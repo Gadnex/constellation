@@ -501,7 +501,7 @@
             display: inline-block;
             padding: var(--size-1) var(--size-2);
             margin: var(--size-1);
-            background-color: var(--button-background);
+            background-color: var(--button-background, var(--background-color));
             color: var(--button-color, var(--primary));
             border: 2px solid var(--button-background, var(--primary));
             border-radius: var(--size-1);

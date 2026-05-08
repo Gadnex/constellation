@@ -1,10 +1,11 @@
 import Shiki from "@shikijs/markdown-it";
 import MarkdownIt from "markdown-it";
+import { HtmlBasePlugin } from "@11ty/eleventy";
 
 export default async function (eleventyConfig) {
 
+    eleventyConfig.addPlugin(HtmlBasePlugin);
     eleventyConfig.setInputDirectory("src");
-
     eleventyConfig.setTemplateFormats([
         "html",
         "md",
@@ -34,4 +35,8 @@ export default async function (eleventyConfig) {
         );
 
     eleventyConfig.setLibrary("md", markdownLib);
+
+    return {
+        pathPrefix: "/constellation/"
+    };
 };
