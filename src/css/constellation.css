@@ -1,0 +1,535 @@
+@layer Colors, Sizes, Typography, Forms;
+
+@layer Colors {
+    :where(:root) {
+        --brand: dodgerblue;
+
+        /* Normalizes the brand color to ensure accessible contrast in both light and dark modes */
+        --primary: light-dark(oklch(from var(--brand) clamp(0.35, l, 0.50) c h),
+                oklch(from var(--brand) clamp(0.60, l + 0.20, 0.75) calc(c * 0.9) h));
+
+        /* Base Anchors (Generated from Primary) */
+        --secondary: oklch(from var(--primary) l calc(c * 0.85) calc(h + 35));
+        --tertiary: oklch(from var(--primary) l calc(c * 0.85) calc(h - 35));
+        --contrast: oklch(from var(--primary) l c calc(h + 180));
+
+        /* Lightest: A soft pastel tint */
+        --primary-lightest: oklch(from var(--primary) 0.93 calc(c * 0.25) h);
+        --secondary-lightest: oklch(from var(--secondary) 0.93 calc(c * 0.25) h);
+        --tertiary-lightest: oklch(from var(--tertiary) 0.93 calc(c * 0.25) h);
+        --contrast-lightest: oklch(from var(--contrast) 0.93 calc(c * 0.25) h);
+
+        /* Lighter: A vibrant UI accent */
+        --primary-lighter: oklch(from var(--primary) calc(l + 0.15) calc(c * 0.80) h);
+        --secondary-lighter: oklch(from var(--secondary) calc(l + 0.15) calc(c * 0.80) h);
+        --tertiary-lighter: oklch(from var(--tertiary) calc(l + 0.15) calc(c * 0.80) h);
+        --contrast-lighter: oklch(from var(--contrast) calc(l + 0.15) calc(c * 0.80) h);
+
+        /* Darker: Rich and deep (with a subtle hue shift for warmth) */
+        --primary-darker: oklch(from var(--primary) calc(l - 0.12) c calc(h - 5));
+        --secondary-darker: oklch(from var(--secondary) calc(l - 0.12) c calc(h - 5));
+        --tertiary-darker: oklch(from var(--tertiary) calc(l - 0.12) c calc(h - 5));
+        --contrast-darker: oklch(from var(--contrast) calc(l - 0.12) c calc(h - 5));
+
+        /* Darkest: High-contrast text/border shades */
+        --primary-darkest: oklch(from var(--primary) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
+        --secondary-darkest: oklch(from var(--secondary) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
+        --tertiary-darkest: oklch(from var(--tertiary) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
+        --contrast-darkest: oklch(from var(--contrast) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
+
+        /* Neutral: Shades of gray with a hint of the primary color */
+        --neutral: light-dark(oklch(from var(--primary) 50% 0.01 h), oklch(from var(--primary) 60% 0.01 h));
+        --neutral-lightest: oklch(from var(--primary) 98% 0.01 h);
+        --neutral-lighter: oklch(from var(--primary) 70% 0.01 h);
+        --neutral-darker: oklch(from var(--primary) 30% 0.01 h);
+        --neutral-darkest: oklch(from var(--primary) 18% 0.01 h);
+
+        --error: light-dark(oklch(0.55 0.22 28), oklch(0.70 0.18 28));
+        --warning: light-dark(oklch(0.80 0.15 85), oklch(0.85 0.12 85));
+        --success: light-dark(oklch(0.60 0.18 145), oklch(0.75 0.14 145));
+        --info: light-dark(oklch(0.60 0.15 250), oklch(0.75 0.12 250));
+
+        --background-color: light-dark(white, black);
+        --color: light-dark(black, white);
+
+        background-color: var(--background-color);
+        color: var(--color);
+
+        .primary {
+            --heading-color: var(--primary);
+            --button-background: var(--primary);
+            --button-color: var(--background-color);
+            --button-hover: var(--primary-lighter);
+            --button-border: var(--primary-darker);
+        }
+
+        .secondary {
+            --heading-color: var(--secondary);
+            --button-background: var(--secondary);
+            --button-color: var(--background-color);
+            --button-hover: var(--secondary-lighter);
+        }
+
+        .tertiary {
+            --heading-color: var(--tertiary);
+            --button-background: var(--tertiary);
+            --button-color: var(--background-color);
+            --button-hover: var(--tertiary-lighter);
+        }
+
+        .contrast {
+            --heading-color: var(--contrast);
+            --button-background: var(--contrast);
+            --button-color: var(--background-color);
+            --button-hover: var(--contrast-lighter);
+        }
+
+        .neutral {
+            --heading-color: var(--neutral);
+            --button-background: var(--neutral);
+            --button-color: var(--background-color);
+            --button-hover: var(--neutral-lighter);
+        }
+    }
+}
+
+@layer Typography {
+    :where(:root) {
+        --font-system-ui: system-ui, sans-serif;
+        --font-transitional: Charter, Bitstream Charter, Sitka Text, Cambria, serif;
+        --font-old-style: Iowan Old Style, Palatino Linotype, URW Palladio L, P052, serif;
+        --font-humanist: Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans, source-sans-pro, sans-serif;
+        --font-geometric-humanist: Avenir, Montserrat, Corbel, URW Gothic, source-sans-pro, sans-serif;
+        --font-classical-humanist: Optima, Candara, Noto Sans, source-sans-pro, sans-serif;
+        --font-neo-grotesque: Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans, Arial, sans-serif;
+        --font-monospace-slab-serif: Nimbus Mono PS, Courier New, monospace;
+        --font-monospace-code: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, Cascadia Code, Menlo, Consolas, DejaVu Sans Mono, monospace;
+        --font-industrial: Bahnschrift, DIN Alternate, Franklin Gothic Medium, Nimbus Sans Narrow, sans-serif-condensed, sans-serif;
+        --font-rounded-sans: ui-rounded, Hiragino Maru Gothic ProN, Quicksand, Comfortaa, Manjari, Arial Rounded MT, Arial Rounded MT Bold, Calibri, source-sans-pro, sans-serif;
+        --font-slab-serif: Rockwell, Rockwell Nova, Roboto Slab, DejaVu Serif, Sitka Small, serif;
+        --font-antique: Superclarendon, Bookman Old Style, URW Bookman, URW Bookman L, Georgia Pro, Georgia, serif;
+        --font-didone: Didot, Bodoni MT, Noto Serif Display, URW Palladio L, P052, Sylfaen, serif;
+        --font-handwritten: Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual, cursive;
+
+        font-family: var(--font-system-ui);
+
+        --font-size-neg-2: clamp(0.6944rem, 0.684rem + 0.0465vw, 0.72rem);
+        --font-size-neg-1: clamp(0.8333rem, 0.8061rem + 0.1212vw, 0.9rem);
+        --font-size-0: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
+        --font-size-1: clamp(1.2rem, 1.1156rem + 0.375vw, 1.4063rem);
+        --font-size-2: clamp(1.44rem, 1.31rem + 0.5778vw, 1.7578rem);
+        --font-size-3: clamp(1.728rem, 1.536rem + 0.8532vw, 2.1973rem);
+        --font-size-4: clamp(2.0736rem, 1.7983rem + 1.2236vw, 2.7466rem);
+        --font-size-5: clamp(2.4883rem, 2.1018rem + 1.718vw, 3.4332rem);
+        --font-size-6: clamp(2.986rem, 2.4519rem + 2.3737vw, 4.2915rem);
+
+        font-size: var(--font-size-0);
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 0.02rem;
+        -webkit-text-size-adjust: none;
+        hanging-punctuation: first last;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 1.1;
+            font-weight: 900;
+            margin-block: var(--size-0);
+            color: var(--heading-color, --color)
+        }
+
+        h1 {
+            font-size: var(--font-size-6);
+        }
+
+        h2 {
+            font-size: var(--font-size-5);
+        }
+
+        h3 {
+            font-size: var(--font-size-4);
+        }
+
+        h4 {
+            font-size: var(--font-size-3);
+        }
+
+        h5 {
+            font-size: var(--font-size-2);
+        }
+
+        h6 {
+            font-size: var(--font-size-1);
+        }
+
+        p {
+            margin-block: var(--size-2);
+        }
+
+        a {
+            color: var(--primary);
+            font-weight: 500;
+            padding: var(--size-0);
+        }
+
+        a:focus {
+            outline: 2px solid var(--primary);
+            border-radius: var(--size-0);
+        }
+
+        abbr {
+            cursor: help;
+        }
+
+        em,
+        i,
+        cite {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        u,
+        s,
+        del,
+        ins {
+            text-decoration-thickness: 2px;
+        }
+
+        u,
+        ins {
+            text-underline-offset: 2px;
+        }
+
+        small,
+        sub,
+        sup {
+            font-size: var(--font-size-neg-2);
+        }
+
+        del,
+        .alert {
+            color: var(--error);
+        }
+
+        ins {
+            color: var(--success);
+        }
+
+        kbd {
+            font-family: var(--font-monospace-code);
+            background-color: light-dark(var(--neutral-lightest), var(--neutral-darkest));
+            padding: 2px 4px;
+            border: 1px solid light-dark(var(--neutral-lighter), var(--neutral-darker));
+            border-radius: var(--size-0);
+        }
+
+        code {
+            font-family: var(--font-monospace-code);
+        }
+
+        hr {
+            height: var(--size-1);
+            background-color: var(--color);
+            border-color: var(--color);
+        }
+    }
+
+    [data-theme="light"] {
+        color-scheme: light;
+    }
+
+    [data-theme="dark"] {
+        color-scheme: dark;
+    }
+
+    @media print {
+        [data-theme="dark"] {
+            color-scheme: light;
+        }
+    }
+}
+
+@layer Sizes {
+    :where(:root) {
+        --size-0: clamp(0.125rem, 0.125rem + 0vw, 0.125rem);
+        --size-1: clamp(0.3125rem, 0.2869rem + 0.1136vw, 0.375rem);
+        --size-2: clamp(0.5625rem, 0.4858rem + 0.3409vw, 0.75rem);
+        --size-3: clamp(0.875rem, 0.7727rem + 0.4545vw, 1.125rem);
+        --size-4: clamp(1.125rem, 0.9716rem + 0.6818vw, 1.5rem);
+        --size-5: clamp(1.6875rem, 1.4574rem + 1.0227vw, 2.25rem);
+        --size-6: clamp(2.25rem, 1.9432rem + 1.3636vw, 3rem);
+        --size-7: clamp(3.375rem, 2.9148rem + 2.0455vw, 4.5rem);
+        --size-8: clamp(4.5rem, 3.8864rem + 2.7273vw, 6rem);
+        --size-9: clamp(5.625rem, 4.858rem + 3.4091vw, 7.5rem);
+        --size-10: clamp(6.75rem, 5.8295rem + 4.0909vw, 9rem);
+        --size-11: clamp(7.875rem, 6.8011rem + 4.7727vw, 10.5rem);
+        --size-12: clamp(9rem, 7.7727rem + 5.4545vw, 12rem);
+    }
+}
+
+@layer Forms {
+    :where(:root) {
+        /* accent-color: var(--primary); */
+
+        input,
+        textarea {
+            font-size: var(--font-size-0);
+            padding: var(--size-1);
+            margin: var(--size-0);
+            border: 1px solid var(--neutral);
+            border-radius: var(--size-1);
+            background-color: light-dark(var(--neutral-lightest), var(--neutral-darkest));
+
+            &[disabled],
+            &[readonly] {
+                background-color: var(--background-color);
+            }
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[aria-invalid=false],
+        textarea[aria-invalid=false],
+        select[aria-invalid=false],
+        fieldset[aria-invalid=false] {
+            border-color: var(--success);
+        }
+
+        input[aria-invalid=true],
+        textarea[aria-invalid=true],
+        select[aria-invalid=true],
+        fieldset[aria-invalid=true] {
+            border-color: var(--error);
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--primary);
+            outline: 2px solid var(--primary);
+            outline-offset: -1px;
+        }
+
+        input[aria-invalid=true]+*,
+        textarea[aria-invalid=true]+* {
+            color: var(--error);
+            margin-block: 0 var(--size-1);
+            font-size: var(--font-size-neg-2);
+            font-weight: 300;
+
+            &:is(ul, ol) {
+                padding-inline: var(--size-3);
+            }
+        }
+
+        input[type=search] {
+            font-size: var(--font-size-1);
+            border-width: 2px;
+            border-radius: 1000px;
+            padding: var(--size-1) var(--size-2);
+        }
+
+        input[type=color] {
+            /* -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none; */
+            padding: 0 var(--size-0);
+            margin: 0;
+            /* width: var(--size-7); */
+            /* height: var(--size-5); */
+            /* border: none; */
+        }
+
+        /* input[type=color]::-webkit-color-swatch {
+            border-radius: var(--size-1);
+            border: 2px solid var(--neutral);
+        }
+
+        input[type=color]::-moz-color-swatch {
+            border-radius: var(--size-1);
+            border: 2px solid var(--neutral);
+        } */
+
+        input[type=file] {
+            padding: var(--size-1);
+        }
+
+        input[type=file]::file-selector-button {
+            display: inline-block;
+            padding: var(--size-1) var(--size-2);
+            margin-inline-end: var(--size-2);
+            background-color: var(--surface-3);
+            border: 2px solid var(--surface-4);
+            border-radius: var(--radius-2);
+            font-size: var(--font-size-2);
+            font-weight: var(--font-weight-5);
+        }
+
+        input[type=file]::file-selector-button:hover {
+            background-color: var(--surface-2);
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: var(--size-3);
+            height: var(--size-3);
+            accent-color: var(--brand-color);
+        }
+
+        input[type="range"] {
+            padding: 0;
+            accent-color: var(--brand-color);
+        }
+
+        input:read-only {
+            outline: 0;
+        }
+
+        /* form {
+
+            label {
+                text-wrap: nowrap;
+            }
+
+            :where(label:not(:has(input[type=checkbox], input[type=radio]))) {
+                display: flex;
+                flex-direction: column;
+
+                input {
+                    margin-inline: 0;
+                }
+            }
+
+            fieldset {
+                padding: var(--size-2) var(--size-3);
+                margin: var(--size-1);
+                margin-block-start: var(--size-6);
+                border: 2px solid var(--surface-2);
+                border-radius: var(--radius-2);
+                position: relative;
+
+                legend {
+                    position: absolute;
+                    top: calc(var(--size-5) * -1);
+                    left: calc(var(--size-1) * -1);
+                    text-wrap: nowrap;
+                }
+            }
+
+            footer {
+                display: flex;
+                justify-content: end;
+                gap: var(--size-3);
+                padding-block: var(--size-3);
+            }
+
+            button,
+            input[type=submit],
+            a[role=button] {
+                padding: var(--size-3) var(--size-4);
+                margin: 0;
+            }
+        } */
+
+        /* select,
+        ::picker(select) {
+            appearance: base-select;
+        }
+
+        select {
+            padding: var(--size-2) var(--size-3);
+            margin: var(--size-1);
+            border: 2px solid var(--surface-2);
+            border-radius: var(--radius-2);
+            background-position: -10px;
+
+            button {
+                font-size: var(--font-size-1);
+                font-weight: var(--font-weight-2);
+                background-color: var(--background-color);
+                color: var(--color);
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            option {
+                margin: 0;
+                padding-inline: var(--size-2);
+                border-radius: var(--radius-2);
+            }
+        }
+
+        select:hover {
+            background-color: var(--surface-1);
+
+            button {
+                background-color: var(--surface-1);
+            }
+        }
+
+        ::picker(select) {
+            padding: var(--size-1);
+            border: 2px solid var(--surface-2);
+            border-radius: var(--radius-2);
+            background-color: var(--surface-1);
+            top: calc(anchor(bottom) + 1px);
+        }
+
+        select::picker-icon {
+            color: var(--color);
+            transition: 0.4s rotate;
+        }
+
+        select:open::picker-icon {
+            rotate: 180deg;
+        } */
+    }
+}
+
+@layer Buttons {
+    :where(:root) {
+
+        button,
+        input[type=submit],
+        a[role=button] {
+            display: inline-block;
+            padding: var(--size-1) var(--size-2);
+            margin: var(--size-1);
+            background-color: var(--button-background);
+            color: var(--button-color, var(--primary));
+            border: 2px solid var(--button-background, var(--primary));
+            border-radius: var(--size-1);
+            font-size: var(--font-size-1);
+            font-weight: 500;
+            text-decoration: none;
+            text-align: center;
+            line-height: normal;
+            outline-offset: 1px;
+
+            &:hover {
+                background-color: var(--button-hover, light-dark(var(--neutral-lightest), var(--neutral-darkest)));
+            }
+
+            &:focus-visible {
+                outline: 4px solid var(--primary);
+            }
+
+            &.big {
+                padding: var(--size-2) var(--size-4);
+                font-size: var(--font-size-2);
+                font-weight: 700;
+            }
+
+            &.small {
+                padding: var(--size-0) var(--size-1);
+                font-size: var(--font-size-neg-1);
+            }
+        }
+    }
+}

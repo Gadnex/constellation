@@ -1,0 +1,46 @@
+---
+layout: base.liquid
+title: Constellation CSS - Home
+description: Home page of Constellation CSS
+date: 2026-04-16
+---
+
+<article>
+    <h2>Home</h2>
+    <p>
+        In this experiment I want to see if I can build my own CSS styles using <a href="https://open-props.style/">Open
+            Props</a> as a <em>design system</em>, but without the
+        <em>normalize</em> and <em>buttons</em> opinionated styles of Open Props. Different pages of
+        this site will demonstrate different styling options.
+    </p>
+    <p>
+        I decided to build the styles using a layered approach so that these layers can be used independently
+        and
+        stacked on top of each other as required.
+    </p>
+
+    <h3>Open-Props layer</h3>
+    <p>
+        The first layer is Open Props itself. It just declares useful properties that can be used in other
+        layers for consistency. This layer does not make any visual changes to the HTML pages.
+    </p>
+
+    <h3>Normalize layer</h3>
+    <p>
+        The normalize layer is used as a base style to use for most of my internal projects. It should do a CSS
+        reset and create basic styling for semantic HTML tags. This layer also offers light and dark themes
+        dependent on the operating system's light/dark mode. It is also responsive based on the size of the
+        device screen and resolution, to look good on anything from a large 4K display to a entry level mobile
+        phone.
+    </p>
+    <p>
+        This layer will also set up print styles so that printing a page would default to the normalized
+        view with some slight modifications. It should not print the body header and footer tags and only print
+        the main tag.
+    </p>
+    <p>
+        Any layer built on top of the normalize layer should declare its styles inside a <kbd>@media
+            screen</kbd> CSS selector so that it does not break the printable styles configured by the normalize
+        layer.
+    </p>
+</article>

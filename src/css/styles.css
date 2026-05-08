@@ -1,0 +1,113 @@
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-inline: var(--size-2);
+
+    &>header {
+        display: flex;
+        justify-content: space-between;
+        padding-block: var(--size-1);
+    }
+
+    &>main {
+        flex-grow: 1;
+    }
+
+    &>footer {
+        text-align: center;
+        padding: var(--size-0);
+    }
+}
+
+.settings-menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: min-content;
+    padding: 0;
+    position: relative;
+    anchor-name: settings-menu-button;
+}
+
+.settings-menu-button:hover {
+    color: var(--primary);
+}
+
+.settings-menu {
+    position: absolute;
+    position-anchor: settings-menu-button;
+    /* width: 100%; */
+    margin: 0;
+    padding: var(--size-2);
+    inset: auto;
+    inset-block-start: anchor(bottom);
+    inset-inline-end: anchor(right);
+    border: 2px solid var(--neutral);
+    
+    * {
+        margin: 0;
+    }
+
+    & > li {
+        cursor: pointer;
+    }
+    
+    & > li:hover {
+        color: var(--primary);
+    }
+
+    hr {
+        width: 100%;
+    }
+}
+
+.settings-menu:popover-open {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background-color: light-dark(var(--neutral-lightest), var(--neutral-darkest));
+    padding: var(--size-2);
+    border: 1px solid light-dark(var(--neutral), var(--neutral));
+    border-radius: var(--size-2);
+    margin: var(--size-2);
+}
+
+.flex-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-evenly;
+    gap: var(--size-1);
+
+    &>* {
+        flex: 1 1 30ch;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
+    gap: var(--size-2);
+}
+
+.color-series {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--size-2);
+
+    &>div {
+
+        header {
+            padding: var(--size-0);
+            text-align: center;
+        }
+
+        div {
+            min-width: 20ch;
+            min-height: 20ch;
+        }
+    }
+}
