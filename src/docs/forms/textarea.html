@@ -1,0 +1,39 @@
+---
+title: Textarea
+---
+<div class="card">
+    <div>
+        <label>
+            Textarea
+            <textarea placeholder="Placeholder" aria-label="Placeholder"></textarea>
+        </label>
+    </div>
+    <div>
+        <label>
+            Disabled textarea
+            <textarea placeholder="Disabled" aria-label="Disabled textarea" disabled></textarea>
+        </label>
+    </div>
+    <div>
+        <label>
+            Read-only textarea
+            <textarea placeholder="Read-only" aria-label="Read-only textarea" readonly></textarea>
+        </label>
+    </div>
+    <div>
+        <label>
+            Valid textarea
+            <textarea placeholder='aria-invalid="false"' aria-invalid="false"></textarea>
+        </label>
+    </div>
+    <div>
+        <label>
+            Invalid textarea
+            <textarea placeholder='aria-invalid="true"' aria-invalid="true"></textarea>
+            <ul>
+                <li>Value is required</li>
+                <li>Must be at least 30 characters long</li>
+            </ul>
+        </label>
+    </div>
+</div>

@@ -1,4 +1,29 @@
-<a href="/">Home</a>
-{% for page in collections.pages %}
-<a href="{{ page.url }}">{{ page.data.title }}</a>
-{% endfor %}
+<menu role="list">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+
+    {% for topic in collections.topics %}
+      {% assign topic_slug = topic | prepend: "/" | append: "/" %}
+      {% assign isCurrentTopic = false %}
+      {% if page.filePathStem contains topic_slug %}
+        {% assign isCurrentTopic = true %}
+      {% endif %}
+      <li>
+        <details name="nav-sub-menu" {% if isCurrentTopic %}open{% endif %}>
+          <!-- Capitalize the folder name using Liquid filters -->
+          <summary>{{ topic | capitalize }}</summary>
+          <menu role="list">
+            {% for item in collections.docs %}
+              {% if item.page.filePathStem contains topic_slug %}
+                <li>
+                  <a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>
+                    {{ item.data.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}            
+          </menu>
+        </details>
+      </li>
+    {% endfor %}
+</menu>

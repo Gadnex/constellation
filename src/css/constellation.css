@@ -1,8 +1,6 @@
-@layer Colors, Sizes, Typography, Forms;
-
 @layer Colors {
-    :where(:root) {
-        --brand: dodgerblue;
+    :where(:root, [data-theme]) {
+        --brand: #238fff;
 
         /* Normalizes the brand color to ensure accessible contrast in both light and dark modes */
         --primary: light-dark(oklch(from var(--brand) clamp(0.35, l, 0.50) c h),
@@ -52,6 +50,7 @@
         --background-color: light-dark(white, black);
         --color: light-dark(black, white);
 
+        color-scheme: light dark;
         background-color: var(--background-color);
         color: var(--color);
 
@@ -90,6 +89,14 @@
             --button-color: var(--background-color);
             --button-hover: var(--neutral-lighter);
         }
+    }
+
+    [data-theme="light"] {
+        color-scheme: light;
+    }
+
+    [data-theme="dark"] {
+        color-scheme: dark;
     }
 }
 
@@ -236,19 +243,15 @@
             background-color: var(--color);
             border-color: var(--color);
         }
-    }
 
-    [data-theme="light"] {
-        color-scheme: light;
-    }
+        menu {
+            list-style: none;
+            padding: 0;
+            margin: var(--size-1) 0;
 
-    [data-theme="dark"] {
-        color-scheme: dark;
-    }
-
-    @media print {
-        [data-theme="dark"] {
-            color-scheme: light;
+            li {
+                margin-block: var(--size-0);
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding-inline: var(--size-2);
+    padding-inline: var(--size-3);
 
     &>header {
         display: flex;
@@ -73,7 +73,7 @@ body {
     padding: var(--size-2);
     border: 1px solid light-dark(var(--neutral), var(--neutral));
     border-radius: var(--size-2);
-    margin: var(--size-2);
+    margin-block: var(--size-2);
 }
 
 .flex-wrap {

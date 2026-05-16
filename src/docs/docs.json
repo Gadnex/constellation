@@ -1,0 +1,5 @@
+{
+  "tags": ["docs"],
+  "layout": "base.liquid",
+  "permalink": "/{{ page.filePathStem }}/"
+}

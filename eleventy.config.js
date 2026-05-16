@@ -18,6 +18,21 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/*/*.css");
     eleventyConfig.addPassthroughCopy("src/*/*.js");
 
+    eleventyConfig.addCollection("topics", function(collectionApi) {
+        const docs = collectionApi.getFilteredByTag("docs");
+        const topics = new Set();
+        
+        docs.forEach(item => {
+            const pathParts = item.page.filePathStem.split('/');
+            
+            if (pathParts.length >= 4) {
+                topics.add(pathParts[2]); 
+            }
+        });
+        
+        return Array.from(topics);
+    });
+
     const options = {
         html: true,
         breaks: true,
