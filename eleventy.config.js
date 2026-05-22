@@ -18,20 +18,44 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/*/*.css");
     eleventyConfig.addPassthroughCopy("src/*/*.js");
 
-    eleventyConfig.addCollection("topics", function(collectionApi) {
+    eleventyConfig.addCollection("orderedDocs", function (collectionApi) {
         const docs = collectionApi.getFilteredByTag("docs");
-        const topics = new Set();
-        
+        const topicsMap = {};
+
         docs.forEach(item => {
+            // Fallbacks if data is missing
             const pathParts = item.page.filePathStem.split('/');
-            
-            if (pathParts.length >= 4) {
-                topics.add(pathParts[2]); 
+            const folderName = pathParts.length >= 4 ? pathParts[2] : "General";
+
+            // Eleventy automatically reads these from your JSON and Frontmatter
+            const topicName = item.data.topic || folderName;
+            const topicOrder = item.data.topicOrder || 99;
+            const pageOrder = item.data.pageOrder || 99;
+
+            if (!topicsMap[topicName]) {
+                topicsMap[topicName] = {
+                    name: topicName,
+                    order: topicOrder,
+                    pages: []
+                };
             }
+
+            topicsMap[topicName].pages.push({
+                title: item.data.title || item.page.fileSlug,
+                url: item.url,
+                order: pageOrder
+            });
         });
-        
-        return Array.from(topics);
+
+        // Sort topics, then sort pages within those topics
+        return Object.values(topicsMap)
+            .sort((a, b) => a.order - b.order)
+            .map(topic => {
+                topic.pages.sort((a, b) => a.order - b.order);
+                return topic;
+            });
     });
+
 
     const options = {
         html: true,

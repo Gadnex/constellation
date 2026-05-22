@@ -2,25 +2,27 @@
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
 
-    {% for topic in collections.topics %}
-      {% assign topic_slug = topic | prepend: "/" | append: "/" %}
+    {% for topic in collections.orderedDocs %}
       {% assign isCurrentTopic = false %}
-      {% if page.filePathStem contains topic_slug %}
-        {% assign isCurrentTopic = true %}
-      {% endif %}
+      
+      <!-- Check if the current page belongs to any of the pages in this topic -->
+      {% for item in topic.pages %}
+        {% if page.url == item.url %}
+          {% assign isCurrentTopic = true %}
+        {% endif %}
+      {% endfor %}
+
       <li>
         <details name="nav-sub-menu" {% if isCurrentTopic %}open{% endif %}>
-          <!-- Capitalize the folder name using Liquid filters -->
-          <summary>{{ topic | capitalize }}</summary>
+          <!-- Uses the clean topic name from your JSON file -->
+          <summary>{{ topic.name }}</summary>
           <menu role="list">
-            {% for item in collections.docs %}
-              {% if item.page.filePathStem contains topic_slug %}
-                <li>
-                  <a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>
-                    {{ item.data.title }}
-                  </a>
-                </li>
-              {% endif %}
+            {% for item in topic.pages %}
+              <li>
+                <a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>
+                  {{ item.title }}
+                </a>
+              </li>
             {% endfor %}            
           </menu>
         </details>
