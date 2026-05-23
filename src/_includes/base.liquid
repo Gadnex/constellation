@@ -14,22 +14,26 @@
     <title>Constellation: {{ title }}</title>
 </head>
 
-<body>
-    <header>
-        <h1>Constellation CSS</h1>
-        <!-- <div data-json-signals></div> -->
-        {% include 'setting' %}
-    </header>
-    <nav aria-label="Main Navigation">
-        {% include 'menu' %}
-    </nav>
-    <main>
-        <h2>{{ title }}</h2>
-        <article>
-            {{ content }}
-        </article>
-    </main>
-    <footer>
+<body class="fullscreen">
+    {% include 'setting' %}
+    <div class="sidebar-container">
+        <div class="sidebar">
+            <header>
+                <h1 class="text-1">Constellation CSS</h1>
+            </header>
+            <nav aria-label="Main Navigation">
+                {% include 'menu' %}
+            </nav>
+            <!-- <div data-json-signals></div> -->
+        </div>
+        <main>
+            <h2>{{ title }}</h2>
+            <article>
+                {{ content }}
+            </article>
+        </main>
+    </div>
+    <footer class="center p-1">
         {% include 'footer' %}
     </footer>
 </body>
