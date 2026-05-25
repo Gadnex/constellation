@@ -601,6 +601,8 @@
             text-align: center;
             line-height: normal;
             outline-offset: 1px;
+            user-select: none;
+            -webkit-user-select: none;
 
             &:hover {
                 background-color: var(--button-hover, light-dark(var(--neutral-lightest), var(--neutral-darkest)));
@@ -891,6 +893,11 @@
             --button-background: var(--neutral);
             --button-color: var(--background-color);
             --button-hover: var(--neutral-lighter);
+        }
+
+        .no-select {
+            user-select: none;
+            -webkit-user-select: none;
         }
     }
 }
