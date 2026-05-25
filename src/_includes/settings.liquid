@@ -41,8 +41,9 @@
             </label>
             <label>
                 <span>--color-degrees:</span>
-                <input name="degrees" type="number" min="0" max="180" data-bind:_color-degrees
+                <input name="degrees" type="range" min="0" max="180" step="5" data-bind:_color-degrees
                     data-on:change="localStorage.setItem('color-degrees', $_colorDegrees)">
+                    <input name="degrees-display" type="text" data-bind:_color-degrees disabled>
             </label>
             <button
                 data-on:click="$_brand = '#238fff'; localStorage.removeItem('brand-color'); $_colorDegrees = 35;  localStorage.removeItem('color-degrees');">

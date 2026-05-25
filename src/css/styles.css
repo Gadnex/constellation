@@ -51,7 +51,8 @@
     }
 
     input[type="color"],
-    input[type="number"] {
+    input[type="range"],
+    input[type="text"] {
         display: block;
         width: 100%;
         max-width: 100%;
@@ -65,8 +66,12 @@
         margin: 0;
     }
 
-    input[type="number"] {
-        width: 14ch;
+    input[type="range"] {
+        width: 100%;
+    }
+
+    input[type="text"] {
+        width: 15ch;
         padding: 0.5rem;
     }
 

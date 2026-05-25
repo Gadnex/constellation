@@ -363,13 +363,12 @@
 
 @layer Forms {
     :where(:root) {
-        /* accent-color: var(--primary); */
+        accent-color: var(--primary);
 
         input,
         textarea {
             font-size: var(--font-size-0);
-            padding: var(--size-1);
-            margin: 0;
+            padding: var(--size-2) var(--size-3);
             border: 1px solid var(--border-color);
             border-radius: var(--size-1);
             background-color: light-dark(var(--neutral-lightest), var(--neutral-darkest));
@@ -421,7 +420,12 @@
             font-size: var(--font-size-1);
             border-width: 2px;
             border-radius: 1000px;
-            padding: var(--size-1) var(--size-2);
+            padding: var(--size-3) var(--size-4);
+        }
+
+        input[type="range"] {
+            padding: 0;
+            width: 20ch;
         }
 
         input[type=color] {
@@ -468,11 +472,6 @@
         input[type="radio"] {
             width: var(--size-3);
             height: var(--size-3);
-            accent-color: var(--brand-color);
-        }
-
-        input[type="range"] {
-            padding: 0;
             accent-color: var(--brand-color);
         }
 

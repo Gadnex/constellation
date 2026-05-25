@@ -1,5 +1,5 @@
 ---
-title: Input
+title: Input element
 pageOrder: 1
 ---
 <p>
@@ -8,7 +8,8 @@ pageOrder: 1
 
 <h3>Input types</h3>
 <p>
-    The input element has a type attribute and the default value is <kbd>type="text"</kbd>, but various other types are available. The following examples show all the available types. 
+    The input element has a type attribute and the default value is <kbd>type="text"</kbd>, but various other types are
+    available. The following examples show all the available types.
 </p>
 <div class="box grid">
     <div>
@@ -89,14 +90,23 @@ pageOrder: 1
             <input type="time" name="time" aria-label="Time">
         </label>
     </div>
+    <div>
+        <label>
+            <div>Search</div>
+            <input type="search" name="search" placeholder="Search" aria-label="Search" />
+        </label>
+    </div>
 </div>
 
 <h3>Input validation</h3>
 <p>
-    When validating input fields, it is useful to show whether the entered input is valid or invalid. When doing so it is important to also make this clear for accessibility users using the <kbd>aria-invalid</kbd> attribute.
+    When validating input fields, it is useful to show whether the entered input is valid or invalid. When doing so it
+    is important to also make this clear for accessibility users using the <kbd>aria-invalid</kbd> attribute.
 </p>
 <p>
-    Constellation CSS makes use of the <kbd>aria-invalid</kbd> attribute to apply either an <code>--success</code> or <code>--error</code> color to mark the field visually. For invalid fields, any sibling element immediately following the input element will have smaller text in the <code>--error</code> color.
+    Constellation CSS makes use of the <kbd>aria-invalid</kbd> attribute to apply either an <code>--success</code> or
+    <code>--error</code> color to mark the field visually. For invalid fields, any sibling element immediately following
+    the input element will have smaller text in the <code>--error</code> color.
 </p>
 <section class="box stack gap-2">
     <div>
@@ -118,190 +128,54 @@ pageOrder: 1
     </div>
 </section>
 
-<div>
-    <label>
-        <div>Search</div>
-        <input type="search" name="search" placeholder="Search" aria-label="Search" />
-    </label>
-</div>
+<h3>Input type range</h3>
+<p>
+    The input <kbd>type="range"</kbd> does not visually look like a text input field and is thus styled differently.
+</p>
+<section class="box">
+    <div>
+        <label>
+            <div>Range</div>
+            <input type="range" min="0" max="100">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Range with step and list</div>
+            <input type="range" min="0" max="100" step="25" list="markers">
+            <datalist id="markers">
+                <option value="0" label="0%"></option>
+                <option value="25" label="25%"></option>
+                <option value="50" label="50%"></option>
+                <option value="75" label="75%"></option>
+                <option value="100" label="100%"></option>
+            </datalist>
+        </label>
+    </div>
+</section>
 
-<div>
-    <label>
-        <div>Color</div>
-        <input type="color" value="#00ffaa" aria-label="Color picker">
-    </label>
-</div>
-<div>
-    <label>
-        <div>File</div>
-        <input type="file">
-    </label>
-</div>
-<div>
-    <label>
-        <div>Range</div>
-        <input type="range" />
-    </label>
-</div>
+<h3>Input type color</h3>
+<p>
 
-<fieldset>
-    <legend>Checkboxes</legend>
+</p>
+<section class="box">
     <div>
         <label>
-            <input type="checkbox" name="english" checked />
-            English
+            <div>Color</div>
+            <input type="color" value="#00ffaa" aria-label="Color picker">
         </label>
     </div>
+</section>
+
+<h3>Input type file</h3>
+<p>
+
+</p>
+<section class="box">
     <div>
         <label>
-            <input type="checkbox" name="french" checked />
-            French
+            <div>File</div>
+            <input type="file">
         </label>
     </div>
-    <div>
-        <label>
-            <input type="checkbox" name="mandarin" />
-            Mandarin
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="thai" />
-            Thai
-        </label>
-    </div>
-    <div><label aria-disabled="true">
-            <input type="checkbox" name="dothraki" disabled />
-            Dothraki
-        </label>
-    </div>
-</fieldset>
-<fieldset>
-    <legend>Radio buttons</legend>
-    <div>
-        <label>
-            <input type="radio" name="language" checked />
-            English
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="radio" name="language" />
-            French
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="radio" name="language" />
-            Mandarin
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="radio" name="language" />
-            Thai
-        </label>
-    </div>
-    <div>
-        <label aria-disabled="true">
-            <input type="radio" name="language" disabled />
-            Dothraki
-        </label>
-    </div>
-</fieldset>
-<fieldset class="flex-column">
-    <legend>Fieldset flex-column</legend>
-    <div>
-        <label>
-            <input type="checkbox" name="english" checked />
-            English
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="french" checked />
-            French
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="mandarin" />
-            Mandarin
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="thai" />
-            Thai
-        </label>
-    </div>
-    <div><label aria-disabled="true">
-            <input type="checkbox" name="dothraki" disabled />
-            Dothraki
-        </label>
-    </div>
-</fieldset>
-<fieldset aria-invalid="false">
-    <legend>Fieldset valid</legend>
-    <div>
-        <label>
-            <input type="checkbox" name="english" checked />
-            English
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="french" checked />
-            French
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="mandarin" />
-            Mandarin
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="thai" />
-            Thai
-        </label>
-    </div>
-    <div><label aria-disabled="true">
-            <input type="checkbox" name="dothraki" disabled />
-            Dothraki
-        </label>
-    </div>
-</fieldset>
-<fieldset aria-invalid="true">
-    <legend>Fieldset invalid</legend>
-    <div>
-        <label>
-            <input type="checkbox" name="english" checked />
-            English
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="french" checked />
-            French
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="mandarin" />
-            Mandarin
-        </label>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" name="thai" />
-            Thai
-        </label>
-    </div>
-    <div><label aria-disabled="true">
-            <input type="checkbox" name="dothraki" disabled />
-            Dothraki
-        </label>
-    </div>
-</fieldset>
+</section>
