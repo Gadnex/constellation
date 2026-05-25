@@ -172,11 +172,17 @@
             color: var(--primary);
             font-weight: 500;
             padding: var(--size-0);
-        }
-
-        a:focus {
-            outline: 2px solid var(--primary);
             border-radius: var(--size-0);
+
+            &[aria-current="page"] {
+                color: var(--background-color);
+                background-color: var(--primary);
+            }
+
+            &:focus {
+                outline: 2px solid var(--primary);
+                border-radius: var(--size-0);
+            }
         }
 
         abbr {
@@ -232,6 +238,10 @@
 
         code {
             font-family: var(--font-monospace-code);
+        }
+
+        .text-invert {
+            color: var(--background-color);
         }
 
         .text-default {
@@ -326,6 +336,7 @@
 
             a {
                 display: block;
+                padding-inline-start: var(--size-1);
             }
         }
 
@@ -358,7 +369,7 @@
         textarea {
             font-size: var(--font-size-0);
             padding: var(--size-1);
-            margin: var(--size-0);
+            margin: 0;
             border: 1px solid var(--border-color);
             border-radius: var(--size-1);
             background-color: light-dark(var(--neutral-lightest), var(--neutral-darkest));
@@ -707,6 +718,13 @@
             }
         }
 
+        /* The grid */
+        .grid {
+            display: grid;
+            gap: var(--size-2);
+            grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
+        }
+
     }
 }
 
@@ -754,7 +772,40 @@
             text-align: center;
         }
 
+        /* Margins */
+        .m-none {
+            margin: 0;
+        }
+
+        .m-0 {
+            margin: var(--size-0);
+        }
+
+        .m-1 {
+            margin: var(--size-1);
+        }
+
+        .m-2 {
+            margin: var(--size-2);
+        }
+
+        .m-3 {
+            margin: var(--size-3);
+        }
+
+        .m-4 {
+            margin: var(--size-4);
+        }
+
+        .m-5 {
+            margin: var(--size-5);
+        }
+
         /* Padding */
+        .p-none {
+            padding: 0;
+        }
+
         .p-0 {
             padding: var(--size-0);
         }
@@ -777,6 +828,35 @@
 
         .p-5 {
             padding: var(--size-5);
+        }
+
+        /* Gap */
+        .gap-none {
+            gap: 0;
+        }
+
+        .gap-0 {
+            gap: var(--size-0);
+        }
+
+        .gap-1 {
+            gap: var(--size-1);
+        }
+
+        .gap-2 {
+            gap: var(--size-2);
+        }
+
+        .gap-3 {
+            gap: var(--size-3);
+        }
+
+        .gap-4 {
+            gap: var(--size-4);
+        }
+
+        .gap-5 {
+            gap: var(--size-5);
         }
 
         /* Colors */

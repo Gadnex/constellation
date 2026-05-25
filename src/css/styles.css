@@ -1,84 +1,77 @@
 .settings-menu-button {
-    position: absolute;
+    position: fixed;
     inset-block-start: 0.5rem;
     inset-inline-end: 0.5rem;
     background: none;
     border: none;
     cursor: pointer;
     height: min-content;
+    margin: 0;
     padding: 0;
+    line-height: 0;
     anchor-name: settings-menu-button;
-}
 
-.settings-menu-button:hover {
-    color: var(--primary);
+    &:hover {
+        color: var(--brand);
+    }
 }
 
 .settings-menu {
-    position: absolute;
+    position: fixed;
     position-anchor: settings-menu-button;
-    /* width: 100%; */
     margin: 0;
-    padding: var(--size-2);
+    margin-block-start: 0.2rem;
+    padding: 0.8rem;
     inset: auto;
     inset-block-start: anchor(bottom);
     inset-inline-end: anchor(right);
-    border: 2px solid var(--neutral);
-    
-    * {
+    border: 2px solid;
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        margin: 0;
+        margin-block-end: 0.5rem;
+        padding: 0.8rem;
+    }
+
+    &>*:last-child {
+        margin-block-end: 0;
+    }
+
+    label,
+    input,
+    button {
+        cursor: pointer;
+    }
+
+    label:hover {
+        color: var(--brand);
+    }
+
+    input[type="color"],
+    input[type="number"] {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-block-end: 0.5rem;
+        border-width: 1px;
+    }
+
+    button {
         margin: 0;
     }
 
-    & > li {
-        cursor: pointer;
-    }
-    
-    & > li:hover {
-        color: var(--primary);
+    input[type="number"] {
+        width: 14ch;
+        padding: 0.5rem;
     }
 
-    hr {
-        width: 100%;
-    }
-}
-
-.settings-menu:popover-open {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-wrap {
-    display: flex;
-    flex-flow: row wrap;
-    align-content: space-evenly;
-    gap: var(--size-1);
-
-    &>* {
-        flex: 1 1 30ch;
-    }
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
-    gap: var(--size-2);
-}
-
-.color-series {
-    display: flex;
-    flex-wrap: wrap;
-    padding: var(--size-2);
-
-    &>div {
-
-        header {
-            padding: var(--size-0);
-            text-align: center;
-        }
-
-        div {
-            min-width: 20ch;
-            min-height: 20ch;
-        }
+    &:popover-open {
+        display: flex;
+        flex-direction: column;
     }
 }

@@ -2,34 +2,112 @@
 title: Input
 pageOrder: 1
 ---
-<div class="box">
+<p>
+    The HTML input element is the primary mechanism for HTML form input fields.
+</p>
+
+<h3>Input types</h3>
+<p>
+    The input element has a type attribute and the default value is <kbd>type="text"</kbd>, but various other types are available. The following examples show all the available types. 
+</p>
+<div class="box grid">
     <div>
         <label>
-            Text
+            <div>Text</div>
             <input type="text" placeholder="Placeholder">
         </label>
     </div>
     <div>
         <label>
-            Disabled input
+            <div>Disabled input</div>
             <input type="text" placeholder="Disabled" aria-label="Disabled input" disabled>
         </label>
     </div>
     <div>
         <label>
-            Read-only input
+            <div>Read-only input</div>
             <input type="text" value="Read-only" aria-label="Read-only input" readonly>
         </label>
     </div>
     <div>
         <label>
-            Valid input
+            <div>Password</div>
+            <input type="password">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Email</div>
+            <input type="email">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Number</div>
+            <input type="number">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Password</div>
+            <input type="password">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Tel</div>
+            <input type="tel">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Url</div>
+            <input type="url">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Date</div>
+            <input type="date" name="date" aria-label="Date">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Datetime-local</div>
+            <input type="datetime-local" name="datetime-local" aria-label="Datetime local">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Month</div>
+            <input type="month" name="month" aria-label="Month">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div>Time</div>
+            <input type="time" name="time" aria-label="Time">
+        </label>
+    </div>
+</div>
+
+<h3>Input validation</h3>
+<p>
+    When validating input fields, it is useful to show whether the entered input is valid or invalid. When doing so it is important to also make this clear for accessibility users using the <kbd>aria-invalid</kbd> attribute.
+</p>
+<p>
+    Constellation CSS makes use of the <kbd>aria-invalid</kbd> attribute to apply either an <code>--success</code> or <code>--error</code> color to mark the field visually. For invalid fields, any sibling element immediately following the input element will have smaller text in the <code>--error</code> color.
+</p>
+<section class="box stack gap-2">
+    <div>
+        <label>
+            <div>Valid input</div>
             <input type="text" aria-invalid="false" value='aria-invalid="false"'>
         </label>
     </div>
     <div>
         <label>
-            Invalid input
+            <div>Invalid input</div>
             <input type="text" aria-invalid="true" value='aria-invalid="true"'>
             <ul>
                 <li>Value is required</li>
@@ -38,243 +116,192 @@ pageOrder: 1
             </ul>
         </label>
     </div>
-    <div>
-        <label>
-            Email
-            <input type="email">
-        </label>
-    </div>
-    <div>
-        <label>
-            Number
-            <input type="number">
-        </label>
-    </div>
-    <div>
-        <label>
-            Password
-            <input type="password">
-        </label>
-    </div>
-    <div>
-        <label>
-            Tel
-            <input type="tel">
-        </label>
-    </div>
-    <div>
-        <label>
-            Url
-            <input type="url">
-        </label>
-    </div>
-    <div>
-        <label>
-            Date
-            <input type="date" name="date" aria-label="Date">
-        </label>
-    </div>
-    <div>
-        <label>
-            Datetime-local
-            <input type="datetime-local" name="datetime-local" aria-label="Datetime local">
-        </label>
-    </div>
-    <div>
-        <label>
-            Month
-            <input type="month" name="month" aria-label="Month">
-        </label>
-    </div>
-    <div>
-        <label>
-            Time
-            <input type="time" name="time" aria-label="Time">
-        </label>
-    </div>
-    <div>
-        <label>
-            Search
-            <input type="search" name="search" placeholder="Search" aria-label="Search" />
-        </label>
-    </div>
-    <div>
-        <label>
-            Color
-            <input type="color" value="#00ffaa" aria-label="Color picker">
-        </label>
-    </div>
-    <div>
-        <label>
-            File
-            <input type="file">
-        </label>
-    </div>
-    <div>
-        <label>
-            Range
-            <input type="range" />
-        </label>
-    </div>
-    <fieldset>
-        <legend>Checkboxes</legend>
-        <div>
-            <label>
-                <input type="checkbox" name="english" checked />
-                English
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="french" checked />
-                French
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="mandarin" />
-                Mandarin
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="thai" />
-                Thai
-            </label>
-        </div>
-        <div><label aria-disabled="true">
-                <input type="checkbox" name="dothraki" disabled />
-                Dothraki
-            </label>
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>Radio buttons</legend>
-        <div>
-            <label>
-                <input type="radio" name="language" checked />
-                English
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" name="language" />
-                French
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" name="language" />
-                Mandarin
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" name="language" />
-                Thai
-            </label>
-        </div>
-        <div>
-            <label aria-disabled="true">
-                <input type="radio" name="language" disabled />
-                Dothraki
-            </label>
-        </div>
-    </fieldset>
-    <fieldset class="flex-column">
-        <legend>Fieldset flex-column</legend>
-        <div>
-            <label>
-                <input type="checkbox" name="english" checked />
-                English
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="french" checked />
-                French
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="mandarin" />
-                Mandarin
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="thai" />
-                Thai
-            </label>
-        </div>
-        <div><label aria-disabled="true">
-                <input type="checkbox" name="dothraki" disabled />
-                Dothraki
-            </label>
-        </div>
-    </fieldset>
-    <fieldset aria-invalid="false">
-        <legend>Fieldset valid</legend>
-        <div>
-            <label>
-                <input type="checkbox" name="english" checked />
-                English
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="french" checked />
-                French
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="mandarin" />
-                Mandarin
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="thai" />
-                Thai
-            </label>
-        </div>
-        <div><label aria-disabled="true">
-                <input type="checkbox" name="dothraki" disabled />
-                Dothraki
-            </label>
-        </div>
-    </fieldset>
-    <fieldset aria-invalid="true">
-        <legend>Fieldset invalid</legend>
-        <div>
-            <label>
-                <input type="checkbox" name="english" checked />
-                English
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="french" checked />
-                French
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="mandarin" />
-                Mandarin
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="thai" />
-                Thai
-            </label>
-        </div>
-        <div><label aria-disabled="true">
-                <input type="checkbox" name="dothraki" disabled />
-                Dothraki
-            </label>
-        </div>
-    </fieldset>
+</section>
+
+<div>
+    <label>
+        <div>Search</div>
+        <input type="search" name="search" placeholder="Search" aria-label="Search" />
+    </label>
 </div>
+
+<div>
+    <label>
+        <div>Color</div>
+        <input type="color" value="#00ffaa" aria-label="Color picker">
+    </label>
+</div>
+<div>
+    <label>
+        <div>File</div>
+        <input type="file">
+    </label>
+</div>
+<div>
+    <label>
+        <div>Range</div>
+        <input type="range" />
+    </label>
+</div>
+
+<fieldset>
+    <legend>Checkboxes</legend>
+    <div>
+        <label>
+            <input type="checkbox" name="english" checked />
+            English
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="french" checked />
+            French
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="mandarin" />
+            Mandarin
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="thai" />
+            Thai
+        </label>
+    </div>
+    <div><label aria-disabled="true">
+            <input type="checkbox" name="dothraki" disabled />
+            Dothraki
+        </label>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Radio buttons</legend>
+    <div>
+        <label>
+            <input type="radio" name="language" checked />
+            English
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="language" />
+            French
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="language" />
+            Mandarin
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="language" />
+            Thai
+        </label>
+    </div>
+    <div>
+        <label aria-disabled="true">
+            <input type="radio" name="language" disabled />
+            Dothraki
+        </label>
+    </div>
+</fieldset>
+<fieldset class="flex-column">
+    <legend>Fieldset flex-column</legend>
+    <div>
+        <label>
+            <input type="checkbox" name="english" checked />
+            English
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="french" checked />
+            French
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="mandarin" />
+            Mandarin
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="thai" />
+            Thai
+        </label>
+    </div>
+    <div><label aria-disabled="true">
+            <input type="checkbox" name="dothraki" disabled />
+            Dothraki
+        </label>
+    </div>
+</fieldset>
+<fieldset aria-invalid="false">
+    <legend>Fieldset valid</legend>
+    <div>
+        <label>
+            <input type="checkbox" name="english" checked />
+            English
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="french" checked />
+            French
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="mandarin" />
+            Mandarin
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="thai" />
+            Thai
+        </label>
+    </div>
+    <div><label aria-disabled="true">
+            <input type="checkbox" name="dothraki" disabled />
+            Dothraki
+        </label>
+    </div>
+</fieldset>
+<fieldset aria-invalid="true">
+    <legend>Fieldset invalid</legend>
+    <div>
+        <label>
+            <input type="checkbox" name="english" checked />
+            English
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="french" checked />
+            French
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="mandarin" />
+            Mandarin
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="thai" />
+            Thai
+        </label>
+    </div>
+    <div><label aria-disabled="true">
+            <input type="checkbox" name="dothraki" disabled />
+            Dothraki
+        </label>
+    </div>
+</fieldset>

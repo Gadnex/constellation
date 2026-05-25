@@ -1,151 +1,158 @@
 ---
-title: Colors
+title: Dynamic colors
 pageOrder: 1
 ---
-<h6>Brand</h6>
-<section>
-    <div class="color-series">
-        <div class="brand">
-            <header>--brand</header>
-            <div style="background-color: var(--brand);"></div>
-        </div>
-    </div>
-</section>
+<p>
+    In order to prevent an overload of color choices, Constellation CSS provides a limited set of colors to work with. These choices are dynamically generated using color theory based on a <code>--brand</code> color that you set in your custom CSS. 
+</p>
+<p>
+    All colors have light mode and dark modes versions to ensure proper contrast with the background color. Dark mode colors are slightly lighter for improved contrast. 
+</p>
 
-<h6>Primary</h6>
-<div class="color-series">
-    <div>
-        <header>--primary-lightest</header>
-        <div style="background-color: var(--primary-lightest);"></div>
-    </div>
-    <div>
-        <header>--primary-lighter</header>
-        <div style="background-color: var(--primary-lighter);"></div>
-    </div>
-    <div>
-        <header>--primary</header>
-        <div style="background-color: var(--primary);"></div>
-    </div>
-    <div>
-        <header>--primary-darker</header>
-        <div style="background-color: var(--primary-darker);"></div>
-    </div>
-    <div>
-        <header>--primary-darkest</header>
-        <div style="background-color: var(--primary-darkest);"></div>
+<h3>Brand</h3>
+<p>
+    The default brand color of Constellation CSS is <code>#238fff</code>, which is the color code for <code><b>dodgerblue</b></code>. You can change the brand color to your preferred brand color by settting the CSS variable <code>--brand</code> to a valid color value. 
+</p>
+<p>
+    It is suggested not to use the <code>--brand</code> CSS variable in your own CSS and to rather use the <code>--primary</code> CSS variable that will work well in light and dark mode.
+</p>
+<p>
+    At the top right orner of the site you can find a settings menu. Inside the setting menu you can pick a <code>--brand</code> color that will immediately be applied accross the entire site. There is also a <code>Reset</code> button to reset back to the default brand color. 
+</p>
+<div class="box">
+    <div class="p-2" style="background-color: var(--brand);">
+        <kbd>--brand: <span data-text="$_brand"></span></kbd>
     </div>
 </div>
 
-<h6>Secondary</h6>
-<div class="color-series">
-    <div>
-        <header>--secondary-lightest</header>
-        <div style="background-color: var(--secondary-lightest);"></div>
+<h3>Primary</h3>
+<p>
+    The primary color is derived from the brand color by narrowing the lightness to a range that will look good on a light background. Thus if you select a --brand color that is too light or dark, the primary color will fix this issue. 
+</p>
+<p>
+    The primary color will have two ligher and two darker shades that you can use as CSS variables. Other colors also have 2 ligher and darker shades.
+</p>
+<div class="box">
+    <div class="p-2" style="background-color: var(--primary-lightest);">
+        <kbd>--primary-lightest</kbd>
     </div>
-    <div>
-        <header>--secondary-lighter</header>
-        <div style="background-color: var(--secondary-lighter);"></div>
+    <div class="p-2" style="background-color: var(--primary-lighter);">
+        <kbd>--primary-lighter</kbd>
     </div>
-    <div>
-        <header>--secondary</header>
-        <div style="background-color: var(--secondary);"></div>
+    <div class="p-2" style="background-color: var(--primary);">
+        <kbd>--primary</kbd>
     </div>
-    <div>
-        <header>--secondary-darker</header>
-        <div style="background-color: var(--secondary-darker);"></div>
+    <div class="p-2" style="background-color: var(--primary-darker);">
+        <kbd>--primary-darker</kbd>
     </div>
-    <div>
-        <header>--secondary-darkest</header>
-        <div style="background-color: var(--secondary-darkest);"></div>
+    <div class="p-2" style="background-color: var(--primary-darkest);">
+        <kbd>--primary-darkest</kbd>
     </div>
 </div>
 
-<h6>Tertiary</h6>
+<h3>Secondary</h3>
+<p>
+    The secondary color is relative to the primary color and is found by moving the hue <kbd data-text="$_colorDegrees">35</kbd> degrees in a clockwize direction on the color wheel. The value can be adjusted in the settings menu.
+</p>
+<div class="box">
+    <div class="p-2" style="background-color: var(--secondary-lightest);">
+        <kbd>--secondary-lightest</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--secondary-lighter);">
+        <kbd>--secondary-lighter</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--secondary);">
+        <kbd>--secondary</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--secondary-darker);">
+        <kbd>--secondary-darker</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--secondary-darkest);">
+        <kbd>--secondary-darkest</kbd>
+    </div>
+</div>
 
-<div class="color-series">
-    <div>
-        <header>--tertiary-lightest</header>
-        <div style="background-color: var(--tertiary-lightest);"></div>
+<h3>Tertiary</h3>
+<p>
+    The tertiary color is relative to the primary color and is found by moving the hue <kbd data-text="$_colorDegrees">35</kbd> degrees in an anti- clockwize direction on the color wheel. The value can be adjusted in the settings menu.
+</p>
+<div class="box">
+    <div class="p-2" style="background-color: var(--tertiary-lightest);">
+        <kbd>--tertiary-lightest</kbd>
     </div>
-    <div>
-        <header>--tertiary-lighter</header>
-        <div style="background-color: var(--tertiary-lighter);"></div>
+    <div class="p-2" style="background-color: var(--tertiary-lighter);">
+        <kbd>--tertiary-lighter</kbd>
     </div>
-    <div>
-        <header>--tertiary</header>
-        <div style="background-color: var(--tertiary);"></div>
+    <div class="p-2" style="background-color: var(--tertiary);">
+        <kbd>--tertiary</kbd>
     </div>
-    <div>
-        <header>--tertiary-darker</header>
-        <div style="background-color: var(--tertiary-darker);"></div>
+    <div class="p-2" style="background-color: var(--tertiary-darker);">
+        <kbd>--tertiary-darker</kbd>
     </div>
-    <div>
-        <header>--tertiary-darkest</header>
-        <div style="background-color: var(--tertiary-darkest);"></div>
-    </div>
-</div>
-<h6>Contrast</h6>
-<div class="color-series">
-    <div>
-        <header>--contrast-lightest</header>
-        <div style="background-color: var(--contrast-lightest);"></div>
-    </div>
-    <div>
-        <header>--contrast-lighter</header>
-        <div style="background-color: var(--contrast-lighter);"></div>
-    </div>
-    <div>
-        <header>--contrast</header>
-        <div style="background-color: var(--contrast);"></div>
-    </div>
-    <div>
-        <header>--contrast-darker</header>
-        <div style="background-color: var(--contrast-darker);"></div>
-    </div>
-    <div>
-        <header>--contrast-darkest</header>
-        <div style="background-color: var(--contrast-darkest);"></div>
+    <div class="p-2" style="background-color: var(--tertiary-darkest);">
+        <kbd>--tertiary-darkest</kbd>
     </div>
 </div>
-<h6>Neutral</h6>
-<div class="color-series">
-    <div>
-        <header>--neutral-lightest</header>
-        <div style="background-color: var(--neutral-lightest);"></div>
+
+<h3>Contrast</h3>
+<p>
+    The contrast color is relative to the primary color and is found by moving the hue <kbd>180</kbd> degrees in a clockwize direction on the color wheel. The value is thus on the opposite side of the color wheel and cannot be adjusted.
+</p>
+<div class="box">
+    <div class="p-2" style="background-color: var(--contrast-lightest);">
+        <kbd>--contrast-lightest</kbd>
     </div>
-    <div>
-        <header>--neutral-lighter</header>
-        <div style="background-color: var(--neutral-lighter);"></div>
+    <div class="p-2" style="background-color: var(--contrast-lighter);">
+        <kbd>--contrast-lighter</kbd>
     </div>
-    <div>
-        <header>--neutral</header>
-        <div style="background-color: var(--neutral);"></div>
+    <div class="p-2" style="background-color: var(--contrast);">
+        <kbd>--contrast</kbd>
     </div>
-    <div>
-        <header>--neutral-darker</header>
-        <div style="background-color: var(--neutral-darker);"></div>
+    <div class="p-2" style="background-color: var(--contrast-darker);">
+        <kbd>--contrast-darker</kbd>
     </div>
-    <div>
-        <header>--neutral-darkest</header>
-        <div style="background-color: var(--neutral-darkest);"></div>
+    <div class="p-2" style="background-color: var(--contrast-darkest);">
+        <kbd>--contrast-darkest</kbd>
     </div>
 </div>
-<h6>Semantic</h6>
-<div class="color-series">
-    <div>
-        <header>--error</header>
-        <div style="background-color: var(--error);"></div>
+
+<h3>Neutral</h3>
+<p>
+    The neutral colors are different shades of grey with a slight hint of the primary color to give them some character.
+</p>
+<div class="box">
+    <div class="p-2" style="background-color: var(--neutral-lightest);">
+        <kbd>--neutral-lightest</kbd>
     </div>
-    <div>
-        <header>--warning</header>
-        <div style="background-color: var(--warning);"></div>
+    <div class="p-2" style="background-color: var(--neutral-lighter);">
+        <kbd>--neutral-lighter</kbd>
     </div>
-    <div>
-        <header>--success</header>
-        <div style="background-color: var(--success);"></div>
+    <div class="p-2" style="background-color: var(--neutral);">
+        <kbd>--neutral</kbd>
     </div>
-    <div>
-        <header>--info</header>
-        <div style="background-color: var(--info);"></div>
+    <div class="p-2" style="background-color: var(--neutral-darker);">
+        <kbd>--neutral-darker</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--neutral-darkest);">
+        <kbd>--neutral-darkest</kbd>
+    </div>
+</div>
+
+<h3>Semantic</h3>
+<p>
+    A number of scemantic colors are also offered to highlight <b>error</b>, <b>warning</b>, <b>success</b> and <b>info</b> details. These values are not customizable and care should be taken so that the dynamically generated colors do not clash with these colors.
+</p>
+<div class="box">
+    <div class="p-2" style="background-color: var(--error);">
+        <kbd>--error</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--warning);">
+        <kbd>--warning</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--success);">
+        <kbd>--success</kbd>
+    </div>
+    <div class="p-2" style="background-color: var(--info);">
+        <kbd>--info</kbd>
     </div>
 </div>

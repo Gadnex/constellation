@@ -2,6 +2,8 @@
 <html lang="en"
     data-signals:_brand="localStorage.getItem('brand-color') !== null ? localStorage.getItem('brand-color') : '#238fff'"
     data-style:--brand="$_brand" data-signals:_dark-theme="localStorage.getItem('dark-theme')"
+    data-signals:_color-degrees="localStorage.getItem('color-degrees') !== null ? localStorage.getItem('color-degrees') : 35"
+    data-style:--color-degrees="$_colorDegrees" data-signals:_--color-degrees="localStorage.getItem('color-degrees')"
     data-attr:data-theme="$_darkTheme === '' ? 'light dark' : $_darkTheme === 'true' ? 'dark' : 'light'">
 
 <head>
@@ -15,11 +17,11 @@
 </head>
 
 <body class="fullscreen">
-    {% include 'setting' %}
+    {% include 'settings' %}
     <div class="sidebar-container">
         <div class="sidebar">
             <header>
-                <h1>
+                <h1 class="m-0">
                     <div class="text-3 text-center primary">Constellation</div>
                     <div class="text-3 text-center primary">CSS</div>
                 </h1>
@@ -31,9 +33,7 @@
         </div>
         <main>
             <h2>{{ title }}</h2>
-            <article>
-                {{ content }}
-            </article>
+            {{ content }}
         </main>
     </div>
     <footer class="center p-1">
