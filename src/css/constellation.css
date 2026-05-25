@@ -368,6 +368,7 @@
         input,
         textarea {
             font-size: var(--font-size-0);
+            max-width: 100%;
             padding: var(--size-2) var(--size-3);
             border: 1px solid var(--border-color);
             border-radius: var(--size-1);
@@ -425,7 +426,7 @@
 
         input[type="range"] {
             padding: 0;
-            width: 20ch;
+            min-width: 20ch;
         }
 
         input[type=color] {
@@ -449,7 +450,7 @@
             border: 2px solid var(--border-color);
         } */
 
-        input[type=file] {
+        /* input[type=file] {
             padding: var(--size-1);
         }
 
@@ -466,7 +467,7 @@
 
         input[type=file]::file-selector-button:hover {
             background-color: var(--surface-2);
-        }
+        } */
 
         input[type="checkbox"],
         input[type="radio"] {
