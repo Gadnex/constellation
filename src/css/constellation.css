@@ -81,6 +81,9 @@
         background-color: var(--background-color);
         color: var(--color);
 
+    }
+
+    * {
         --shadow-none: 0 0 0 transparent;
         --shadow-1: 0 1px 2px light-dark(color-mix(in srgb, var(--neutral-darkest) 50%, transparent), transparent);
         --shadow-2: 0 3px 6px light-dark(color-mix(in srgb, var(--neutral-darkest) 45%, transparent), transparent);
@@ -88,21 +91,23 @@
         --shadow-4: 0 12px 24px light-dark(color-mix(in srgb, var(--neutral-darkest) 35%, transparent), transparent);
         --shadow-5: 0 20px 40px light-dark(color-mix(in srgb, var(--neutral-darkest) 30%, transparent), transparent);
 
+        --glow-color: var(--primary);
+
         --shadow-glow-1:
             0 0 1px light-dark(color-mix(in srgb, var(--neutral-darkest) 50%, transparent), transparent),
-            0 0 8px 2px light-dark(transparent, color-mix(in srgb, var(--primary) 60%, transparent));
+            0 0 8px 2px light-dark(transparent, color-mix(in srgb, var(--glow-color) 60%, transparent));
         --shadow-glow-2:
             0 1px 2px light-dark(color-mix(in srgb, var(--neutral-darkest) 50%, transparent), transparent),
-            0 0 16px 3px light-dark(transparent, color-mix(in srgb, var(--primary) 50%, transparent));
+            0 0 16px 3px light-dark(transparent, color-mix(in srgb, var(--glow-color) 50%, transparent));
         --shadow-glow-3:
             0 3px 6px light-dark(color-mix(in srgb, var(--neutral-darkest) 45%, transparent), transparent),
-            0 0 28px 4px light-dark(transparent, color-mix(in srgb, var(--primary) 40%, transparent));
+            0 0 28px 4px light-dark(transparent, color-mix(in srgb, var(--glow-color) 40%, transparent));
         --shadow-glow-4:
             0 6px 12px light-dark(color-mix(in srgb, var(--neutral-darkest) 40%, transparent), transparent),
-            0 0 48px 6px light-dark(transparent, color-mix(in srgb, var(--primary) 30%, transparent));
+            0 0 48px 6px light-dark(transparent, color-mix(in srgb, var(--glow-color) 30%, transparent));
         --shadow-glow-5:
             0 12px 24px light-dark(color-mix(in srgb, var(--neutral-darkest) 35%, transparent), transparent),
-            0 0 64px 8px light-dark(transparent, color-mix(in srgb, var(--primary) 20%, transparent));
+            0 0 64px 8px light-dark(transparent, color-mix(in srgb, var(--glow-color) 20%, transparent));
     }
 
     [data-theme="light"] {
@@ -623,12 +628,15 @@
             font-weight: 400;
             text-decoration: none;
             text-align: center;
-            line-height: normal;
+            line-height: 1;
+            vertical-align: middle;
             outline-offset: 1px;
             user-select: none;
             -webkit-user-select: none;
             box-shadow: var(--shadow-3);
             transition: box-shadow 0.15s ease-out;
+
+            /* --glow-color: var(--button-glow-color, var(--primary)); */
 
             &:hover {
                 background-color: var(--button-hover, light-dark(white, var(--neutral-darker)));
@@ -636,6 +644,10 @@
 
             &:focus-visible {
                 outline: 4px solid var(--primary);
+            }
+
+            &:focus:not(:focus-visible) {
+                outline: none;
             }
 
             &:active {
@@ -906,18 +918,21 @@
             --button-background: var(--secondary);
             --button-color: var(--background-color);
             --button-hover: var(--secondary-lighter);
+            --glow-color: var(--secondary);
         }
 
         .tertiary {
             --button-background: var(--tertiary);
             --button-color: var(--background-color);
             --button-hover: var(--tertiary-lighter);
+            --glow-color: var(--tertiary);
         }
 
         .contrast {
             --button-background: var(--contrast);
             --button-color: var(--background-color);
             --button-hover: var(--contrast-lighter);
+            --glow-color: var(--contrast);
         }
 
         .neutral {
