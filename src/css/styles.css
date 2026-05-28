@@ -16,7 +16,8 @@
 }
 
 .brand-text {
-    --brand-font: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, Cascadia Code, Menlo, Consolas, DejaVu Sans Mono, monospace;
+    --brand-font: dank mono, operator mono, inconsolata, fira mono, ui-monospace, sf mono, monaco, droid sans mono, source code pro, cascadia code, menlo, consolas, dejavu sans mono, monospace;
+    
     font-family: var(--brand-font);
     letter-spacing: -0.025em;
 }
@@ -75,10 +76,6 @@
         cursor: pointer;
     }
 
-    label:hover {
-        color: var(--brand);
-    }
-
     input[type="color"],
     input[type="range"],
     input[type="text"] {
@@ -93,6 +90,7 @@
 
     button {
         margin: 0;
+        margin-block: 0.5rem;
     }
 
     input[type="range"] {
