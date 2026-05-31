@@ -630,23 +630,23 @@
             -webkit-user-select: none;
             box-shadow: var(--shadow-3);
             transition: box-shadow 0.15s ease-out;
-            
+
             &:hover {
                 background-color: var(--button-hover);
             }
-            
+
             &:focus-visible {
                 outline: 4px solid var(--primary);
             }
-            
+
             &:focus:not(:focus-visible) {
                 outline: none;
             }
-            
+
             &:active {
                 box-shadow: var(--shadow-glow-3);
             }
-            
+
             &:disabled {
                 background-color: var(--neutral);
                 box-shadow: var(--shadow-0);
@@ -688,14 +688,6 @@
             }
         }
 
-        /* The center */
-        .center {
-            box-sizing: content-box;
-            max-inline-size: 75ch;
-            margin-inline: auto;
-            padding-inline: var(--padding);
-        }
-
         /* The box */
         .box {
             --box-color: var(var(--color));
@@ -708,6 +700,78 @@
             box-shadow: var(--shadow-2);
             border-radius: var(--size-3);
             padding: var(--padding);
+        }
+
+        /* The center */
+        .center {
+            box-sizing: content-box;
+            max-inline-size: 75ch;
+            margin-inline: auto;
+            padding-inline: var(--padding);
+        }
+
+        /* The cluster */
+        .cluster {
+            --column-gap: var(--size-3);
+            --row-gap: var(--size-3);
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--row-gap) var(--column-gap);
+
+            &:has(.cluster) {
+                container-type: inline-size;
+            }
+
+            &.h-start {
+                justify-content: flex-start;
+            }
+
+            &.h-end {
+                justify-content: flex-end;
+            }
+
+            &.h-center {
+                justify-content: center;
+            }
+
+            &.h-space-between {
+                justify-content: space-between;
+            }
+
+            &.h-space-around {
+                justify-content: space-around;
+            }
+
+            &.h-space-evenly {
+                justify-content: space-evenly;
+            }
+
+            &.v-start {
+                align-items: flex-start;
+            }
+
+            &.v-end {
+                align-items: flex-end;
+            }
+
+            &.v-center {
+                align-items: center;
+            }
+
+            &.v-stretch {
+                align-items: stretch;
+            }
+
+            &.v-baseline {
+                align-items: baseline;
+            }
+        }
+
+        @container (max-width: 60ch) {
+            .cluster>.cluster {
+                flex-grow: 1;
+            }
         }
 
         /* The sidebar */
@@ -920,26 +984,92 @@
         /* Gap */
         .gap-0 {
             --gap: 0;
+            --row-gap: 0;
+            --column-gap: 0;
         }
 
         .gap-1 {
             --gap: var(--size-1);
+            --row-gap: var(--size-1);
+            --column-gap: var(--size-1);
         }
 
         .gap-2 {
             --gap: var(--size-2);
+            --row-gap: var(--size-2);
+            --column-gap: var(--size-2);
         }
 
         .gap-3 {
             --gap: var(--size-3);
+            --row-gap: var(--size-3);
+            --column-gap: var(--size-3);
         }
 
         .gap-4 {
             --gap: var(--size-4);
+            --row-gap: var(--size-4);
+            --column-gap: var(--size-4);
         }
 
         .gap-5 {
             --gap: var(--size-5);
+            --row-gap: var(--size-5);
+            --column-gap: var(--size-5);
+        }
+
+        .gap-r-0 {
+            --row-gap: 0;
+        }
+
+        .gap-r-1 {
+            --row-gap: var(--size-1);
+        }
+
+        .gap-r-2 {
+            --row-gap: var(--size-2);
+        }
+
+        .gap-r-3 {
+            --row-gap: var(--size-3);
+        }
+
+        .gap-r-4 {
+            --row-gap: var(--size-4);
+        }
+
+        .gap-r-5 {
+            --row-gap: var(--size-5);
+        }
+
+
+        .gap-c-0 {
+            --column-gap: 0;
+        }
+
+        .gap-c-1 {
+            --column-gap: var(--size-1);
+        }
+
+        .gap-c-2 {
+            --column-gap: var(--size-2);
+        }
+
+        .gap-c-3 {
+            --column-gap: var(--size-3);
+        }
+
+        .gap-c-4 {
+            --column-gap: var(--size-4);
+        }
+
+        .gap-c-5 {
+            --column-gap: var(--size-5);
+        }
+
+        /* Flexbox */
+        .grow {
+            flex-grow: 1;
         }
 
         /* Colors */

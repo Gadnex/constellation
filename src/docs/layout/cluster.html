@@ -1,0 +1,246 @@
+---
+title: The cluster
+pageOrder: 4
+---
+<p>
+    The cluster is a layout component designed for placing a number of HTML elements side by side horizontally.
+    If there is insufficient space to fit all the elements side by side, they start wrappingto the next line.
+</p>
+<p>
+    The cluster is applied by setting <kbd>class="cluster"</kbd> on an HTML element.
+</p>
+
+<h3>Example</h3>
+<p>
+    Below is an example cluster with the default layout for clusters.
+    All elements are justied to be at the start of the row.
+</p>
+<div class="box cluster">
+    <div class="p-2" style="background-color: var(--neutral); height: var(--size-9);">
+        Element 1
+    </div>
+    <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+    <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+    <div class="p-2" style="background-color: var(--neutral);">E4</div>
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a cluster to alter the appearence and behaviour.
+</p>
+
+<h4>Gap</h4>
+<p>
+    There are a number CSS classes to set the gap between the elements of the cluster.
+    These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
+    <kbd>gap-0</kbd> means no gap at all.
+    The default gap is the same as <kbd>gap-3</kbd>.
+</p>
+<p>
+    There are also <kbd>gap-r-{0-5}</kbd> and <kbd>gap-c-{0-5}</kbd> utility classes
+    that set only the row or column gap.
+</p>
+<p>
+    The examples below demonstare the different gap sized.
+</p>
+<div class="stack">
+    <div>
+        <strong>gap-0</strong>
+        <div class="box cluster gap-0">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-1</strong>
+        <div class="box cluster gap-1">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-2</strong>
+        <div class="box cluster gap-2">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-3</strong>
+        <div class="box cluster gap-3">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-4</strong>
+        <div class="box cluster gap-4">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-5</strong>
+        <div class="box cluster gap-5">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-r-1 + gap-c-5</strong>
+        <div class="box cluster gap-r-1 gap-c-5" style="width: 300px;">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+</div>
+
+<h4>Horizontal content justification</h4>
+<p>
+    There are a number CSS classes to set the horizontal content justification of the cluster.
+    The default content justification in CSS is <kbd>justify-content: flex-start;</kbd>.
+    The examples below demonstare the different horizontal content justifications.
+</p>
+<div class="stack">
+    <div>
+        <strong>h-start (Default)</strong>
+        <div class="box cluster h-start">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-end</strong>
+        <div class="box cluster h-end">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-center</strong>
+        <div class="box cluster h-center">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-space-between</strong>
+        <div class="box cluster h-space-between">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-space-around</strong>
+        <div class="box cluster h-space-around">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-space-evenly</strong>
+        <div class="box cluster h-space-evenly">
+            <div class="p-2" style="background-color: var(--neutral);">Element 1</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+</div>
+
+<h4>Vertical item alignment</h4>
+<p>
+    There are a number CSS classes to set the vertical item alignment of the cluster.
+    The default item alignment in CSS is <kbd>align-items: stretch;</kbd>.
+    The examples below demonstare the different vertical item alignments.
+</p>
+<div class="stack">
+    <div>
+        <strong>v-start</strong>
+        <div class="box cluster v-start">
+            <div class="p-2" style="background-color: var(--neutral); height: var(--size-9);">
+                Element 1
+            </div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-end</strong>
+        <div class="box cluster v-end">
+            <div class="p-2" style="background-color: var(--neutral); height: var(--size-9);">
+                Element 1
+            </div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-center</strong>
+        <div class="box cluster v-center">
+            <div class="p-2" style="background-color: var(--neutral); height: var(--size-9);">
+                Element 1
+            </div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-stretch (Default)</strong>
+        <div class="box cluster v-stretch">
+            <div class="p-2" style="background-color: var(--neutral); height: var(--size-9);">
+                Element 1
+            </div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-baseline</strong>
+        <div class="box cluster v-baseline">
+            <div class="p-4" style="background-color: var(--neutral); height: var(--size-9);">
+                Element 1
+            </div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 2</div>
+            <div class="p-2" style="background-color: var(--neutral);">Element 3</div>
+        </div>
+    </div>
+</div>
+
+<h3>Nesting clusters</h3>
+<p>
+    It is also possible to nest a cluster within another cluster to create useful layouts,
+    but it is not recommended to nest more than 2 levels deep.
+</p>
+<p>
+    The below example has a cluster with the CSS classes <kbd>cluster</kbd> and <kbd>h-space-between</kbd>.
+    Within the cluster are two more clusters with the CSS classes <kbd>cluster</kbd> and <kbd>h-center</kbd>.
+</p>
+<p>
+    When the outer cluster is not wrapped the <kbd>h-center</kbd> of the inner 2 clusters have no effect
+    as the inner clusters are the size of their contents.
+    But when the outer cluster is wrapped a CSS container query will set the CSS property <kbd>flex-grow: 1;</kbd>
+    on the inner clusters so that their <kbd>h-center</kbd> will have an effect.
+</p>
+<div class="box cluster h-space-between v-center gap-r-0">
+    <div class="cluster h-center">
+        <strong class="text-3">MySite</strong>
+    </div>
+    <div class="cluster h-center gap-r-0 gap-c-2">
+        <div><a href="#">Home</a></div>
+        <div><a href="#">About</a></div>
+        <div><a href="#">Colors</a></div>
+        <div><a href="#">Semantic HTML</a></div>
+    </div>
+</div>
