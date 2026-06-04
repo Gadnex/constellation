@@ -136,6 +136,26 @@
             color: var(--background-color);
             background-color: var(--neutral);
         }
+
+        .error {
+            color: var(--background-color);
+            background-color: var(--error);
+        }
+
+        .warning {
+            color: var(--background-color);
+            background-color: var(--warning);
+        }
+
+        .success {
+            color: var(--background-color);
+            background-color: var(--success);
+        }
+
+        .info {
+            color: var(--background-color);
+            background-color: var(--info);
+        }
     }
 
     * {
@@ -343,6 +363,22 @@
 
         .text-contrast {
             color: var(--contrast);
+        }
+
+        .text-error {
+            color: var(--error);
+        }
+
+        .text-warning {
+            color: var(--warning);
+        }
+
+        .text-success {
+            color: var(--success);
+        }
+
+        .text-info {
+            color: var(--info);
         }
     }
 }
