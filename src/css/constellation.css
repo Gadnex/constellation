@@ -82,57 +82,26 @@
 
         /* Colors */
         .primary {
-            --button-color: var(--background-color);
-            --button-border-color: var(--primary);
-            --button-background: var(--primary);
-            --button-hover: var(--primary-lighter);
-            --box-color: var(var(--color));
-            --box-background-color: light-dark(var(--primary-lighter), var(--primary-darker));
-            --box-border-color: light-dark(var(--primary-lightest), var(--primary-darkest));
-
             color: var(--background-color);
             background-color: var(--primary);
         }
 
         .secondary {
-            --button-color: var(--background-color);
-            --button-border-color: var(--secondary);
-            --button-background: var(--secondary);
-            --button-hover: var(--secondary-lighter);
-            --glow-color: var(--secondary);
-
             color: var(--background-color);
             background-color: var(--secondary);
         }
 
         .tertiary {
-            --button-color: var(--background-color);
-            --button-border-color: var(--tertiary);
-            --button-background: var(--tertiary);
-            --button-hover: var(--tertiary-lighter);
-            --glow-color: var(--tertiary);
-
             color: var(--background-color);
             background-color: var(--tertiary);
         }
 
         .contrast {
-            --button-color: var(--background-color);
-            --button-border-color: var(--contrast);
-            --button-background: var(--contrast);
-            --button-hover: var(--contrast-lighter);
-            --glow-color: var(--contrast);
-
             color: var(--background-color);
             background-color: var(--contrast);
         }
 
         .neutral {
-            --button-color: var(--background-color);
-            --button-border-color: light-dark(var(--neutral-darker), var(--neutral));
-            --button-background: light-dark(var(--neutral-darker), var(--neutral));
-            --button-hover: light-dark(var(--neutral), var(--neutral-lighter));
-
             color: var(--background-color);
             background-color: var(--neutral);
         }
@@ -330,6 +299,7 @@
 
         kbd {
             font-family: var(--font-monospace-code);
+            color: var(--color);
             background-color: light-dark(var(--neutral-lighter), black);
             padding: 2px 4px;
             border: 1px solid var(--border-color);
@@ -786,21 +756,26 @@
             --box-color: var(var(--color));
             --box-background-color: light-dark(white, var(--neutral-darker));
             --box-border-color: var(--border-color);
+            --box-shadow: var(--shadow-2);
+            --box-border-radius: var(--size-3);
+            --box-padding: var(--padding);
 
             color: var(--box-color);
             background-color: var(--box-background-color);
             border: 1px solid var(--box-border-color);
-            box-shadow: var(--shadow-2);
-            border-radius: var(--size-3);
-            padding: var(--padding);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--box-border-radius);
+            padding: var(--box-padding);
         }
 
         /* The center */
         .center {
+            --center-padding: var(--padding);
+
             box-sizing: content-box;
             max-inline-size: 75ch;
             margin-inline: auto;
-            padding-inline: var(--padding);
+            padding-inline: var(--center-padding);
         }
 
         /* The cluster */
@@ -1168,6 +1143,54 @@
         .no-select {
             user-select: none;
             -webkit-user-select: none;
+        }
+
+        .primary {
+            --button-color: var(--background-color);
+            --button-border-color: var(--primary);
+            --button-background: var(--primary);
+            --button-hover: var(--primary-lighter);
+            --box-background-color: light-dark(var(--primary-lighter), var(--primary-darker));
+            --box-border-color: light-dark(var(--primary-lightest), var(--primary-darkest));
+        }
+
+        .secondary {
+            --button-color: var(--background-color);
+            --button-border-color: var(--secondary);
+            --button-background: var(--secondary);
+            --button-hover: var(--secondary-lighter);
+            --glow-color: var(--secondary);
+            --box-background-color: light-dark(var(--secondary-lighter), var(--secondary-darker));
+            --box-border-color: light-dark(var(--secondary-lightest), var(--secondary-darkest));
+        }
+
+        .tertiary {
+            --button-color: var(--background-color);
+            --button-border-color: var(--tertiary);
+            --button-background: var(--tertiary);
+            --button-hover: var(--tertiary-lighter);
+            --glow-color: var(--tertiary);
+            --box-background-color: light-dark(var(--tertiary-lighter), var(--tertiary-darker));
+            --box-border-color: light-dark(var(--tertiary-lightest), var(--tertiary-darkest));
+        }
+
+        .contrast {
+            --button-color: var(--background-color);
+            --button-border-color: var(--contrast);
+            --button-background: var(--contrast);
+            --button-hover: var(--contrast-lighter);
+            --glow-color: var(--contrast);
+            --box-background-color: light-dark(var(--contrast-lighter), var(--contrast-darker));
+            --box-border-color: light-dark(var(--contrast-lightest), var(--contrast-darkest));
+        }
+
+        .neutral {
+            --button-color: var(--background-color);
+            --button-border-color: light-dark(var(--neutral-darker), var(--neutral));
+            --button-background: light-dark(var(--neutral-darker), var(--neutral));
+            --button-hover: light-dark(var(--neutral), var(--neutral-lighter));
+            --box-background-color: light-dark(var(--neutral), var(--neutral));
+            --box-border-color: light-dark(var(--neutral-darker), var(--neutral-lighter));
         }
     }
 }
