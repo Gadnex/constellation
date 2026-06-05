@@ -753,8 +753,9 @@
 
         /* The box */
         .box {
-            --box-color: var(var(--color));
+            --box-color: var(--color);
             --box-background-color: light-dark(white, var(--neutral-darker));
+            --box-border-width: 1px;
             --box-border-color: var(--border-color);
             --box-shadow: var(--shadow-2);
             --box-border-radius: var(--size-3);
@@ -762,7 +763,7 @@
 
             color: var(--box-color);
             background-color: var(--box-background-color);
-            border: 1px solid var(--box-border-color);
+            border: var(--box-border-width) solid var(--box-border-color);
             box-shadow: var(--box-shadow);
             border-radius: var(--box-border-radius);
             padding: var(--box-padding);
@@ -771,9 +772,9 @@
         /* The center */
         .center {
             --center-padding: var(--padding);
+            --center-max-inline-size: 80ch;
 
-            box-sizing: content-box;
-            max-inline-size: 75ch;
+            max-inline-size: var(--center-max-inline-size);
             margin-inline: auto;
             padding-inline: var(--center-padding);
         }
@@ -1110,7 +1111,6 @@
             --row-gap: var(--size-5);
         }
 
-
         .gap-c-0 {
             --column-gap: 0;
         }
@@ -1133,6 +1133,43 @@
 
         .gap-c-5 {
             --column-gap: var(--size-5);
+        }
+
+        /* Width */
+        .w-content {
+            width: fit-content;
+        }
+
+        .w-max-10ch {
+            max-width: 10ch;
+        }
+        
+        .w-max-20ch {
+            max-width: 20ch;
+        }
+        
+        .w-max-30ch {
+            max-width: 30ch;
+        }
+        
+        .w-max-40ch {
+            max-width: 40ch;
+        }
+        
+        .w-max-50ch {
+            max-width: 50ch;
+        }
+        
+        .w-max-60ch {
+            max-width: 60ch;
+        }
+        
+        .w-max-70ch {
+            max-width: 70ch;
+        }
+        
+        .w-max-80ch {
+            max-width: 80ch;
         }
 
         /* Flexbox */

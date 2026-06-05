@@ -7,28 +7,29 @@ pageOrder: 2
     The box has a has a visible border with a border radius and some padding to ensure the content of the box does not touch the border.
 </p>
 <p>
-    The cluster is applied by setting <kbd>class="box"</kbd> on an HTML element.
+    The box is applied by setting <kbd>class="box"</kbd> on an HTML element.
 </p>
 
 <h3>Example</h3>
 <p>
-    Below is an example cluster with the default layout for clusters.
-    All elements are justied to be at the start of the row.
+    Below is an example box with the default layout and styling for boxes.
 </p>
-<div class="box center">
-    This is a box with some text
+<div class="box center w-max-40ch">
+    This is a box
 </div>
 
 <h3>CSS Classes</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a cluster to alter the appearence and behaviour.
+    There are a number of additional CSS classes that can be applied to a box to alter the appearence.
 </p>
 
 <h4>Color utilities</h4>
 <p>
-    There are a number CSS classes to set the color of the box as follows.
+    There are a number CSS color utility classes to set for a box.
+    These utility classes can be applied for example as <kbd>class="box primary"</kbd> to create a box with the primary color scheme.
+    Below are examples of all the color utility classes.
 </p>
-<div class="grid">
+<div class="grid max-cols-3">
     <div>
         <strong>primary</strong>
         <div class="box primary">
@@ -58,5 +59,90 @@ pageOrder: 2
         <div class="box neutral">
             Neutral
         </div>
+    </div>
+</div>
+
+<h4>Padding utilities</h4>
+<p>
+    There are a number CSS padding utility classes to set for a box.
+    These utility classes can be applied for example as <kbd>class="box p-3"</kbd> padding using the responsive CSS size variable --size-3.
+    The padding class <kbd>p-0</kbd> means that there is no padding at all. 
+    Below are examples of all the padding utility classes.
+</p>
+<div class="grid max-cols-3">
+    <div>
+        <strong>p-0</strong>
+        <div class="box p-0">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>p-1</strong>
+        <div class="box p-1">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>p-2</strong>
+        <div class="box p-2">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>p-3</strong>
+        <div class="box p-3">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>p-4</strong>
+        <div class="box p-4">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>p-5</strong>
+        <div class="box p-5">
+            Content
+        </div>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the cluster.
+</p>
+<div>
+    <div>
+        <strong>--box-color</strong>
+         - Set the font color of text in the box.
+    </div>
+    <div>
+        <strong>--box-background-color</strong>
+         - Set the background color of the box.
+    </div>
+    <div>
+        <strong>--box-border-width</strong>
+         - Set the box border width in px.
+         Not suggested to use the size responsive variables here.
+    </div>
+    <div>
+        <strong>--box-border-color</strong>
+         - Set the border color of the box.
+    </div>
+    <div>
+        <strong>--box-shadow</strong>
+         - Set the shadow of the box.
+         One of the shadow CSS variables could be used here.
+    </div>
+    <div>
+        <strong>--box-border-radius</strong>
+         - Set the border radius of the box.
+         It is suggested to use the --size-{1-12} CSS variables to have a responsive border radius.
+    </div>
+    <div>
+        <strong>--box-padding</strong>
+         - Set the padding of the box.
+         It is suggested to use the --size-{1-12} CSS variables to have a responsive padding size.
     </div>
 </div>
