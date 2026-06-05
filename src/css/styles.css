@@ -29,6 +29,7 @@
 
 .settings-menu-button {
     position: fixed;
+    z-index: 1;
     inset-block-start: 0.5rem;
     inset-inline-end: 0.5rem;
     background: none;
@@ -39,7 +40,7 @@
     margin: 0;
     padding: 0;
     line-height: 0;
-    anchor-name: settings-menu-button;
+    anchor-name: --settings-menu-button;
 
     &:hover {
         color: var(--brand);
@@ -48,7 +49,7 @@
 
 .settings-menu {
     position: fixed;
-    position-anchor: settings-menu-button;
+    position-anchor: --settings-menu-button;
     margin: 0;
     margin-block-start: 0.2rem;
     padding: 0.8rem;
@@ -105,5 +106,41 @@
     &:popover-open {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
+    
+    main {
+        view-transition-name: main-content;
+    }
+    
+    ::view-transition-old(main-content) {
+        animation-name: slide-out;
+        animation-duration: 0.25s;
+        color-scheme: inherit;
+    }
+    
+    ::view-transition-new(main-content) {
+        animation-name: slide-in;
+        animation-duration: 0.25s;
+        color-scheme: inherit;
+    }
+
+    @keyframes slide-out {
+        to {
+            translate: -100vw;
+            opacity: 0;
+        }
+    }
+
+    @keyframes slide-in {
+        from {
+            translate: 100vw;
+            opacity: 0;
+        }
     }
 }
