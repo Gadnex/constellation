@@ -9,12 +9,6 @@ pageOrder: 4
 <p>
     The cluster is applied by setting <kbd>class="cluster"</kbd> on an HTML element.
 </p>
-
-<h3>Example</h3>
-<p>
-    Below is an example cluster with the default layout for clusters.
-    All elements are justied to be at the start of the row.
-</p>
 <div class="box cluster" style="width: 275px;">
     <div class="p-2 primary" style="height: var(--size-9);">
         Element 1
@@ -34,14 +28,14 @@ pageOrder: 4
     There are a number CSS classes to set the gap between the elements of the cluster.
     These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
     <kbd>gap-0</kbd> means no gap at all.
-    The default gap is the same as <kbd>gap-3</kbd>.
+    The default gap is <kbd>gap-3</kbd>.
 </p>
 <p>
     There are also <kbd>gap-r-{0-5}</kbd> and <kbd>gap-c-{0-5}</kbd> utility classes
     that set only the row or column gap.
 </p>
 <p>
-    The examples below demonstare the different gap sized.
+    The examples below demonstare the different gap sizes.
 </p>
 <div class="stack">
     <div>
@@ -69,7 +63,7 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>gap-3</strong>
+        <strong>gap-3 (Default)</strong>
         <div class="box cluster gap-3" style="width: 275px;">
             <div class="p-2 primary">Element 1</div>
             <div class="p-2 contrast">Element 2</div>
@@ -251,13 +245,13 @@ pageOrder: 4
 </p>
 <div>
     <div>
-        <strong>--column-gap</strong>
-         - Set the gap between columns of the grid.
+        <strong>--column-gap:</strong>
+         Set the gap between columns of the grid.
          It is suggested to use the --size-{1-12} CSS variables to have a responsive gap size.
     </div>
     <div>
-        <strong>--row-gap</strong>
-         - Set the gap between columns of the grid.
+        <strong>--row-gap:</strong>
+         Set the gap between columns of the grid.
          It is suggested to use the --size-{1-12} CSS variables to have a responsive gap size.
     </div>
 </div>

@@ -774,6 +774,7 @@
             --center-padding: var(--padding);
             --center-max-inline-size: 80ch;
 
+            box-sizing: content-box;
             max-inline-size: var(--center-max-inline-size);
             margin-inline: auto;
             padding-inline: var(--center-padding);
@@ -875,7 +876,7 @@
 
         /* The grid */
         .grid {
-            --min-width: 30ch;
+            --min-width: 20ch;
             --max-cols: 100;
             --gap: var(--size-3);
             --w: calc((100% - var(--gap) * (var(--max-cols) - 1)) / var(--max-cols));

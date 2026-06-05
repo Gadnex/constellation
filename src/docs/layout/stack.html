@@ -3,5 +3,91 @@ title: The stack
 pageOrder: 1
 ---
 <p>
-    The stack
+    The stack is a layout component designed for placing a number of HTML elements vertically with a consistent gap in between each element of the stack.
+    The margin of all direct children of the stack is removed to ensure the consistent gap between the stacked elements.
 </p>
+<p>
+    The stack is applied by setting <kbd>class="stack"</kbd> on an HTML element.
+</p>
+<div class="stack center w-max-40ch">
+    <div class="box">Stacked element</div>
+    <div class="box">Stacked element</div>
+    <div class="box">Stacked element</div>
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a stack to alter the appearence.
+</p>
+
+<h4>Gap</h4>
+<p>
+    There are a number CSS classes to set the gap between the elements of the stack.
+    These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
+    <kbd>gap-0</kbd> means no gap at all.
+    The default gap is <kbd>gap-3</kbd>.
+</p>
+<p>
+    The examples below demonstare the different gap sizes.
+</p>
+<div class="grid max-cols-3">
+    <div>
+        <strong>gap-0</strong>
+        <div class="stack gap-0">
+            <div class="p-2 primary">Element 1</div>
+            <div class="p-2 contrast">Element 2</div>
+            <div class="p-2 primary">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-1</strong>
+        <div class="stack gap-1">
+            <div class="p-2 primary">Element 1</div>
+            <div class="p-2 contrast">Element 2</div>
+            <div class="p-2 primary">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-2</strong>
+        <div class="stack gap-2">
+            <div class="p-2 primary">Element 1</div>
+            <div class="p-2 contrast">Element 2</div>
+            <div class="p-2 primary">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-3</strong>
+        <div class="stack gap-3">
+            <div class="p-2 primary">Element 1</div>
+            <div class="p-2 contrast">Element 2</div>
+            <div class="p-2 primary">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-4</strong>
+        <div class="stack gap-4">
+            <div class="p-2 primary">Element 1</div>
+            <div class="p-2 contrast">Element 2</div>
+            <div class="p-2 primary">Element 3</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-5</strong>
+        <div class="stack gap-5">
+            <div class="p-2 primary">Element 1</div>
+            <div class="p-2 contrast">Element 2</div>
+            <div class="p-2 primary">Element 3</div>
+        </div>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the cluster.
+</p>
+<div>
+    <div>
+        <strong>--gap:</strong>
+         Set the font color of text in the stack.
+    </div>
+</div>

@@ -3,9 +3,100 @@ title: The center
 pageOrder: 3
 ---
 <p>
-    The center
+    The center is a layout component designed for horizontally centering an HTML element with a maximum width to ensure text remains readable.
+    On narrower screens the width can shrink.
+    Even on the narrowest screens there is a padding to ensure the centered element does not touch the screen edges. 
+</p>
+<p>
+    The center is applied by setting <kbd>class="center"</kbd> on an HTML element.
+</p>
+<div class="box center w-max-40ch">
+    A centered element
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a center to alter the appearence.
 </p>
 
-<div class="box center">
-    Layout <a href="/layout/box/">box</a> with class <kbd>center</kbd> applied
+<h4>Width</h4>
+<p>
+    There are a number CSS classes to set the width of the centered element.
+    The width class <kbd>w-content</kbd> limits the width of the centered element to be the minimum to fit its content.
+    The width classes <kbd>w-max-{1-8}0ch</kbd> sets the maximum width in characters from 10ch to 80ch in increments of 10 characters.
+    The default gap is <kbd>w-max-80ch</kbd>.
+</p>
+<p>
+    The examples below demonstare the different gap sizes.
+</p>
+<div class="stack">
+    <div>
+        <strong>w-content</strong>
+        <div class="box center w-content">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-10ch</strong>
+        <div class="box center w-max-10ch">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-20ch</strong>
+        <div class="box center w-max-20ch">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-30ch</strong>
+        <div class="box center w-max-30ch">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-40ch</strong>
+        <div class="box center w-max-40ch">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-50ch</strong>
+        <div class="box center w-max-50ch">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-60ch</strong>
+        <div class="box center w-max-60ch">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-70ch</strong>
+        <div class="box center w-max-70ch">
+            Content
+        </div>
+    </div>
+    <div>
+        <strong>w-max-80ch (Default)</strong>
+        <div class="box center w-max-80ch">
+            Content
+        </div>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the cluster.
+</p>
+<div>
+    <div>
+        <strong>--center-padding:</strong>
+         Set the horizontal (inline) padding of the centered element.
+    </div>
+    <div>
+        <strong>--center-max-inline-size:</strong>
+         Set the maximum inline size of the inline element.
+    </div>
 </div>
