@@ -450,7 +450,7 @@
         input,
         textarea {
             font-size: var(--font-size-0);
-            max-width: 100%;
+            max-inline-size: 100%;
             padding: var(--size-3) var(--size-4);
             border: 1px solid var(--border-color);
             border-radius: var(--size-2);
@@ -508,7 +508,7 @@
 
         input[type="range"] {
             padding: 0;
-            min-width: 20ch;
+            min-inline-size: 20ch;
         }
 
         input[type="color"] {
@@ -838,7 +838,7 @@
             }
         }
 
-        @container (max-width: 60ch) {
+        @container (max-inline-size: 60ch) {
             .cluster>.cluster {
                 flex-grow: 1;
             }
@@ -851,24 +851,23 @@
             display: flex;
             flex-wrap: wrap;
             outline: 1px solid var(--border-color);
-            min-width: 320px;
+            min-inline-size: 320px;
 
             &>.sidebar {
                 flex: 1 1 var(--sidebar-width);
-                min-width: 0;
+                min-inline-size: 0;
                 outline: 1px solid var(--border-color);
                 padding: var(--padding);
             }
 
             &> :not(.sidebar) {
                 flex: 999 1 0;
-                min-width: 0;
                 min-inline-size: 50%;
                 padding: var(--padding);
             }
         }
 
-        @container (max-width: 60ch) {
+        @container (max-inline-size: 60ch) {
             .sidebar-container {
                 align-content: flex-start;
             }
@@ -876,14 +875,14 @@
 
         /* The grid */
         .grid {
-            --min-width: 20ch;
+            --min-inline-size: 20ch;
             --max-cols: 100;
             --gap: var(--size-3);
             --w: calc((100% - var(--gap) * (var(--max-cols) - 1)) / var(--max-cols));
 
             display: grid;
             gap: var(--gap);
-            grid-template-columns: repeat(auto-fit, minmax(max(var(--min-width), var(--w)), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(max(var(--min-inline-size), var(--w)), 1fr));
 
             &.max-cols-2 {
                 --max-cols: 2;
@@ -1138,39 +1137,39 @@
 
         /* Width */
         .w-content {
-            width: fit-content;
+            inline-size: fit-content;
         }
 
         .w-max-10ch {
-            max-width: 10ch;
+            max-inline-size: 10ch;
         }
         
         .w-max-20ch {
-            max-width: 20ch;
+            max-inline-size: 20ch;
         }
         
         .w-max-30ch {
-            max-width: 30ch;
+            max-inline-size: 30ch;
         }
         
         .w-max-40ch {
-            max-width: 40ch;
+            max-inline-size: 40ch;
         }
         
         .w-max-50ch {
-            max-width: 50ch;
+            max-inline-size: 50ch;
         }
         
         .w-max-60ch {
-            max-width: 60ch;
+            max-inline-size: 60ch;
         }
         
         .w-max-70ch {
-            max-width: 70ch;
+            max-inline-size: 70ch;
         }
         
         .w-max-80ch {
-            max-width: 80ch;
+            max-inline-size: 80ch;
         }
 
         /* Flexbox */
