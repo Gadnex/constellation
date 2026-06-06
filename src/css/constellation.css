@@ -847,6 +847,7 @@
         /* The sidebar */
         .sidebar-container {
             --sidebar-width: 30ch;
+            --sidebar-background-color: var(--background-color);
 
             display: flex;
             flex-wrap: wrap;
@@ -858,6 +859,7 @@
                 min-inline-size: 0;
                 outline: 1px solid var(--border-color);
                 padding: var(--padding);
+                background-color: var(--sidebar-background-color);
             }
 
             &> :not(.sidebar) {

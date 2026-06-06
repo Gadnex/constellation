@@ -29,7 +29,7 @@
 
 .settings-menu-button {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     inset-block-start: 0.5rem;
     inset-inline-end: 0.5rem;
     background: none;
@@ -114,6 +114,11 @@
         navigation: auto;
     }
     
+    .sidebar {
+        view-transition-name: sidebar;
+        z-index: 1;
+    }
+
     main {
         view-transition-name: main-content;
     }
@@ -121,25 +126,23 @@
     ::view-transition-old(main-content) {
         animation-name: slide-out;
         animation-duration: 0.25s;
-        color-scheme: inherit;
     }
     
     ::view-transition-new(main-content) {
         animation-name: slide-in;
         animation-duration: 0.25s;
-        color-scheme: inherit;
     }
 
     @keyframes slide-out {
         to {
-            translate: -100vw;
+            translate: -100%;
             opacity: 0;
         }
     }
 
     @keyframes slide-in {
         from {
-            translate: 100vw;
+            translate: 100%;
             opacity: 0;
         }
     }
