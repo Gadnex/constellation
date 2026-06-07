@@ -1069,9 +1069,9 @@
 
         /* Gap */
         .gap-0 {
-            --gap: 0;
-            --row-gap: 0;
-            --column-gap: 0;
+            --gap: 0px;
+            --row-gap: 0px;
+            --column-gap: 0px;
         }
 
         .gap-1 {
@@ -1105,7 +1105,7 @@
         }
 
         .gap-r-0 {
-            --row-gap: 0;
+            --row-gap: 0px;
         }
 
         .gap-r-1 {
@@ -1129,7 +1129,7 @@
         }
 
         .gap-c-0 {
-            --column-gap: 0;
+            --column-gap: 0px;
         }
 
         .gap-c-1 {

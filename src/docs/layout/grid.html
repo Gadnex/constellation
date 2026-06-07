@@ -3,5 +3,212 @@ title: The grid
 pageOrder: 8
 ---
 <p>
-    The grid
+    The grid is a layout component designed for placing a number of HTML elements in a grid with rows and
+    columns.
+    All the columns have the same width.
+    All elements in a row have the same height, but different rows do not always have the same height.
 </p>
+<p>
+    Each column has a default minimum width of 20 characters to prevent text overflow. 
+</p>
+<p>
+    On the surface it may seem similar to <a href="/layout/cluster/">The cluster</a> but it differs in a number of ways.
+    In a cluster the size of each element is deternimed by it's content and thus elements in the same row do not have the same width.
+    When a cluster wraps onto multiple lines, the column gaps between the different rows do not match up. 
+</p>
+<p>
+    The grid is applied by setting <kbd>class="grid"</kbd> on an HTML element.
+</p>
+<div class="grid">
+    <div class="p-2 primary">Element 1</div>
+    <div class="p-2 primary">Element 2</div>
+    <div class="p-2 primary">Element 3</div>
+    <div class="p-2 primary">E4</div>
+    <div class="p-2 primary">
+        <div>E5</div>
+        <div>Some text</div>
+    </div>
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a grid to alter the appearence and behaviour.
+</p>
+
+<h4>Gap</h4>
+<p>
+    There are a number CSS classes to set the gap between the elements of the grid.
+    These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
+    <kbd>gap-0</kbd> means no gap at all.
+    The default gap is <kbd>gap-3</kbd>.
+</p>
+<p>
+    The examples below demonstare the different gap sizes.
+</p>
+<div class="stack">
+    <div>
+        <strong>gap-0</strong>
+        <div class="box grid gap-0"">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-1</strong>
+        <div class="box grid gap-1"">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-2</strong>
+        <div class="box grid gap-2"">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-3 (Default)</strong>
+        <div class="box grid gap-3"">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-4</strong>
+        <div class="box grid gap-4"">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-5</strong>
+        <div class="box grid gap-5"">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+</div>
+
+<h4>Maximum columns</h4>
+<p>
+    There are a number CSS classes to set the maximum number of columns of the grid.
+    By default the maximum number of columns is 100 to allow very large grids.
+</p>
+<div class="stack">
+    <div>
+        <strong>Default (--min-inline-size: 3ch;)</strong>
+        <div class="box grid" style="--min-inline-size: 3ch;">
+            <div class="p-2 primary">1</div>
+            <div class="p-2 primary">2</div>
+            <div class="p-2 primary">3</div>
+            <div class="p-2 primary">4</div>
+            <div class="p-2 primary">5</div>
+            <div class="p-2 primary">6</div>
+            <div class="p-2 primary">7</div>
+            <div class="p-2 primary">8</div>
+            <div class="p-2 primary">9</div>
+            <div class="p-2 primary">10</div>
+            <div class="p-2 primary">11</div>
+            <div class="p-2 primary">12</div>
+            <div class="p-2 primary">13</div>
+            <div class="p-2 primary">14</div>
+            <div class="p-2 primary">15</div>
+            <div class="p-2 primary">16</div>
+            <div class="p-2 primary">17</div>
+            <div class="p-2 primary">18</div>
+            <div class="p-2 primary">19</div>
+            <div class="p-2 primary">20</div>
+        </div>
+    </div>
+    <div>
+        <strong>max-cols-2 (--min-inline-size: 10ch;)</strong>
+        <div class="box grid max-cols-2" style="--min-inline-size: 10ch;">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>max-cols-3 (--min-inline-size: 10ch;)</strong>
+        <div class="box grid max-cols-3" style="--min-inline-size: 10ch;">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>max-cols-4 (--min-inline-size: 10ch;)</strong>
+        <div class="box grid max-cols-4" style="--min-inline-size: 10ch;">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>max-cols-5 (--min-inline-size: 10ch;)</strong>
+        <div class="box grid max-cols-5" style="--min-inline-size: 10ch;">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the grid.
+</p>
+<div>
+    <div>
+        <strong class="text-primary">--min-inline-size:</strong>
+        Set the minimum inline size (width) of the grid columns.
+        It is suggested to use ch units.
+        Values that are too small to fit the content will create text overflow issues.
+    </div>
+    <div>
+        <strong class="text-primary">--max-cols:</strong>
+        Set the maximum number of columns of the grid.
+    </div>
+    <div>
+        <strong class="text-primary">--gap:</strong>
+        Set the gap between rows and columns of the grid.
+        It is suggested to use the --size-{1-12} CSS variables to have a responsive gap size.
+    </div>
+</div>
