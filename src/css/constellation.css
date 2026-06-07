@@ -66,8 +66,8 @@
         --neutral-darkest: oklch(from var(--primary) 18% 0.01 h);
 
         /* Semantic colors */
-        --error: light-dark(oklch(55% 0.22 28deg), oklch(70% 0.18 28deg));
-        --warning: light-dark(oklch(80% 0.15 85deg), oklch(85% 0.12 85deg));
+        --error: light-dark(oklch(60% 0.22 28deg), oklch(70% 0.18 28deg));
+        --warning: light-dark(oklch(80% 0.15 85deg), oklch(75% 0.12 85deg));
         --success: light-dark(oklch(60% 0.18 145deg), oklch(75% 0.14 145deg));
         --info: light-dark(oklch(60% 0.15 250deg), oklch(75% 0.12 250deg));
 
@@ -737,6 +737,8 @@
 
 @layer layout {
     :where(:root) {
+        --layout-border-width: 1px;
+
         /* The stack */
         .stack {
             --gap: var(--size-3);
@@ -755,7 +757,7 @@
         .box {
             --box-color: var(--color);
             --box-background-color: light-dark(white, var(--neutral-darker));
-            --box-border-width: 1px;
+            --box-border-width: var(--layout-border-width);
             --box-border-color: var(--border-color);
             --box-shadow: var(--shadow-2);
             --box-border-radius: var(--size-3);
@@ -788,10 +790,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: var(--row-gap) var(--column-gap);
-
-            &:has(.cluster) {
-                container-type: inline-size;
-            }
 
             &.h-start {
                 justify-content: flex-start;
@@ -838,40 +836,30 @@
             }
         }
 
-        @container (max-inline-size: 60ch) {
-            .cluster>.cluster {
-                flex-grow: 1;
-            }
-        }
-
         /* The sidebar */
         .sidebar-container {
-            --sidebar-width: 30ch;
             --sidebar-background-color: var(--background-color);
+            --sidebar-border-color: var(--border-color);
+            --sidebar-border-width: var(--layout-border-width);
+            --sidebar-padding: var(--padding);
 
             display: flex;
             flex-wrap: wrap;
-            outline: 1px solid var(--border-color);
+            outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
             min-inline-size: 320px;
 
             &>.sidebar {
-                flex: 1 1 var(--sidebar-width);
+                flex: 1 1 30ch;
                 min-inline-size: 0;
-                outline: 1px solid var(--border-color);
-                padding: var(--padding);
+                outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
+                padding: var(--sidebar-padding);
                 background-color: var(--sidebar-background-color);
             }
 
             &> :not(.sidebar) {
                 flex: 999 1 0;
                 min-inline-size: 50%;
-                padding: var(--padding);
-            }
-        }
-
-        @container (max-inline-size: 60ch) {
-            .sidebar-container {
-                align-content: flex-start;
+                padding: var(--sidebar-padding);
             }
         }
 
@@ -902,12 +890,39 @@
                 --max-cols: 5;
             }
         }
+
+        /* The container */
+        .container {
+            container-type: inline-size;
+            inline-size: 100%;
+
+            .mobile-show {
+                display: none;
+            }
+        }
+
+        @container (max-inline-size: 60ch) {
+            .container>.mobile-hide {
+                display: none;
+            }
+
+            .container>.mobile-show {
+                display: block;
+            }
+
+            .sidebar-container {
+                align-content: flex-start;
+            }
+
+            .cluster>.cluster {
+                flex-grow: 1;
+            }
+        }
     }
 }
 
 @layer utilities {
     :where(:root) {
-        /* Text Sizes */
         .text-neg-2 {
             font-size: var(--font-size-neg-2);
         }
@@ -1145,31 +1160,31 @@
         .w-max-10ch {
             max-inline-size: 10ch;
         }
-        
+
         .w-max-20ch {
             max-inline-size: 20ch;
         }
-        
+
         .w-max-30ch {
             max-inline-size: 30ch;
         }
-        
+
         .w-max-40ch {
             max-inline-size: 40ch;
         }
-        
+
         .w-max-50ch {
             max-inline-size: 50ch;
         }
-        
+
         .w-max-60ch {
             max-inline-size: 60ch;
         }
-        
+
         .w-max-70ch {
             max-inline-size: 70ch;
         }
-        
+
         .w-max-80ch {
             max-inline-size: 80ch;
         }
@@ -1230,6 +1245,22 @@
             --button-hover: light-dark(var(--neutral), var(--neutral-lighter));
             --box-background-color: light-dark(var(--neutral), var(--neutral));
             --box-border-color: light-dark(var(--neutral-darker), var(--neutral-lighter));
+        }
+
+        .error {
+            --box-background-color: var(--error);
+        }
+
+        .warning {
+            --box-background-color: var(--warning);
+        }
+
+        .success {
+            --box-background-color: var(--success);
+        }
+
+        .info {
+            --box-background-color: var(--info);
         }
     }
 }

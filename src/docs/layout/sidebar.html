@@ -3,5 +3,61 @@ title: The sidebar
 pageOrder: 5
 ---
 <p>
-    The sidebar
+    The sidebar is a layout component designed for creating a vertical side menu next to the main page content.
+    There is a border line separating the sidebar and the main page content.
+    Both the sidebar and the main page content have a padding so that their content does not touch the screen edged or
+    the border line between them.
+    By default the sidebar has a width of 30 characters, which should be sufficient for menu item text.
 </p>
+<p>
+    The sidebar is also responsive and on narrower screens the main page content section gets narrower.
+    On very narrow screens where the main page content would be narrower than the sidebar, the main page content moves
+    to below the sidebar.
+</p>
+<p>
+    By default in Constellation CSS, the HTML body pas a responsive padding, thus when using a sidebar it is suggested
+    to set
+    <kbd>&lt;body class="fullscreen"&gt;</kbd> to prepare the body to contain a sidebar.
+</p>
+<p>
+    The sidebar is created by wrapping both the sidebar and the main page content in an HTML tag with the class
+    <kbd>sidebar-container</kbd>.
+    On the sidebar HTML element <kbd>class="sidebar"</kbd> is applied.
+</p>
+<div class="container">
+    <div class="sidebar-container mobile-hide">
+        <div class="sidebar">Sidebar</div>
+        <div>Main page content</div>
+    </div>
+    <div class="box m-b-4 warning mobile-show">
+        <p>
+            The example sidebar will not show on narrow screens.
+        </p>
+        <p>
+            Please refer to the Constellation CSS site itself, which has a sidebar example.
+        </p>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the cluster.
+</p>
+<div>
+    <div>
+        <strong class="text-primary">--sidebar-background-color:</strong>
+        Sets the background color of the sidebar.
+    </div>
+    <div>
+        <strong class="text-primary">--sidebar-border-color:</strong>
+        Sets the border color of the sidebar conatiner and sidebar.
+    </div>
+    <div>
+        <strong class="text-primary">--sidebar-border-width:</strong>
+        Sets the border width of the sidebar.
+    </div>
+    <div>
+        <strong class="text-primary">--sidebar-padding:</strong>
+        Set the horizontal (inline) padding of the centered element.
+    </div>
+</div>

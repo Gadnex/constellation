@@ -225,7 +225,7 @@ pageOrder: 4
     But when the outer cluster is wrapped a CSS container query will set the CSS property <kbd>flex-grow: 1;</kbd>
     on the inner clusters so that their <kbd>h-center</kbd> will have an effect.
 </p>
-<div class="box cluster h-space-between v-center gap-r-0">
+<div class="box cluster h-space-between v-center gap-r-0 container">
     <div class="cluster h-center">
         <strong class="text-3">MySite</strong>
     </div>
@@ -234,6 +234,8 @@ pageOrder: 4
         <div><a href="#">About</a></div>
         <div><a href="#">Colors</a></div>
         <div><a href="#">Semantic HTML</a></div>
+        <div><a href="#">Forms</a></div>
+        <div><a href="#">Buttons</a></div>
     </div>
 </div>
 
@@ -243,12 +245,12 @@ pageOrder: 4
 </p>
 <div>
     <div>
-        <strong>--column-gap:</strong>
+        <strong class="text-primary">--column-gap:</strong>
          Set the gap between columns of the grid.
          It is suggested to use the --size-{1-12} CSS variables to have a responsive gap size.
     </div>
     <div>
-        <strong>--row-gap:</strong>
+        <strong class="text-primary">--row-gap:</strong>
          Set the gap between columns of the grid.
          It is suggested to use the --size-{1-12} CSS variables to have a responsive gap size.
     </div>

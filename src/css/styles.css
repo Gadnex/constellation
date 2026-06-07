@@ -17,7 +17,7 @@
 
 .brand-text {
     --brand-font: dank mono, operator mono, inconsolata, fira mono, ui-monospace, sf mono, monaco, droid sans mono, source code pro, cascadia code, menlo, consolas, dejavu sans mono, monospace;
-    
+
     font-family: var(--brand-font);
     letter-spacing: -0.025em;
 }
@@ -113,7 +113,7 @@
     @view-transition {
         navigation: auto;
     }
-    
+
     .sidebar {
         view-transition-name: sidebar;
         z-index: 1;
@@ -122,12 +122,12 @@
     main {
         view-transition-name: main-content;
     }
-    
+
     ::view-transition-old(main-content) {
         animation-name: slide-out;
         animation-duration: 0.25s;
     }
-    
+
     ::view-transition-new(main-content) {
         animation-name: slide-in;
         animation-duration: 0.25s;
