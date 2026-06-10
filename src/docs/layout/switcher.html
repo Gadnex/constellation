@@ -3,5 +3,100 @@ title: The switcher
 pageOrder: 6
 ---
 <p>
-    The switcher
+    The switcher is a layout component to switch between two layout options.
+    Either the inner elements are layed out side by side in a single row
+    or they are layed out in a single column.
+    This differs from the <a href="/layout/cluster/">cluster</a> in that a cluster can
+    have multiple items on the same row, but also have multiple rows.
 </p>
+<p>
+    The switcher is applied by setting <kbd>class="switcher"</kbd> on an HTML element.
+</p>
+<div class="switcher">
+    <div class="primary">Element</div>
+    <div class="primary">Element</div>
+    <div class="primary">Element</div>
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a switcher to alter the appearence.
+</p>
+
+<h4>Gap</h4>
+<p>
+    There are a number CSS classes to set the gap between the elements of the switcher.
+    These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
+    <kbd>gap-0</kbd> means no gap at all.
+    The default gap is <kbd>gap-3</kbd>.
+</p>
+<p>
+    The examples below demonstare the different gap sizes.
+</p>
+<div class="stack">
+    <div>
+        <strong>gap-0</strong>
+        <div class="switcher gap-0">
+            <div class="primary">Element</div>
+            <div class="contrast">Element</div>
+            <div class="primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-1</strong>
+        <div class="switcher gap-1">
+            <div class="primary">Element</div>
+            <div class="contrast">Element</div>
+            <div class="primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-2</strong>
+        <div class="switcher gap-2">
+            <div class="primary">Element</div>
+            <div class="contrast">Element</div>
+            <div class="primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-3</strong>
+        <div class="switcher gap-3">
+            <div class="primary">Element</div>
+            <div class="contrast">Element</div>
+            <div class="primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-4</strong>
+        <div class="switcher gap-4">
+            <div class="primary">Element</div>
+            <div class="contrast">Element</div>
+            <div class="primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-5</strong>
+        <div class="switcher gap-5">
+            <div class="primary">Element</div>
+            <div class="contrast">Element</div>
+            <div class="primary">Element</div>
+        </div>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the cluster.
+</p>
+<div>
+    <div>
+        <strong class="text-primary">--threshold:</strong>
+        Set the horizontal (inline) size at which the switched switches.
+        Suggested to set the value in ch units.
+        the default threshold is 60ch.
+    </div>
+    <div>
+        <strong class="text-primary">--gap:</strong>
+        Set the gap between the elements.
+    </div>
+</div>

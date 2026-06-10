@@ -855,6 +855,21 @@
             }
         }
 
+        /* The switcher */
+        .switcher {
+            --threshold: 60ch;
+            --gap: var(--size-3);
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap);
+
+            &>* {
+                flex-grow: 1;
+                flex-basis: calc((var(--threshold) - 100%) * 999);
+            }
+        }
+
         /* The grid */
         .grid {
             --min-inline-size: 20ch;
