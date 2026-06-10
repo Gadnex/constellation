@@ -484,12 +484,11 @@
         input[aria-invalid="true"]+*,
         textarea[aria-invalid="true"]+* {
             color: var(--error);
-            margin-block: 0 var(--size-2);
             font-size: var(--font-size-neg-2);
             font-weight: 300;
 
             &:is(ul, ol) {
-                padding-inline: var(--size-4);
+                padding-inline-start: var(--size-4);
             }
         }
 
