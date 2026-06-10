@@ -1,4 +1,4 @@
-<menu role="list" class="stack gap-2">
+<menu role="list">
     <li>
       <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>
         Home
@@ -22,7 +22,7 @@
       <li>
         <details name="nav-sub-menu" {% if isCurrentTopic %}open{% endif %}>
           <summary>{{ topic.name }}</summary>
-          <menu role="list" class="stack gap-2">
+          <menu role="list">
             {% for item in topic.pages %}
               <li>
                 <a href="/{{ item.url | lstrip: '/' }}" {% if page.url == item.url %}aria-current="page"{% endif %}>
