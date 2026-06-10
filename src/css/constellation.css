@@ -411,15 +411,9 @@
 
         menu {
             list-style: none;
-            margin: var(--size-3) 0;
-
-            li {
-                margin-block: var(--size-1);
-            }
 
             a {
                 display: block;
-                padding-inline-start: var(--size-2);
             }
         }
 
@@ -677,7 +671,6 @@
         a[role="button"] {
             display: inline-block;
             padding: var(--size-3) var(--size-4);
-            margin: var(--size-2);
             color: var(--button-color);
             background-color: var(--button-background);
             border: 2px solid var(--button-border-color);
