@@ -310,46 +310,6 @@
         code {
             font-family: var(--font-monospace-code);
         }
-
-        .text-invert {
-            color: var(--background-color);
-        }
-
-        .text-default {
-            color: var(--color);
-        }
-
-        .text-primary {
-            color: var(--primary);
-        }
-
-        .text-secondary {
-            color: var(--secondary);
-        }
-
-        .text-tertiary {
-            color: var(--tertiary);
-        }
-
-        .text-contrast {
-            color: var(--contrast);
-        }
-
-        .text-error {
-            color: var(--error);
-        }
-
-        .text-warning {
-            color: var(--warning);
-        }
-
-        .text-success {
-            color: var(--success);
-        }
-
-        .text-info {
-            color: var(--info);
-        }
     }
 }
 
@@ -743,6 +703,46 @@
             &>* {
                 margin-block: 0;
             }
+
+            &.v-start {
+                justify-content: flex-start;
+            }
+
+            &.v-end {
+                justify-content: flex-end;
+            }
+
+            &.v-center {
+                justify-content: center;
+            }
+
+            &.v-space-between {
+                justify-content: space-between;
+            }
+
+            &.v-space-around {
+                justify-content: space-around;
+            }
+
+            &.v-space-evenly {
+                justify-content: space-evenly;
+            }
+
+            &.h-start {
+                align-items: flex-start;
+            }
+
+            &.h-end {
+                align-items: flex-end;
+            }
+
+            &.h-center {
+                align-items: center;
+            }
+
+            &.h-stretch {
+                align-items: stretch;
+            }
         }
 
         /* The box */
@@ -828,6 +828,12 @@
             }
         }
 
+        @container (max-inline-size: 60ch) {
+            .cluster>.cluster {
+                flex-grow: 1;
+            }
+        }
+
         /* The sidebar */
         .sidebar-container {
             --sidebar-background-color: var(--background-color);
@@ -835,23 +841,30 @@
             --sidebar-border-width: var(--layout-border-width);
             --sidebar-padding: var(--padding);
 
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 1fr;
             outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
             min-inline-size: 320px;
-
+            container-type: inline-size;
+            
             &>.sidebar {
-                flex: 1 1 30ch;
-                min-inline-size: 0;
                 outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
                 padding: var(--sidebar-padding);
                 background-color: var(--sidebar-background-color);
+                min-inline-size: 320px;
             }
-
+            
             &> :not(.sidebar) {
-                flex: 999 1 0;
-                min-inline-size: 50%;
+                min-inline-size: 320px;
                 padding: var(--sidebar-padding);
+            }
+        }
+
+        @container (min-width: 60ch) {
+            .sidebar-container {
+                grid-template-rows: auto;
+                grid-template-columns: 30ch 1fr;
             }
         }
 
@@ -868,6 +881,13 @@
                 flex-grow: 1;
                 flex-basis: calc((var(--threshold) - 100%) * 999);
             }
+        }
+
+        /* The cover */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* The grid */
@@ -916,20 +936,57 @@
             .container>.mobile-show {
                 display: block;
             }
-
-            .sidebar-container {
-                align-content: flex-start;
-            }
-
-            .cluster>.cluster {
-                flex-grow: 1;
-            }
         }
     }
 }
 
 @layer utilities {
     :where(:root) {
+        /* Text */
+        .text-invert {
+            color: var(--background-color);
+        }
+
+        .text-default {
+            color: var(--color);
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-secondary {
+            color: var(--secondary);
+        }
+
+        .text-tertiary {
+            color: var(--tertiary);
+        }
+
+        .text-contrast {
+            color: var(--contrast);
+        }
+
+        .text-error {
+            color: var(--error);
+        }
+
+        .text-warning {
+            color: var(--warning);
+        }
+
+        .text-success {
+            color: var(--success);
+        }
+
+        .text-info {
+            color: var(--info);
+        }
+
+        .text-layout {
+            line-height: 1;
+        }
+
         .text-neg-2 {
             font-size: var(--font-size-neg-2);
         }
@@ -1074,6 +1131,54 @@
             padding: var(--size-5);
         }
 
+        .p-b-0 {
+            padding-block: 0;
+        }
+
+        .p-b-1 {
+            padding-block: var(--size-1);
+        }
+
+        .p-b-2 {
+            padding-block: var(--size-2);
+        }
+
+        .p-b-3 {
+            padding-block: var(--size-3);
+        }
+
+        .p-b-4 {
+            padding-block: var(--size-4);
+        }
+
+        .p-b-5 {
+            padding-block: var(--size-5);
+        }
+
+        .p-i-0 {
+            padding-inline: 0;
+        }
+
+        .p-i-1 {
+            padding-inline: var(--size-1);
+        }
+
+        .p-i-2 {
+            padding-inline: var(--size-2);
+        }
+
+        .p-i-3 {
+            padding-inline: var(--size-3);
+        }
+
+        .p-i-4 {
+            padding-inline: var(--size-4);
+        }
+
+        .p-i-5 {
+            padding-inline: var(--size-5);
+        }
+
         /* Gap */
         .gap-0 {
             --gap: 0px;
@@ -1194,6 +1299,14 @@
 
         .w-max-80ch {
             max-inline-size: 80ch;
+        }
+
+        .w-full {
+            inline-size: 100%;
+        }
+
+        .h-full {
+            block-size: 100%;
         }
 
         /* Flexbox */

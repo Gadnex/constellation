@@ -81,9 +81,93 @@ pageOrder: 1
     </div>
 </div>
 
+<h4>Vertical content justification</h4>
+<p>
+    There are a number CSS classes to set the vertical content justification of the stack.
+    The default content justification in CSS is <kbd>justify-content: flex-start;</kbd>.
+    The examples below demonstare the different vertical content justifications.
+</p>
+<div class="stack">
+    <div>
+        <strong>v-start (Default)</strong>
+        <div class="box stack v-start" style="min-block-size: 200px;">
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-end</strong>
+        <div class="box stack v-end" style="min-block-size: 200px;">
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-center</strong>
+        <div class="box stack v-center" style="min-block-size: 200px;">
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-space-between</strong>
+        <div class="box stack v-space-between" style="min-block-size: 300px;">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 contrast">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-space-around</strong>
+        <div class="box stack v-space-around" style="min-block-size: 300px;">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 contrast">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>v-space-evenly</strong>
+        <div class="box stack v-space-evenly" style="min-block-size: 300px;">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 contrast">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+</div>
+
+<h4>Horizontal item alignment</h4>
+<p>
+    There are a number CSS classes to set the horizontal item alignment of the stack.
+    The default item alignment in CSS is <kbd>align-items: stretch;</kbd>.
+    The examples below demonstare the different horizontal item alignments.
+</p>
+<div class="stack">
+    <div>
+        <strong>h-start</strong>
+        <div class="box stack h-start">
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-end</strong>
+        <div class="box stack h-end">
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-center</strong>
+        <div class="box stack h-center">
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>h-stretch (Default)</strong>
+        <div class="box stack h-stretch">
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+</div>
+
 <h3>CSS Variables</h3>
 <p>
-    The following CSS variables are defined for the cluster.
+    The following CSS variables are defined for the stack.
 </p>
 <div>
     <div>
