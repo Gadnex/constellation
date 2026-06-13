@@ -3,5 +3,113 @@ title: The frame
 pageOrder: 9
 ---
 <p>
-    The frame
+    The frame is a layout component designed for displaying image or video content the content within an HTML element.
+    In sets a specific aspect ratio for the frame with a defaul value of 16 / 9.
 </p>
+<p>
+    The frame is applied by setting <kbd>class="frame"</kbd> on an HTML element.
+</p>
+<div class="center w-max-40ch">
+    <div class="frame primary"></div>
+</div>
+
+<h3>Examples</h3>
+<p>
+    The following examples show image and video content in a frame with the default aspect ratio of 16/9.
+</p>
+<div class="grid w-min-30ch">
+    <div class="box">
+        <strong>Image content</strong>
+        <div class="frame">
+            <img src="/img/stars.jpg" alt="Image of stars">
+        </div>
+    </div>
+    <div class="box">
+        <strong>Video content</strong>
+        <figure class="frame pile">
+            <video controls autoplay loop muted>
+                <source src="/img/night-sky-with-crescent-moon-and-milky-way.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+                <a href="https://www.vecteezy.com/free-videos/night-sky-stars" target="_blank">Night Sky Stars Stock
+                    Videos by Vecteezy</a>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a frame to alter the appearence.
+</p>
+
+<h4>Aspect ratio</h4>
+<p>
+    There are a number CSS classes to set the width of the centered element.
+</p>
+<p>
+    The examples below demonstare the different gap sizes.
+</p>
+<div class="grid w-min-20ch">
+    <div>
+        <strong>ultrawide</strong>
+        <div class="frame ultrawide primary"></div>
+    </div>
+    <div>
+        <strong>widescreen (Default)</strong>
+        <div class="frame widescreen primary"></div>
+    </div>
+    <div>
+        <strong>golden</strong>
+        <div class="frame golden primary"></div>
+    </div>
+    <div>
+        <strong>landscape</strong>
+        <div class="frame landscape primary"></div>
+    </div>
+    <div>
+        <strong>square</strong>
+        <div class="frame square primary"></div>
+    </div>
+    <div>
+        <strong>portrait</strong>
+        <div class="frame portrait primary"></div>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the cluster.
+</p>
+<div>
+    <div>
+        <strong class="text-primary">--aspect-ratio:</strong>
+        Set the aspect ratio of the frame.
+        It is recommended to use one of the CSS variables below as a value.    
+    </div>
+    <div>
+        <strong class="text-primary">--ratio-ultrawide:</strong>
+        Sets an aspect ratio of 18/5.
+    </div>
+    <div>
+        <strong class="text-primary">--ratio-widescreen:</strong>
+        Sets an aspect ratio of 16/9.
+        This is the default value.
+    </div>
+    <div>
+        <strong class="text-primary">--ratio-golden</strong>
+        Sets an aspect ratio of 1.6180/1.
+    </div>
+    <div>
+        <strong class="text-primary">--ratio-landscape:</strong>
+        Sets an aspect ratio of 4/3.
+    </div>
+    <div>
+        <strong class="text-primary">--ratio-square:</strong>
+        Sets an aspect ratio of 1/1.
+    </div>
+    <div>
+        <strong class="text-primary">--ratio-portrait:</strong>
+        Sets an aspect ratio of 3/4.
+    </div>
+</div>

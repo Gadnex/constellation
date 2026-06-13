@@ -14,7 +14,8 @@ export default async function (eleventyConfig) {
         "jpg",
         "png",
         "svg",
-        "ico"
+        "ico",
+        "mp4"
     ]);
 
     // Fast, native text-based minification that will NEVER crash on syntax typos

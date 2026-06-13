@@ -114,6 +114,63 @@ pageOrder: 8
     </div>
 </div>
 
+<h4>Width</h4>
+<p>
+    There are a number CSS classes to set the minimum inline size (width) of columns of the grid.
+    By default the minimum inline size of columns is 20ch to allow narrow grid columns.
+</p>
+<div class="stack">
+    <div>
+        <strong>w-min-10ch</strong>
+        <div class="box grid w-min-10ch">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>w-min-20ch (Default)</strong>
+        <div class="box grid w-min-20ch">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>w-min-30ch</strong>
+        <div class="box grid w-min-30ch">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>w-min-40ch</strong>
+        <div class="box grid w-min-40ch">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>w-min-50ch</strong>
+        <div class="box grid w-min-50ch">
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+            <div class="p-2 primary">Element</div>
+        </div>
+    </div>
+</div>
+
 <h4>Maximum columns</h4>
 <p>
     There are a number CSS classes to set the maximum number of columns of the grid.
@@ -121,7 +178,7 @@ pageOrder: 8
 </p>
 <div class="stack">
     <div>
-        <strong>Default (--min-inline-size: 3ch;)</strong>
+        <strong>Default + (--min-inline-size: 3ch;)</strong>
         <div class="box grid" style="--min-inline-size: 3ch;">
             <div class="p-2 primary">1</div>
             <div class="p-2 primary">2</div>
@@ -146,8 +203,8 @@ pageOrder: 8
         </div>
     </div>
     <div>
-        <strong>max-cols-2 (--min-inline-size: 10ch;)</strong>
-        <div class="box grid max-cols-2" style="--min-inline-size: 10ch;">
+        <strong>max-cols-2 + w-min-10ch</strong>
+        <div class="box grid max-cols-2 w-min-10ch">
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
@@ -157,8 +214,8 @@ pageOrder: 8
         </div>
     </div>
     <div>
-        <strong>max-cols-3 (--min-inline-size: 10ch;)</strong>
-        <div class="box grid max-cols-3" style="--min-inline-size: 10ch;">
+        <strong>max-cols-3 + w-min-10ch</strong>
+        <div class="box grid max-cols-3 w-min-10ch">
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
@@ -168,8 +225,8 @@ pageOrder: 8
         </div>
     </div>
     <div>
-        <strong>max-cols-4 (--min-inline-size: 10ch;)</strong>
-        <div class="box grid max-cols-4" style="--min-inline-size: 10ch;">
+        <strong>max-cols-4 + w-min-10ch</strong>
+        <div class="box grid max-cols-4 w-min-10ch">
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
@@ -179,8 +236,8 @@ pageOrder: 8
         </div>
     </div>
     <div>
-        <strong>max-cols-5 (--min-inline-size: 10ch;)</strong>
-        <div class="box grid max-cols-5" style="--min-inline-size: 10ch;">
+        <strong>max-cols-5 + w-min-10ch</strong>
+        <div class="box grid max-cols-5 w-min-10ch">
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
             <div class="p-2 primary">Element</div>
