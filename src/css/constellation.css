@@ -763,15 +763,15 @@
 
                 &.gradient-top::after {
                     background: linear-gradient(to bottom,
-                            black 0%,
-                            oklch(from black l c h / 0%) 50%,
+                            oklch(from var(--background-color) l c h / 80%) 0%,
+                            oklch(from var(--background-color) l c h / 0%) 30%,
                             transparent 100%);
                 }
 
                 &.gradient-bottom::after {
                     background: linear-gradient(to top,
-                            black 0%,
-                            oklch(from black l c h / 0%) 50%,
+                            oklch(from var(--background-color) l c h / 80%) 0%,
+                            oklch(from var(--background-color) l c h / 0%) 30%,
                             transparent 100%);
                 }
             }
@@ -1034,6 +1034,14 @@
         /* Text */
         .text-invert {
             color: var(--background-color);
+        }
+
+        .text-light {
+            color: var(--neutral-lightest);
+        }
+
+        .text-dark {
+            color: var(--neutral-darkest);
         }
 
         .text-default {
