@@ -1007,6 +1007,47 @@
             }
         }
 
+        /* The reel */
+        .reel {
+            --item-width: 20vw;
+            --gap: var(--size-3);
+            --padding: var(--size-2);
+
+            display: flex;
+            gap: var(--gap);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            padding-block-end: var(--padding);
+            scrollbar-color: var(--primary) var(--background-color);
+
+            &>* {
+                scroll-snap-align: start;
+                flex: 0 0 var(--item-width);
+            }
+
+            &.w-10vw {
+                --item-width: 10vw;
+            }
+
+            &.w-20vw {
+                --item-width: 20vw;
+            }
+
+            &.w-30vw {
+                --item-width: 30vw;
+            }
+
+            &.w-40vw {
+                --item-width: 40vw;
+            }
+
+            &.bordered {
+                padding-block: var(--size-3);
+                border: 1px solid var(--border-color);
+            }
+        }
+
         /* The container */
         .container {
             container-type: inline-size;
@@ -1396,6 +1437,38 @@
 
         .w-max-80ch {
             max-inline-size: 80ch;
+        }
+
+        .w-min-10ch {
+            min-inline-size: 10ch;
+        }
+
+        .w-min-20ch {
+            min-inline-size: 20ch;
+        }
+
+        .w-min-30ch {
+            min-inline-size: 30ch;
+        }
+
+        .w-min-40ch {
+            min-inline-size: 40ch;
+        }
+
+        .w-min-50ch {
+            min-inline-size: 50ch;
+        }
+
+        .w-min-60ch {
+            min-inline-size: 60ch;
+        }
+
+        .w-min-70ch {
+            min-inline-size: 70ch;
+        }
+
+        .w-min-80ch {
+            min-inline-size: 80ch;
         }
 
         .w-full {

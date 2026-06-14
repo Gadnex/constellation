@@ -3,5 +3,202 @@ title: The reel
 pageOrder: 10
 ---
 <p>
-    The reel
+    The reel is a layout component designed for making an HTML element horizontally scrollable within its parent
+    element.
+
 </p>
+<p>
+    The reel is applied by setting <kbd>class="reel"</kbd> on an HTML element.
+</p>
+<div class="reel">
+    <div class="frame neutral"></div>
+    <div class="frame neutral"></div>
+    <div class="frame neutral"></div>
+    <div class="frame neutral"></div>
+    <div class="frame neutral"></div>
+    <div class="frame neutral"></div>
+    <div class="frame neutral"></div>
+    <div class="frame neutral"></div>
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a reel to alter the appearence.
+</p>
+
+<h4>Item width</h4>
+<p>
+    There are a number CSS classes to set the width of the elements of the reel.
+    The default item width is <kbd>w-20vw</kbd>, which is 20% of the viewport (screen) width.
+</p>
+<p>
+    The examples below demonstare the different gap sizes.
+</p>
+<div class="stack">
+    <div>
+        <strong>w-10vw</strong>
+        <div class="reel w-10vw">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>w-20vw (Default)</strong>
+        <div class="reel w-20vw">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>w-30vw</strong>
+        <div class="reel w-30vw">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>w-40vw</strong>
+        <div class="reel w-40vw">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+</div>
+
+<h4>Gap</h4>
+<p>
+    There are a number CSS classes to set the gap between the elements of the reel.
+    These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
+    <kbd>gap-0</kbd> means no gap at all.
+    The default gap is <kbd>gap-3</kbd>.
+</p>
+<p>
+    The examples below demonstare the different gap sizes.
+</p>
+<div class="stack">
+    <div>
+        <strong>gap-0</strong>
+        <div class="reel gap-0">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-1</strong>
+        <div class="reel gap-1">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-2</strong>
+        <div class="reel gap-2">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-3</strong>
+        <div class="reel gap-3">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-4</strong>
+        <div class="reel gap-4">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-5</strong>
+        <div class="reel gap-5">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+</div>
+
+<h4>Border</h4>
+<p>
+    The <kbd>bordered</kbd> CSS class created a border around the reel.
+</p>
+<div class="stack">
+    <div>
+        <strong>bordered</strong>
+        <div class="reel bordered">
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+            <div class="frame neutral"></div>
+            <div class="frame contrast"></div>
+        </div>
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the reel.
+</p>
+<div>
+    <div>
+        <strong class="text-neutral">--item-width:</strong>
+        Set the width of the elements in the reel.
+    </div>
+    <div>
+        <strong class="text-neutral">--gap:</strong>
+        Set the gap size between the elements in the reel.
+    </div>
+    <div>
+        <strong class="text-neutral">--padding:</strong>
+        Set the padding size below the elements in the reel where the sidebar resides.
+    </div>
+</div>
