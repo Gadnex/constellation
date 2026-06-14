@@ -3,7 +3,8 @@ title: The stack
 pageOrder: 1
 ---
 <p>
-    The stack is a layout component designed for placing a number of HTML elements vertically with a consistent gap in between each element of the stack.
+    The stack is a layout component designed for placing a number of HTML elements vertically with a consistent gap in
+    between each element of the stack.
     The margin of all direct children of the stack is removed to ensure the consistent gap between the stacked elements.
 </p>
 <p>
@@ -165,6 +166,55 @@ pageOrder: 1
     </div>
 </div>
 
+<h4>On top</h4>
+<p>
+    The <kbd>on-top</kbd> class can be used on a <kbd>stack</kbd> to stack elements on top of each other.
+    This pattern is useful if you would like to display an image or video with text on top of it.
+    The image or video should always be the first element within the stack to have it behind everything else.
+</p>
+<p>
+    The example below has a div element with the classes <kbd>frame</kbd>, <kbd>stack</kbd>, <kbd>on-top</kbd>,
+    <kbd>v-center</kbd> and <kbd>h-center</kbd> applied. Inside the div element is an img element followed by a
+    div element with some image text. Instead of the text appearing below the image in the stack, it appears
+    on top of the image and centered vertically and horizontally.
+</p>
+<div class="center w-max-40ch">
+    <div class="frame stack on-top v-center h-center">
+        <img src="/img/stars.jpg" alt="Image of stars">
+        <div>Image text</div>
+    </div>
+</div>
+
+<h4>Gradient</h4>
+<p>
+    When placing text on top of an image, it is sometimes hard to read the text on top of the image.
+    There are two gradient classes that that can be applied with <kbd>on-top</kbd> to place a gradient
+    between the image or video and the text.
+</p>
+<div class="switcher">
+    <div>
+        <strong>No gradient</strong>
+        <div class="frame primary stack on-top v-center h-center">
+            <div></div>
+            <div class="text-contrast">Image text</div>
+        </div>
+    </div>
+    <div>
+        <strong>gradient-top</strong>
+        <div class="frame primary stack on-top v-start h-center gradient-top">
+            <div></div>
+            <div class="text-contrast">Image text</div>
+        </div>
+    </div>
+    <div>
+        <strong>gradient-bottom</strong>
+        <div class="frame primary stack on-top v-end h-center gradient-bottom">
+            <div></div>
+            <div class="text-contrast">Image text</div>
+        </div>
+    </div>
+</div>
+
 <h3>CSS Variables</h3>
 <p>
     The following CSS variables are defined for the stack.
@@ -172,6 +222,6 @@ pageOrder: 1
 <div>
     <div>
         <strong class="text-primary">--gap:</strong>
-         Set the font color of text in the stack.
+        Set the font color of text in the stack.
     </div>
 </div>

@@ -743,6 +743,38 @@
             &.h-stretch {
                 align-items: stretch;
             }
+
+            &.on-top {
+                position: relative;
+
+                &>:not(:first-child) {
+                    position: absolute;
+                    z-index: calc(sibling-index() + 1);
+                }
+
+                &.gradient-top::after,
+                &.gradient-bottom::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+
+                &.gradient-top::after {
+                    background: linear-gradient(to bottom,
+                            black 0%,
+                            oklch(from black l c h / 0%) 50%,
+                            transparent 100%);
+                }
+
+                &.gradient-bottom::after {
+                    background: linear-gradient(to top,
+                            black 0%,
+                            oklch(from black l c h / 0%) 50%,
+                            transparent 100%);
+                }
+            }
         }
 
         /* The box */
@@ -942,7 +974,6 @@
 
             aspect-ratio: var(--aspect-ratio);
             overflow: hidden;
-            position: relative;
 
             &>img,
             &>video {
@@ -993,20 +1024,6 @@
 
             .container>.mobile-show {
                 display: block;
-            }
-        }
-
-        /* The pile */
-        .pile {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            &>:not(img),
-            &>:not(video) {
-                position: absolute;
-                z-index: calc(sibling-index());
             }
         }
     }
