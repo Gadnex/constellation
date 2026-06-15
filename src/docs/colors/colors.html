@@ -3,7 +3,7 @@ title: Dynamic colors
 pageOrder: 1
 ---
 <p>
-    In order to prevent an overload of color choices, Constellation CSS provides a limited set of colors to work with. These choices are dynamically generated using color theory based on a <code>--brand</code> color that you set in your custom CSS. 
+    In order to prevent an overload of color choices, Constellation CSS provides a limited set of colors to work with. These choices are dynamically generated using color theory based on a <kbd>--brand</kbd> color that you set in your custom CSS. 
 </p>
 <p>
     All colors have light mode and dark modes versions to ensure proper contrast with the background color. Dark mode colors are slightly lighter for improved contrast. 
@@ -14,7 +14,7 @@ pageOrder: 1
     The default brand color of Constellation CSS is <code>#238fff</code>, which is the color code for <code><b>dodgerblue</b></code>. You can change the brand color to your preferred brand color by settting the CSS variable <code>--brand</code> to a valid color value. 
 </p>
 <p>
-    It is suggested not to use the <code>--brand</code> CSS variable in your own CSS and to rather use the <code>--primary</code> CSS variable that will work well in light and dark mode.
+    It is suggested not to use the <code>--brand</code> CSS variable in your own CSS and to rather use the <code>--primary-3</code> CSS variable that will work well in light and dark mode.
 </p>
 <p>
     At the top right orner of the site you can find a settings menu. Inside the setting menu you can pick a <code>--brand</code> color that will immediately be applied accross the entire site. There is also a <code>Reset</code> button to reset back to the default brand color. 
@@ -32,87 +32,90 @@ pageOrder: 1
 <p>
     The primary color will have two ligher and two darker shades that you can use as CSS variables. Other colors also have 2 ligher and darker shades.
 </p>
+<p>
+    The color variables <kbd>--primary-{1-5}</kbd> are meant to be applied from back to front on your website and they work for both light and dark modes.
+</p>
 <div class="box">
-    <div class="p-2" style="background-color: var(--primary-lightest);">
-        <kbd>--primary-lightest</kbd>
+    <div class="p-2" style="background-color: var(--primary-1);">
+        <kbd>--primary-1</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--primary-lighter);">
-        <kbd>--primary-lighter</kbd>
+    <div class="p-2" style="background-color: var(--primary-2);">
+        <kbd>--primary-2</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--primary);">
-        <kbd>--primary</kbd>
+    <div class="p-2" style="background-color: var(--primary-3);">
+        <kbd>--primary-3</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--primary-darker);">
-        <kbd>--primary-darker</kbd>
+    <div class="p-2" style="background-color: var(--primary-4);">
+        <kbd>--primary-4</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--primary-darkest);">
-        <kbd>--primary-darkest</kbd>
+    <div class="p-2" style="background-color: var(--primary-5);">
+        <kbd>--primary-5</kbd>
     </div>
 </div>
 
 <h3>Secondary</h3>
 <p>
-    The secondary color is relative to the primary color and is found by moving the hue <kbd data-text="$_colorDegrees">35</kbd> degrees in a clockwize direction on the color wheel. The value can be adjusted in the settings menu.
+    The secondary colors are relative to the primary colors and are found by moving the hue <kbd data-text="$_colorDegrees">35</kbd> degrees in a clockwize direction on the color wheel. The value can be adjusted in the settings menu.
 </p>
 <div class="box">
-    <div class="p-2" style="background-color: var(--secondary-lightest);">
-        <kbd>--secondary-lightest</kbd>
+    <div class="p-2" style="background-color: var(--secondary-1);">
+        <kbd>--secondary-1</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--secondary-lighter);">
-        <kbd>--secondary-lighter</kbd>
+    <div class="p-2" style="background-color: var(--secondary-2);">
+        <kbd>--secondary-2</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--secondary);">
-        <kbd>--secondary</kbd>
+    <div class="p-2" style="background-color: var(--secondary-3);">
+        <kbd>--secondary-3</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--secondary-darker);">
-        <kbd>--secondary-darker</kbd>
+    <div class="p-2" style="background-color: var(--secondary-4);">
+        <kbd>--secondary-4</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--secondary-darkest);">
-        <kbd>--secondary-darkest</kbd>
+    <div class="p-2" style="background-color: var(--secondary-5);">
+        <kbd>--secondary-5</kbd>
     </div>
 </div>
 
 <h3>Tertiary</h3>
 <p>
-    The tertiary color is relative to the primary color and is found by moving the hue <kbd data-text="$_colorDegrees">35</kbd> degrees in an anti- clockwize direction on the color wheel. The value can be adjusted in the settings menu.
+    The tertiary colors are relative to the primary colors and are found by moving the hue <kbd data-text="$_colorDegrees">35</kbd> degrees in an anti- clockwize direction on the color wheel. The value can be adjusted in the settings menu.
 </p>
 <div class="box">
-    <div class="p-2" style="background-color: var(--tertiary-lightest);">
-        <kbd>--tertiary-lightest</kbd>
+    <div class="p-2" style="background-color: var(--tertiary-1);">
+        <kbd>--tertiary-1</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--tertiary-lighter);">
-        <kbd>--tertiary-lighter</kbd>
+    <div class="p-2" style="background-color: var(--tertiary-2);">
+        <kbd>--tertiary-2</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--tertiary);">
-        <kbd>--tertiary</kbd>
+    <div class="p-2" style="background-color: var(--tertiary-3);">
+        <kbd>--tertiary-3</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--tertiary-darker);">
-        <kbd>--tertiary-darker</kbd>
+    <div class="p-2" style="background-color: var(--tertiary-4);">
+        <kbd>--tertiary-4</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--tertiary-darkest);">
-        <kbd>--tertiary-darkest</kbd>
+    <div class="p-2" style="background-color: var(--tertiary-5);">
+        <kbd>--tertiary-5</kbd>
     </div>
 </div>
 
 <h3>Contrast</h3>
 <p>
-    The contrast color is relative to the primary color and is found by moving the hue <kbd>180</kbd> degrees in a clockwize direction on the color wheel. The value is thus on the opposite side of the color wheel and cannot be adjusted.
+    The contrast colors are relative to the primary color and are found by moving the hue <kbd>180</kbd> degrees in a clockwize direction on the color wheel. The value is thus on the opposite side of the color wheel and cannot be adjusted.
 </p>
 <div class="box">
-    <div class="p-2" style="background-color: var(--contrast-lightest);">
-        <kbd>--contrast-lightest</kbd>
+    <div class="p-2" style="background-color: var(--contrast-1);">
+        <kbd>--contrast-1</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--contrast-lighter);">
-        <kbd>--contrast-lighter</kbd>
+    <div class="p-2" style="background-color: var(--contrast-2);">
+        <kbd>--contrast-2</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--contrast);">
-        <kbd>--contrast</kbd>
+    <div class="p-2" style="background-color: var(--contrast-3);">
+        <kbd>--contrast-3</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--contrast-darker);">
-        <kbd>--contrast-darker</kbd>
+    <div class="p-2" style="background-color: var(--contrast-4);">
+        <kbd>--contrast-4</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--contrast-darkest);">
-        <kbd>--contrast-darkest</kbd>
+    <div class="p-2" style="background-color: var(--contrast-5);">
+        <kbd>--contrast-5</kbd>
     </div>
 </div>
 
@@ -121,26 +124,20 @@ pageOrder: 1
     The neutral colors are different shades of grey with a slight hint of the primary color to give them some character.
 </p>
 <div class="box">
-    <div class="p-2" style="background-color: white;">
-        <kbd>white</kbd>
+    <div class="p-2" style="background-color: var(--neutral-1);">
+        <kbd>--neutral-1</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--neutral-lightest);">
-        <kbd>--neutral-lightest</kbd>
+    <div class="p-2" style="background-color: var(--neutral-2);">
+        <kbd>--neutral-2</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--neutral-lighter);">
-        <kbd>--neutral-lighter</kbd>
+    <div class="p-2" style="background-color: var(--neutral-3);">
+        <kbd>--neutral-3</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--neutral);">
-        <kbd>--neutral</kbd>
+    <div class="p-2" style="background-color: var(--neutral-4);">
+        <kbd>--neutral-4</kbd>
     </div>
-    <div class="p-2" style="background-color: var(--neutral-darker);">
-        <kbd>--neutral-darker</kbd>
-    </div>
-    <div class="p-2" style="background-color: var(--neutral-darkest);">
-        <kbd>--neutral-darkest</kbd>
-    </div>
-    <div class="p-2" style="background-color: black;">
-        <kbd>black</kbd>
+    <div class="p-2" style="background-color: var(--neutral-5);">
+        <kbd>--neutral-5</kbd>
     </div>
 </div>
 

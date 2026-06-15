@@ -25,130 +25,156 @@
     }
 
     :where(:root, [data-theme]) {
-        /* Normalizes the brand color to ensure accessible contrast in both light and dark modes */
-        --primary: light-dark(oklch(from var(--brand) clamp(0.35, l, 0.50) c h),
-                oklch(from var(--brand) clamp(0.60, l + 0.20, 0.75) calc(c * 0.9) h));
-
-        /* Base Anchors (Generated from Primary) */
-        --secondary: oklch(from var(--primary) l calc(c * 0.85) calc(h + var(--color-degrees)));
-        --tertiary: oklch(from var(--primary) l calc(c * 0.85) calc(h - var(--color-degrees)));
-        --contrast: oklch(from var(--primary) l c calc(h + 180));
-
-        /* Lightest: A soft pastel tint */
-        --primary-lightest: oklch(from var(--primary) 93% calc(c * 0.25) h);
-        --secondary-lightest: oklch(from var(--secondary) 93% calc(c * 0.25) h);
-        --tertiary-lightest: oklch(from var(--tertiary) 93% calc(c * 0.25) h);
-        --contrast-lightest: oklch(from var(--contrast) 93% calc(c * 0.25) h);
-
-        /* Lighter: A vibrant UI accent */
-        --primary-lighter: oklch(from var(--primary) calc(l + 0.15) calc(c * 0.80) h);
-        --secondary-lighter: oklch(from var(--secondary) calc(l + 0.15) calc(c * 0.80) h);
-        --tertiary-lighter: oklch(from var(--tertiary) calc(l + 0.15) calc(c * 0.80) h);
-        --contrast-lighter: oklch(from var(--contrast) calc(l + 0.15) calc(c * 0.80) h);
-
-        /* Darker: Rich and deep (with a subtle hue shift for warmth) */
-        --primary-darker: oklch(from var(--primary) calc(l - 0.12) c calc(h - 5));
-        --secondary-darker: oklch(from var(--secondary) calc(l - 0.12) c calc(h - 5));
-        --tertiary-darker: oklch(from var(--tertiary) calc(l - 0.12) c calc(h - 5));
-        --contrast-darker: oklch(from var(--contrast) calc(l - 0.12) c calc(h - 5));
-
-        /* Darkest: High-contrast text/border shades */
-        --primary-darkest: oklch(from var(--primary) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
-        --secondary-darkest: oklch(from var(--secondary) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
-        --tertiary-darkest: oklch(from var(--tertiary) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
-        --contrast-darkest: oklch(from var(--contrast) calc(l - 0.25) calc(c * 1.1) calc(h - 10));
-
-        /* Neutral: Shades of gray with a hint of the primary color */
-        --neutral: light-dark(oklch(from var(--primary) 60% 0.01 h), oklch(from var(--primary) 70% 0.01 h));
-        --neutral-lightest: oklch(from var(--primary) 99% 0.01 h);
-        --neutral-lighter: oklch(from var(--primary) 95% 0.01 h);
-        --neutral-darker: oklch(from var(--primary) 25% 0.01 h);
-        --neutral-darkest: oklch(from var(--primary) 18% 0.01 h);
+        --primary-1: light-dark(
+            oklch(from var(--primary-3) calc(l + 0.50) calc(c * 0.05) h),
+            oklch(from var(--primary-3) calc(l - 0.50) calc(c * 0.15) h)
+        );
+        --primary-2: light-dark(
+            oklch(from var(--primary-3) calc(l + 0.30) calc(c * 0.40) h),
+            oklch(from var(--primary-3) calc(l - 0.40) calc(c * 0.40) h)
+        );
+        --primary-3: light-dark(
+            oklch(from var(--brand) clamp(0.40, l, 0.50) c h),
+            oklch(from var(--brand) clamp(0.60, calc(l + 0.20), 0.70) c h)
+        );
+        --primary-4: light-dark(
+            oklch(from var(--primary-3) calc(l - 0.15) c h),
+            oklch(from var(--primary-3) calc(l + 0.20) calc(c * 0.40) h)
+        );
+        --primary-5: light-dark(
+            oklch(from var(--primary-3) calc(l - 0.30) calc(c * 0.40) h),
+            oklch(from var(--primary-3) calc(l + 0.30) calc(c * 0.15) h)
+        );
+        --secondary-1: oklch(from var(--primary-1) l c calc(h + var(--color-degrees)));
+        --secondary-2: oklch(from var(--primary-2) l c calc(h + var(--color-degrees)));
+        --secondary-3: oklch(from var(--primary-3) l c calc(h + var(--color-degrees)));
+        --secondary-4: oklch(from var(--primary-4) l c calc(h + var(--color-degrees)));
+        --secondary-5: oklch(from var(--primary-5) l c calc(h + var(--color-degrees)));
+        --tertiary-1: oklch(from var(--primary-1) l c calc(h - var(--color-degrees)));
+        --tertiary-2: oklch(from var(--primary-2) l c calc(h - var(--color-degrees)));
+        --tertiary-3: oklch(from var(--primary-3) l c calc(h - var(--color-degrees)));
+        --tertiary-4: oklch(from var(--primary-4) l c calc(h - var(--color-degrees)));
+        --tertiary-5: oklch(from var(--primary-5) l c calc(h - var(--color-degrees)));
+        --contrast-1: oklch(from var(--primary-1) l c calc(h + 180));
+        --contrast-2: oklch(from var(--primary-2) l c calc(h + 180));
+        --contrast-3: oklch(from var(--primary-3) l c calc(h + 180));
+        --contrast-4: oklch(from var(--primary-4) l c calc(h + 180));
+        --contrast-5: oklch(from var(--primary-5) l c calc(h + 180));
+        --neutral-1: oklch(from var(--primary-1) l 0.01 h);
+        --neutral-2: oklch(from var(--primary-2) l 0.01 h);
+        --neutral-3: oklch(from var(--primary-3) l 0.01 h);
+        --neutral-4: oklch(from var(--primary-4) l 0.01 h);
+        --neutral-5: oklch(from var(--primary-5) l 0.01 h);
 
         /* Semantic colors */
         --error: light-dark(oklch(60% 0.22 28deg), oklch(70% 0.18 28deg));
-        --warning: light-dark(oklch(80% 0.15 85deg), oklch(75% 0.12 85deg));
+        --warning: light-dark(oklch(70% 0.15 85deg), oklch(75% 0.12 85deg));
         --success: light-dark(oklch(60% 0.18 145deg), oklch(75% 0.14 145deg));
         --info: light-dark(oklch(60% 0.15 250deg), oklch(75% 0.12 250deg));
 
         /* Variables for global colors */
-        --background-color: light-dark(var(--neutral-lightest), var(--neutral-darkest));
-        --color: light-dark(var(--neutral-darkest), var(--neutral-lightest));
-        --border-color: light-dark(var(--neutral), var(--neutral));
+        --background-color: var(--neutral-1);
+        --color: var(--neutral-5);
+        --border-color: var(--neutral-3);
+        --box-color: var(--color);
+        --box-background-color: var(--neutral-2);
+        --box-border-color: var(--border-color);
+        --button-color: var(--color);
+        --button-background: var(--neutral-2);
+        --button-border-color: var(--color);
+        --button-hover: var(--neutral-1);
+        --button-disabled: var(--neutral-3);
 
         color-scheme: light dark;
         background-color: var(--background-color);
         color: var(--color);
 
         /* Colors */
+        .background-primary {
+            --background-color: var(--primary-1);
+            --color: var(--primary-5);
+            --border-color: var(--primary-3);
+            --box-color: var(--primary-5);
+            --box-background-color: var(--primary-2);
+            --box-border-color: var(--primary-3);
+            --button-color: var(--color);
+            --button-background: var(--primary-2);
+            --button-border-color: var(--color);
+            --button-hover: var(--primary-1);
+            --button-disabled: var(--neutral-2);
+
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+
         .primary {
+            background-color: var(--primary-3);
             color: var(--background-color);
-            background-color: var(--primary);
         }
 
         .secondary {
+            background-color: var(--secondary-3);
             color: var(--background-color);
-            background-color: var(--secondary);
         }
 
         .tertiary {
+            background-color: var(--tertiary-3);
             color: var(--background-color);
-            background-color: var(--tertiary);
         }
 
         .contrast {
+            background-color: var(--contrast-3);
             color: var(--background-color);
-            background-color: var(--contrast);
         }
 
         .neutral {
+            background-color: var(--neutral-3);
             color: var(--background-color);
-            background-color: var(--neutral);
         }
 
         .error {
-            color: var(--background-color);
             background-color: var(--error);
+            color: var(--background-color);
         }
 
         .warning {
-            color: var(--background-color);
             background-color: var(--warning);
+            color: var(--background-color);
         }
 
         .success {
-            color: var(--background-color);
             background-color: var(--success);
+            color: var(--background-color);
         }
 
         .info {
-            color: var(--background-color);
             background-color: var(--info);
+            color: var(--background-color);
         }
     }
 
     * {
         --shadow-0: 0 0 0 transparent;
-        --shadow-1: 0 1px 2px light-dark(color-mix(in srgb, var(--neutral-darkest) 50%, transparent), transparent);
-        --shadow-2: 0 3px 6px light-dark(color-mix(in srgb, var(--neutral-darkest) 45%, transparent), transparent);
-        --shadow-3: 0 6px 12px light-dark(color-mix(in srgb, var(--neutral-darkest) 40%, transparent), transparent);
-        --shadow-4: 0 12px 24px light-dark(color-mix(in srgb, var(--neutral-darkest) 35%, transparent), transparent);
-        --shadow-5: 0 20px 40px light-dark(color-mix(in srgb, var(--neutral-darkest) 30%, transparent), transparent);
-        --glow-color: var(--primary);
+        --shadow-1: 0 1px 2px light-dark(color-mix(in srgb, var(--neutral-5) 50%, transparent), transparent);
+        --shadow-2: 0 3px 6px light-dark(color-mix(in srgb, var(--neutral-5) 45%, transparent), transparent);
+        --shadow-3: 0 6px 12px light-dark(color-mix(in srgb, var(--neutral-5) 40%, transparent), transparent);
+        --shadow-4: 0 12px 24px light-dark(color-mix(in srgb, var(--neutral-5) 35%, transparent), transparent);
+        --shadow-5: 0 20px 40px light-dark(color-mix(in srgb, var(--neutral-5) 30%, transparent), transparent);
+        --glow-color: var(--primary-3);
         --shadow-glow-1:
-            0 0 1px light-dark(color-mix(in srgb, var(--neutral-darkest) 50%, transparent), transparent),
+            0 0 1px light-dark(color-mix(in srgb, var(--neutral-5) 50%, transparent), transparent),
             0 0 8px 2px light-dark(transparent, color-mix(in srgb, var(--glow-color) 60%, transparent));
         --shadow-glow-2:
-            0 1px 2px light-dark(color-mix(in srgb, var(--neutral-darkest) 50%, transparent), transparent),
+            0 1px 2px light-dark(color-mix(in srgb, var(--neutral-5) 50%, transparent), transparent),
             0 0 16px 3px light-dark(transparent, color-mix(in srgb, var(--glow-color) 50%, transparent));
         --shadow-glow-3:
-            0 3px 6px light-dark(color-mix(in srgb, var(--neutral-darkest) 45%, transparent), transparent),
+            0 3px 6px light-dark(color-mix(in srgb, var(--neutral-5) 45%, transparent), transparent),
             0 0 28px 4px light-dark(transparent, color-mix(in srgb, var(--glow-color) 40%, transparent));
         --shadow-glow-4:
-            0 6px 12px light-dark(color-mix(in srgb, var(--neutral-darkest) 40%, transparent), transparent),
+            0 6px 12px light-dark(color-mix(in srgb, var(--neutral-5) 40%, transparent), transparent),
             0 0 48px 6px light-dark(transparent, color-mix(in srgb, var(--glow-color) 30%, transparent));
         --shadow-glow-5:
-            0 12px 24px light-dark(color-mix(in srgb, var(--neutral-darkest) 35%, transparent), transparent),
+            0 12px 24px light-dark(color-mix(in srgb, var(--neutral-5) 35%, transparent), transparent),
             0 0 64px 8px light-dark(transparent, color-mix(in srgb, var(--glow-color) 20%, transparent));
     }
 
@@ -238,18 +264,18 @@
         }
 
         a {
-            color: var(--primary);
+            color: var(--primary-3);
             font-weight: 500;
             padding: var(--size-1);
             border-radius: var(--size-1);
 
             &[aria-current="page"] {
                 color: var(--background-color);
-                background-color: var(--primary);
+                background-color: var(--primary-3);
             }
 
             &:focus {
-                outline: 2px solid var(--primary);
+                outline: 2px solid var(--primary-3);
                 border-radius: var(--size-1);
             }
         }
@@ -260,7 +286,8 @@
 
         ::selection,
         mark {
-            background-color: light-dark(var(--primary-lighter), var(--primary-darker));
+            color: var(--primary-5);
+            background-color: var(--primary-3);
         }
 
         em,
@@ -300,7 +327,7 @@
         kbd {
             font-family: var(--font-monospace-code);
             color: var(--color);
-            background-color: light-dark(var(--neutral-lighter), black);
+            background-color: var(--background-color);
             padding: 2px 4px;
             border: 1px solid var(--border-color);
             border-radius: var(--size-1);
@@ -389,7 +416,7 @@
 
             :focus,
             :focus-visible {
-                outline: 2px solid var(--primary);
+                outline: 2px solid var(--primary-3);
                 border-radius: var(--size-1);
             }
 
@@ -399,7 +426,7 @@
 
 @layer forms {
     :where(:root) {
-        accent-color: var(--primary);
+        accent-color: var(--primary-3);
 
         input,
         textarea {
@@ -408,11 +435,11 @@
             padding: var(--size-3) var(--size-4);
             border: 1px solid var(--border-color);
             border-radius: var(--size-2);
-            background-color: light-dark(var(--neutral-lightest), var(--neutral-darkest));
+            background-color: var(--neutral-1);
 
             &[disabled],
             &[readonly] {
-                background-color: light-dark(white, var(--neutral-darker));
+                background-color: var(--neutral-2);
             }
         }
 
@@ -436,8 +463,8 @@
 
         input:focus,
         textarea:focus {
-            border-color: var(--primary);
-            outline: 2px solid var(--primary);
+            border-color: var(--primary-3);
+            outline: 2px solid var(--primary-3);
             outline-offset: -1px;
         }
 
@@ -620,11 +647,6 @@
 
 @layer buttons {
     :where(:root) {
-        --button-color: var(--color);
-        --button-border-color: var(--color);
-        --button-background: var(--background-color);
-        --button-hover: light-dark(white, var(--neutral-darker));
-
         button,
         input[type="submit"],
         a[role="button"] {
@@ -651,7 +673,7 @@
             }
 
             &:focus-visible {
-                outline: 4px solid var(--primary);
+                outline: 4px solid var(--primary-3);
             }
 
             &:focus:not(:focus-visible) {
@@ -663,7 +685,7 @@
             }
 
             &:disabled {
-                background-color: var(--neutral);
+                background-color: var(--button-disabled);
                 box-shadow: var(--shadow-0);
             }
 
@@ -779,10 +801,7 @@
 
         /* The box */
         .box {
-            --box-color: var(--color);
-            --box-background-color: light-dark(white, var(--neutral-darker));
             --box-border-width: var(--layout-border-width);
-            --box-border-color: var(--border-color);
             --box-shadow: var(--shadow-2);
             --box-border-radius: var(--size-3);
             --box-padding: var(--padding);
@@ -1019,7 +1038,7 @@
             -webkit-overflow-scrolling: touch;
             scroll-snap-type: x mandatory;
             padding-block-end: var(--padding);
-            scrollbar-color: var(--primary) var(--background-color);
+            scrollbar-color: var(--primary-3) var(--background-color);
 
             &>* {
                 scroll-snap-align: start;
@@ -1044,7 +1063,7 @@
 
             &.bordered {
                 padding-block: var(--size-3);
-                border: 1px solid var(--border-color);
+                border: var(--layout-border-width) solid var(--border-color);
             }
         }
 
@@ -1078,11 +1097,11 @@
         }
 
         .text-light {
-            color: var(--neutral-lightest);
+            color: light-dark(var(--neutral-1), var(--neutral-5));
         }
 
         .text-dark {
-            color: var(--neutral-darkest);
+            color: light-dark(var(--neutral-5), var(--neutral-1));
         }
 
         .text-default {
@@ -1090,19 +1109,19 @@
         }
 
         .text-primary {
-            color: var(--primary);
+            color: var(--primary-3);
         }
 
         .text-secondary {
-            color: var(--secondary);
+            color: var(--secondary-3);
         }
 
         .text-tertiary {
-            color: var(--tertiary);
+            color: var(--tertiary-3);
         }
 
         .text-contrast {
-            color: var(--contrast);
+            color: var(--contrast-3);
         }
 
         .text-error {
@@ -1489,52 +1508,57 @@
             -webkit-user-select: none;
         }
 
-        .primary {
+        .primary:not(:disabled) {
+            --button-background: var(--primary-3);
             --button-color: var(--background-color);
-            --button-border-color: var(--primary);
-            --button-background: var(--primary);
-            --button-hover: var(--primary-lighter);
-            --box-background-color: light-dark(var(--primary-lighter), var(--primary-darker));
-            --box-border-color: light-dark(var(--primary-lightest), var(--primary-darkest));
+            --button-border-color: var(--primary-3);
+            --button-hover: light-dark(var(--primary-2), var(--primary-4));
+            --box-color: var(--primary-1);
+            --box-background-color: var(--primary-3);
+            --box-border-color: var(--primary-4);
         }
 
-        .secondary {
+        .secondary:not(:disabled) {
+            --button-background: var(--secondary-3);
             --button-color: var(--background-color);
-            --button-border-color: var(--secondary);
-            --button-background: var(--secondary);
-            --button-hover: var(--secondary-lighter);
-            --glow-color: var(--secondary);
-            --box-background-color: light-dark(var(--secondary-lighter), var(--secondary-darker));
-            --box-border-color: light-dark(var(--secondary-lightest), var(--secondary-darkest));
+            --button-border-color: var(--secondary-3);
+            --button-hover: light-dark(var(--secondary-2), var(--secondary-4));
+            --glow-color: var(--secondary-3);
+            --box-color: var(--secondary-1);
+            --box-background-color: var(--secondary-3);
+            --box-border-color: var(--secondary-4);
         }
 
-        .tertiary {
+        .tertiary:not(:disabled) {
+            --button-background: var(--tertiary-3);
             --button-color: var(--background-color);
-            --button-border-color: var(--tertiary);
-            --button-background: var(--tertiary);
-            --button-hover: var(--tertiary-lighter);
-            --glow-color: var(--tertiary);
-            --box-background-color: light-dark(var(--tertiary-lighter), var(--tertiary-darker));
-            --box-border-color: light-dark(var(--tertiary-lightest), var(--tertiary-darkest));
+            --button-border-color: var(--tertiary-3);
+            --button-hover: light-dark(var(--tertiary-2), var(--tertiary-4));
+            --glow-color: var(--tertiary-3);
+            --box-color: var(--tertiary-1);
+            --box-background-color: var(--tertiary-3);
+            --box-border-color: var(--tertiary-4);
         }
 
-        .contrast {
+        .contrast:not(:disabled) {
+            --button-background: var(--contrast-3);
             --button-color: var(--background-color);
-            --button-border-color: var(--contrast);
-            --button-background: var(--contrast);
-            --button-hover: var(--contrast-lighter);
-            --glow-color: var(--contrast);
-            --box-background-color: light-dark(var(--contrast-lighter), var(--contrast-darker));
-            --box-border-color: light-dark(var(--contrast-lightest), var(--contrast-darkest));
+            --button-border-color: var(--contrast-3);
+            --button-hover: light-dark(var(--contrast-2), var(--contrast-4));
+            --glow-color: var(--contrast-3);
+            --box-color: var(--contrast-1);
+            --box-background-color: var(--contrast-3);
+            --box-border-color: var(--contrast-4);
         }
 
-        .neutral {
+        .neutral:not(:disabled) {
+            --button-background: var(--neutral-3);
             --button-color: var(--background-color);
-            --button-border-color: light-dark(var(--neutral-darker), var(--neutral));
-            --button-background: light-dark(var(--neutral-darker), var(--neutral));
-            --button-hover: light-dark(var(--neutral), var(--neutral-lighter));
-            --box-background-color: light-dark(var(--neutral), var(--neutral));
-            --box-border-color: light-dark(var(--neutral-darker), var(--neutral-lighter));
+            --button-border-color: var(--neutral-3);
+            --button-hover: light-dark(var(--neutral-2), var(--neutral-4));
+            --box-color: var(--neutral-1);
+            --box-background-color: var(--neutral-3);
+            --box-border-color: var(--neutral-4);
         }
 
         .error {
