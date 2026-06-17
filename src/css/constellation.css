@@ -361,7 +361,7 @@
 @layer symantic {
     :where(:root) {
         body {
-            margin: var(--size-4);
+            margin-inline: var(--size-4);
 
             &.fullscreen {
                 container-type: inline-size;
