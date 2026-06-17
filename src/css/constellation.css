@@ -25,26 +25,16 @@
     }
 
     :where(:root, [data-theme]) {
-        --primary-1: light-dark(
-            oklch(from var(--primary-3) calc(l + 0.50) calc(c * 0.05) h),
-            oklch(from var(--primary-3) calc(l - 0.50) calc(c * 0.15) h)
-        );
-        --primary-2: light-dark(
-            oklch(from var(--primary-3) calc(l + 0.30) calc(c * 0.40) h),
-            oklch(from var(--primary-3) calc(l - 0.40) calc(c * 0.40) h)
-        );
-        --primary-3: light-dark(
-            oklch(from var(--brand) clamp(0.40, l, 0.50) c h),
-            oklch(from var(--brand) clamp(0.60, calc(l + 0.20), 0.70) c h)
-        );
-        --primary-4: light-dark(
-            oklch(from var(--primary-3) calc(l - 0.15) c h),
-            oklch(from var(--primary-3) calc(l + 0.20) calc(c * 0.40) h)
-        );
-        --primary-5: light-dark(
-            oklch(from var(--primary-3) calc(l - 0.30) calc(c * 0.40) h),
-            oklch(from var(--primary-3) calc(l + 0.30) calc(c * 0.15) h)
-        );
+        --primary-1: light-dark(oklch(from var(--primary-3) calc(l + 0.50) calc(c * 0.05) h),
+                oklch(from var(--primary-3) calc(l - 0.50) calc(c * 0.15) h));
+        --primary-2: light-dark(oklch(from var(--primary-3) calc(l + 0.30) calc(c * 0.40) h),
+                oklch(from var(--primary-3) calc(l - 0.40) calc(c * 0.40) h));
+        --primary-3: light-dark(oklch(from var(--brand) clamp(0.40, l, 0.50) c h),
+                oklch(from var(--brand) clamp(0.60, calc(l + 0.20), 0.70) c h));
+        --primary-4: light-dark(oklch(from var(--primary-3) calc(l - 0.15) c h),
+                oklch(from var(--primary-3) calc(l + 0.20) calc(c * 0.40) h));
+        --primary-5: light-dark(oklch(from var(--primary-3) calc(l - 0.30) calc(c * 0.40) h),
+                oklch(from var(--primary-3) calc(l + 0.30) calc(c * 0.15) h));
         --secondary-1: oklch(from var(--primary-1) l c calc(h + var(--color-degrees)));
         --secondary-2: oklch(from var(--primary-2) l c calc(h + var(--color-degrees)));
         --secondary-3: oklch(from var(--primary-3) l c calc(h + var(--color-degrees)));
@@ -390,21 +380,6 @@
             }
         }
 
-        hr {
-            height: var(--size-2);
-            background-color: var(--color);
-            border-color: var(--color);
-            margin-block: var(--size-4);
-        }
-
-        menu {
-            list-style: none;
-
-            a {
-                display: block;
-            }
-        }
-
         details {
             summary {
                 cursor: pointer;
@@ -421,6 +396,37 @@
                 border-radius: var(--size-1);
             }
 
+        }
+
+        hr {
+            height: var(--size-2);
+            background-color: var(--color);
+            border-color: var(--color);
+            margin-block: var(--size-4);
+        }
+
+        ol,
+        ul {
+            margin-inline-start: var(--padding);
+        }
+
+        menu {
+            list-style: none;
+
+            a {
+                display: block;
+            }
+        }
+
+        dl {
+            dt {
+                font-weight: 700;
+            }
+            
+            dd {
+                list-style: inside;
+                margin-inline-start: var(--padding);
+            }
         }
     }
 }

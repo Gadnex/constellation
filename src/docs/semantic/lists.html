@@ -1,0 +1,73 @@
+---
+title: Lists
+pageOrder: 3
+---
+<p>
+    HTML has a number of list elements.
+    The most well known list elements are odered lists and unordered lists,
+    but these are not the only variants.
+</p>
+
+<h3>Ordered lists</h3>
+<p>
+    Ordered lists have items numbered from one onwards.
+    They are created using the <kbd>ol</kbd> element with nested <kbd>li</kbd> elements.
+</p>
+<div class="box">
+    <ol>
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+    </ol>
+</div>
+
+<h3>Unordered lists</h3>
+<p>
+    Unordered lists have items presented as a bulleted list.
+    They are created using the <kbd>ul</kbd> element with nested <kbd>li</kbd> elements.
+</p>
+<div class="box">
+    <ul>
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+    </ul>
+</div>
+
+<h3>Menu lists</h3>
+<p>
+    HTML also has a <kbd>menu</kbd> element that is treated by the browser as an <kbd>ul</kbd>.
+    They are created using the <kbd>menu</kbd> element with nested <kbd>li</kbd> elements.
+</p>
+<p>
+    Constellation CSS has made an opinionated decition to remove the bullets for a menu.
+    Anchor <kbd>a</kbd> elements inside the list items are also converted to block level elements
+    so that they fill the entire width of their parent.
+    This has the effect that you can click next to the anchor to navigate the link.
+</p>
+<p>
+    You can also put the <kbd>aria-current="page"</kbd> attibute on the anchor element to show
+    that this is the current page in the menu.
+</p>
+<div class="box">
+    <menu id="this-menu">
+        <li><a href="#this-menu" aria-current="page">Menu item one</a></li>
+        <li><a href="#this-menu">Menu item two</a></li>
+        <li><a href="#this-menu">Menu item three</a></li>
+    </menu>
+</div>
+
+<h3>Description lists</h3>
+<p>
+    Description lists have items pairs that represent as title and a description.
+    They are created using the <kbd>dl</kbd> element with nested pairs of
+    <kbd>dt</kbd> and <kbd>dd</kbd> elements.
+</p>
+<div class="box">
+    <dl>
+        <dt>Coffee</dt>
+        <dd>black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>white cold drink</dd>
+    </dl>
+</div>
