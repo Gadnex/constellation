@@ -236,6 +236,7 @@
         }
 
         h1 {
+            margin-block: 0;
             font-size: var(--font-size-6);
         }
 
