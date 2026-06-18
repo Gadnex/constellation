@@ -313,7 +313,7 @@
             }
 
             &:focus {
-                outline: 2px solid var(--primary-3);
+                outline: var(--outline-width) solid var(--primary-3);
                 border-radius: var(--size-1);
             }
         }
@@ -406,6 +406,8 @@
         --size-11: clamp(6.75rem, 5.8295rem + 4.0909vw, 9rem);
         --size-12: clamp(7.875rem, 6.8011rem + 4.7727vw, 10.5rem);
         --padding: var(--size-4);
+        --border-width: 1px;
+        --outline-width: 2px;
 
         .text-neg-2 {
             font-size: var(--font-size-neg-2);
@@ -488,7 +490,7 @@
 
             :focus,
             :focus-visible {
-                outline: 2px solid var(--primary-3);
+                outline: var(--outline-width) solid var(--primary-3);
                 border-radius: var(--size-1);
             }
 
@@ -529,15 +531,20 @@
 
 @layer forms {
     :where(:root) {
+        --field-font-size: var(--font-size-0);
+        --field-border-radius: var(--size-2);
+        --field-border-width: var(--border-width);
+        --field-padding: var(--size-3) var(--size-4);
+
         accent-color: var(--primary-3);
 
         input,
         textarea {
-            font-size: var(--font-size-0);
+            font-size: var(--field-font-size);
             max-inline-size: 100%;
-            padding: var(--size-3) var(--size-4);
-            border: 1px solid var(--border-color);
-            border-radius: var(--size-2);
+            padding: var(--field-padding);
+            border: var(--field-border-width) solid var(--border-color);
+            border-radius: var(--field-border-radius);
             background-color: var(--neutral-1);
 
             &[disabled],
@@ -567,8 +574,8 @@
         input:focus,
         textarea:focus {
             border-color: var(--primary-3);
-            outline: 2px solid var(--primary-3);
-            outline-offset: -1px;
+            outline: var(--outline-width) solid var(--primary-3);
+            outline-offset: calc(-1 * var(--field-border-width));
         }
 
         input[aria-invalid="true"]+*,
@@ -595,26 +602,11 @@
         }
 
         input[type="color"] {
-            /* -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none; */
             padding: 0 var(--size-1);
             margin: 0;
-
-            /* width: var(--size-7);
+            width: var(--size-10);
             height: var(--size-6);
-            border: none; */
         }
-
-        /* input[type=color]::-webkit-color-swatch {
-            border-radius: var(--size-2);
-            border: 2px solid var(--border-color);
-        }
-
-        input[type=color]::-moz-color-swatch {
-            border-radius: var(--size-2);
-            border: 2px solid var(--border-color);
-        } */
 
         /* input[type=file] {
             padding: var(--size-2);
@@ -637,135 +629,96 @@
 
         input[type="checkbox"],
         input[type="radio"] {
-            width: var(--size-4);
-            height: var(--size-4);
-            accent-color: var(--brand-color);
+            width: 1rem;
+            height: 1rem;
         }
 
-        input:read-only {
-            outline: 0;
+        fieldset {
+            padding: var(--size-2) var(--size-3);
+            border: var(--field-border-width) solid var(--border-color);
+            border-radius: var(--field-border-radius);
         }
 
-        /* form {
-
-            label {
-                text-wrap: nowrap;
-            }
-
-            :where(label:not(:has(input[type=checkbox], input[type=radio]))) {
-                display: flex;
-                flex-direction: column;
-
-                input {
-                    margin-inline: 0;
-                }
-            }
-
-            fieldset {
-                padding: var(--size-3) var(--size-4);
-                margin: var(--size-2);
-                margin-block-start: var(--size-6);
-                border: 2px solid var(--surface-2);
-                border-radius: var(--radius-2);
-                position: relative;
-
-                legend {
-                    position: absolute;
-                    top: calc(var(--size-6) * -1);
-                    left: calc(var(--size-2) * -1);
-                    text-wrap: nowrap;
-                }
-            }
-
-            footer {
-                display: flex;
-                justify-content: end;
-                gap: var(--size-4);
-                padding-block: var(--size-4);
-            }
-
-            button,
-            input[type=submit],
-            a[role=button] {
-                padding: var(--size-4) var(--size-5);
-                margin: 0;
-            }
-        } */
-
-        /* select,
+        select,
         ::picker(select) {
             appearance: base-select;
+            background-color: var(--background-color);
+        }
+
+        ::picker(select) {
+            margin-block-start: var(--size-1);
+            border-radius: var(--field-border-radius);
         }
 
         select {
-            padding: var(--size-3) var(--size-4);
-            margin: var(--size-2);
-            border: 2px solid var(--surface-2);
-            border-radius: var(--radius-2);
-            background-position: -10px;
+            margin-block: var(--size-1);
+            padding: var(--size-1) var(--size-2);
+            border: var(--field-border-width) solid var(--border-color);
+            border-radius: var(--field-border-radius);
 
-            button {
+            /* button {
                 font-size: var(--font-size-1);
                 font-weight: var(--font-weight-2);
-                background-color: var(--background-color);
-                color: var(--color);
                 border: none;
                 padding: 0;
                 margin: 0;
-            }
+            } */
 
             option {
                 margin: 0;
-                padding-inline: var(--size-3);
-                border-radius: var(--radius-2);
+                padding-inline-start: var(--size-2);
             }
         }
 
-        select:hover {
+        /* select:hover {
             background-color: var(--surface-1);
 
             button {
                 background-color: var(--surface-1);
             }
-        }
+        } */
 
-        ::picker(select) {
+        /* ::picker(select) {
             padding: var(--size-2);
             border: 2px solid var(--surface-2);
             border-radius: var(--radius-2);
             background-color: var(--surface-1);
             top: calc(anchor(bottom) + 1px);
-        }
+        } */
 
         select::picker-icon {
-            color: var(--color);
             transition: 0.4s rotate;
         }
 
         select:open::picker-icon {
             rotate: 180deg;
-        } */
+        }
     }
 }
 
 @layer buttons {
     :where(:root) {
+        --button-border-radius: var(--size-2);
+        --button-padding: var(--size-3) var(--size-4);
+        --button-font-size: var(--font-size-1);
+        --button-border-width: var(--border-width);
+
         button,
         input[type="submit"],
         a[role="button"] {
             display: inline-block;
-            padding: var(--size-3) var(--size-4);
+            padding: var(--button-padding);
             color: var(--button-color);
             background-color: var(--button-background);
-            border: 2px solid var(--button-border-color);
-            border-radius: var(--size-2);
-            font-size: var(--font-size-1);
+            border: var(--button-border-width) solid var(--button-border-color);
+            border-radius: var(--button-border-radius);
+            font-size: var(--button-font-size);
             font-weight: 400;
             text-decoration: none;
             text-align: center;
             line-height: 1;
             vertical-align: middle;
-            outline-offset: 2px;
+            outline-offset: var(--border-width);
             user-select: none;
             -webkit-user-select: none;
             box-shadow: var(--shadow-3);
@@ -776,7 +729,7 @@
             }
 
             &:focus-visible {
-                outline: 4px solid var(--primary-3);
+                outline: var(--outline-width) solid var(--primary-3);
             }
 
             &:focus:not(:focus-visible) {
@@ -814,7 +767,14 @@
 
 @layer layout {
     :where(:root) {
-        --layout-border-width: 1px;
+        --layout-border-width: var(--border-width);
+        --layout-border-radius: var(--size-3);
+        --layout-box-padding: var(--padding);
+        --layout-shadow: var(--shadow-2);
+        --box-border-width: var(--layout-border-width);
+        --box-border-radius: var(--layout-border-radius);
+        --box-padding: var(--layout-box-padding);
+        --box-shadow: var(--layout-shadow);
 
         /* The stack */
         .stack {
@@ -864,11 +824,6 @@
 
         /* The box */
         .box {
-            --box-border-width: var(--layout-border-width);
-            --box-shadow: var(--shadow-2);
-            --box-border-radius: var(--size-3);
-            --box-padding: var(--padding);
-
             color: var(--box-color);
             background-color: var(--box-background-color);
             border: var(--box-border-width) solid var(--box-border-color);
