@@ -4,7 +4,8 @@ pageOrder: 2
 ---
 <p>
     The box is a layout component designed for placing a number of HTML elements inside a bordered box.
-    The box has a has a visible border with a border radius and some padding to ensure the content of the box does not touch the border.
+    The box has a has a visible border with a border radius and some padding to ensure the content of the box does not
+    touch the border.
 </p>
 <p>
     The box is applied by setting <kbd>class="box"</kbd> on an HTML element.
@@ -21,7 +22,8 @@ pageOrder: 2
 <h4>Color utilities</h4>
 <p>
     There are a number CSS color utility classes to set for a box.
-    These utility classes can be applied for example as <kbd>class="box primary"</kbd> to create a box with the primary color scheme.
+    These utility classes can be applied for example as <kbd>class="box primary"</kbd> to create a box with the primary
+    color scheme.
     Below are examples of all the color utility classes.
 </p>
 <div class="grid max-cols-3">
@@ -60,8 +62,9 @@ pageOrder: 2
 <h4>Padding utilities</h4>
 <p>
     There are a number CSS padding utility classes to set for a box.
-    These utility classes can be applied for example as <kbd>class="box p-3"</kbd> padding using the responsive CSS size variable --size-3.
-    The padding class <kbd>p-0</kbd> means that there is no padding at all. 
+    These utility classes can be applied for example as <kbd>class="box p-3"</kbd> padding using the responsive CSS size
+    variable --size-3.
+    The padding class <kbd>p-0</kbd> means that there is no padding at all.
     Below are examples of all the padding utility classes.
 </p>
 <div class="grid max-cols-3">
@@ -107,37 +110,38 @@ pageOrder: 2
 <p>
     The following CSS variables are defined for the cluster.
 </p>
-<div>
-    <div>
-        <strong class="text-primary">--box-color:</strong>
-         Set the font color of text in the box.
+<dl>
+    <dt class="text-contrast">--box-color:</dt>
+    <dd>Set the font color of text in the box.</dd>
+
+    <dt class="text-contrast">--box-background-color:</dt>
+    <dd>Set the background color of the box.</dd>
+
+    <dt class="text-contrast">--box-border-width:</dt>
+    <dd>
+        Set the box border width in px.
+        Not suggested to use the size responsive variables here.
+    </dd>
+
+    <dt class="text-contrast">--box-border-color:</dt>
+    <dd>Set the border color of the box.</dd>
+
+    <dt class="text-contrast">--box-shadow:</dt>
+    <dd>
+        Set the shadow of the box.
+        One of the shadow CSS variables could be used here.
+    </dd>
+
+    <dt class="text-contrast">--box-border-radius:</dt>
+    <dd>
+        Set the border radius of the box.
+        It is suggested to use the --size-{1-12} CSS variables to have a responsive border radius.
+    </dd>
+
+    <dt class="text-contrast">--box-padding:</dt>
+    <dd>
+        Set the padding of the box.
+        It is suggested to use the --size-{1-12} CSS variables to have a responsive padding size.
+    </dd>
     </div>
-    <div>
-        <strong class="text-primary">--box-background-color:</strong>
-         Set the background color of the box.
-    </div>
-    <div>
-        <strong class="text-primary">--box-border-width:</strong>
-         Set the box border width in px.
-         Not suggested to use the size responsive variables here.
-    </div>
-    <div>
-        <strong class="text-primary">--box-border-color:</strong>
-         Set the border color of the box.
-    </div>
-    <div>
-        <strong class="text-primary">--box-shadow:</strong>
-         Set the shadow of the box.
-         One of the shadow CSS variables could be used here.
-    </div>
-    <div>
-        <strong class="text-primary">--box-border-radius:</strong>
-         Set the border radius of the box.
-         It is suggested to use the --size-{1-12} CSS variables to have a responsive border radius.
-    </div>
-    <div>
-        <strong class="text-primary">--box-padding:</strong>
-         Set the padding of the box.
-         It is suggested to use the --size-{1-12} CSS variables to have a responsive padding size.
-    </div>
-</div>
+</dl>
