@@ -894,14 +894,6 @@
             max-inline-size: var(--center-max-inline-size);
             margin-inline: auto;
             padding-inline: var(--center-padding);
-
-            &>:first-child {
-                margin-block-start: 0;
-            }
-
-            &>:last-child {
-                margin-block-end: 0;
-            }
         }
 
         /* The cluster */
@@ -936,14 +928,14 @@
                 flex: 1 1 30ch;
                 min-inline-size: 0;
                 outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
-                padding: var(--sidebar-padding);
+                padding-inline: var(--sidebar-padding);
                 background-color: var(--sidebar-background-color);
             }
 
             &> :not(.sidebar) {
                 flex: 999 1 0;
                 min-inline-size: 50%;
-                padding: var(--sidebar-padding);
+                padding-inline: var(--sidebar-padding);
             }
         }
 
