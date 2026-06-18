@@ -102,48 +102,48 @@ pageOrder: 4
 </p>
 <div class="stack">
     <div>
-        <strong>h-start (Default)</strong>
-        <div class="box cluster h-start">
+        <strong>main-start (Default)</strong>
+        <div class="box cluster main-start">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-end</strong>
-        <div class="box cluster h-end">
+        <strong>main-end</strong>
+        <div class="box cluster main-end">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-center</strong>
-        <div class="box cluster h-center">
+        <strong>main-center</strong>
+        <div class="box cluster main-center">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-space-between</strong>
-        <div class="box cluster h-space-between">
+        <strong>main-space-between</strong>
+        <div class="box cluster main-space-between">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-space-around</strong>
-        <div class="box cluster h-space-around">
+        <strong>main-space-around</strong>
+        <div class="box cluster main-space-around">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-space-evenly</strong>
-        <div class="box cluster h-space-evenly">
+        <strong>main-space-evenly</strong>
+        <div class="box cluster main-space-evenly">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
@@ -159,8 +159,8 @@ pageOrder: 4
 </p>
 <div class="stack">
     <div>
-        <strong>v-start</strong>
-        <div class="box cluster v-start">
+        <strong>cross-start</strong>
+        <div class="box cluster cross-start">
             <div class="p-2 primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -169,8 +169,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>v-end</strong>
-        <div class="box cluster v-end">
+        <strong>cross-end</strong>
+        <div class="box cluster cross-end">
             <div class="p-2 primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -179,8 +179,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>v-center</strong>
-        <div class="box cluster v-center">
+        <strong>cross-center</strong>
+        <div class="box cluster cross-center">
             <div class="p-2 primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -189,8 +189,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>v-stretch (Default)</strong>
-        <div class="box cluster v-stretch">
+        <strong>cross-stretch (Default)</strong>
+        <div class="box cluster cross-stretch">
             <div class="p-2 primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -199,8 +199,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>v-baseline</strong>
-        <div class="box cluster v-baseline">
+        <strong>cross-baseline</strong>
+        <div class="box cluster cross-baseline">
             <div class="p-4 primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -216,20 +216,20 @@ pageOrder: 4
     but it is not recommended to nest more than 2 levels deep.
 </p>
 <p>
-    The below example has a cluster with the CSS classes <kbd>cluster</kbd> and <kbd>h-space-between</kbd>.
-    Within the cluster are two more clusters with the CSS classes <kbd>cluster</kbd> and <kbd>h-center</kbd>.
+    The below example has a cluster with the CSS classes <kbd>cluster</kbd> and <kbd>main-space-between</kbd>.
+    Within the cluster are two more clusters with the CSS classes <kbd>cluster</kbd> and <kbd>main-center</kbd>.
 </p>
 <p>
-    When the outer cluster is not wrapped the <kbd>h-center</kbd> of the inner 2 clusters have no effect
+    When the outer cluster is not wrapped the <kbd>main-center</kbd> of the inner 2 clusters have no effect
     as the inner clusters are the size of their contents.
     But when the outer cluster is wrapped a CSS container query will set the CSS property <kbd>flex-grow: 1;</kbd>
-    on the inner clusters so that their <kbd>h-center</kbd> will have an effect.
+    on the inner clusters so that their <kbd>main-center</kbd> will have an effect.
 </p>
-<div class="box cluster h-space-between v-center gap-r-0 container">
-    <div class="cluster h-center">
+<div class="box cluster main-space-between cross-center gap-r-0 container">
+    <div class="cluster main-center">
         <strong class="text-3 text-layout">MySite</strong>
     </div>
-    <menu id="this-menu" class="cluster h-center gap-r-0 gap-c-2">
+    <menu id="this-menu" class="cluster main-center gap-r-0 gap-c-2">
         <li><a href="#this-menu">Home</a></li>
         <li><a href="#this-menu">About</a></li>
         <li><a href="#this-menu">Products</a></li>

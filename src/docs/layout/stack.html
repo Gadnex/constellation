@@ -90,42 +90,42 @@ pageOrder: 1
 </p>
 <div class="stack">
     <div>
-        <strong>v-start (Default)</strong>
-        <div class="box stack v-start" style="min-block-size: 200px;">
+        <strong>main-start (Default)</strong>
+        <div class="box stack main-start" style="min-block-size: 200px;">
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>v-end</strong>
-        <div class="box stack v-end" style="min-block-size: 200px;">
+        <strong>main-end</strong>
+        <div class="box stack main-end" style="min-block-size: 200px;">
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>v-center</strong>
-        <div class="box stack v-center" style="min-block-size: 200px;">
+        <strong>main-center</strong>
+        <div class="box stack main-center" style="min-block-size: 200px;">
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>v-space-between</strong>
-        <div class="box stack v-space-between" style="min-block-size: 300px;">
+        <strong>main-space-between</strong>
+        <div class="box stack main-space-between" style="min-block-size: 300px;">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>v-space-around</strong>
-        <div class="box stack v-space-around" style="min-block-size: 300px;">
+        <strong>main-space-around</strong>
+        <div class="box stack main-space-around" style="min-block-size: 300px;">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>v-space-evenly</strong>
-        <div class="box stack v-space-evenly" style="min-block-size: 300px;">
+        <strong>main-space-evenly</strong>
+        <div class="box stack main-space-evenly" style="min-block-size: 300px;">
             <div class="p-2 primary">Element</div>
             <div class="p-2 contrast">Element</div>
             <div class="p-2 primary">Element</div>
@@ -141,26 +141,26 @@ pageOrder: 1
 </p>
 <div class="stack">
     <div>
-        <strong>h-start</strong>
-        <div class="box stack h-start">
+        <strong>cross-start</strong>
+        <div class="box stack cross-start">
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-end</strong>
-        <div class="box stack h-end">
+        <strong>cross-end</strong>
+        <div class="box stack cross-end">
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-center</strong>
-        <div class="box stack h-center">
+        <strong>cross-center</strong>
+        <div class="box stack cross-center">
             <div class="p-2 primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>h-stretch (Default)</strong>
-        <div class="box stack h-stretch">
+        <strong>cross-stretch (Default)</strong>
+        <div class="box stack cross-stretch">
             <div class="p-2 primary">Element</div>
         </div>
     </div>
@@ -174,12 +174,12 @@ pageOrder: 1
 </p>
 <p>
     The example below has a div element with the classes <kbd>frame</kbd>, <kbd>stack</kbd>, <kbd>on-top</kbd>,
-    <kbd>v-center</kbd> and <kbd>h-center</kbd> applied. Inside the div element is an image (img) element followed by a
+    <kbd>main-center</kbd> and <kbd>cross-center</kbd> applied. Inside the div element is an image (img) element followed by a
     div element with some image text. Instead of the text appearing below the image in the stack, it appears
     on top of the image and centered vertically and horizontally.
 </p>
 <div class="center w-max-40ch">
-    <div class="frame stack on-top v-center h-center">
+    <div class="frame stack on-top main-center cross-center">
         <img src="/img/stars.jpg" alt="Image of stars">
         <div class="text-light">Image text</div>
     </div>
@@ -194,21 +194,21 @@ pageOrder: 1
 <div class="switcher">
     <div>
         <strong>No gradient</strong>
-        <div class="frame primary stack on-top v-center h-center">
+        <div class="frame primary stack on-top main-center cross-center">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
     </div>
     <div>
         <strong>gradient-top</strong>
-        <div class="frame primary stack on-top v-start h-center gradient-top">
+        <div class="frame primary stack on-top main-start cross-center gradient-top">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
     </div>
     <div>
         <strong>gradient-bottom</strong>
-        <div class="frame primary stack on-top v-end h-center gradient-bottom">
+        <div class="frame primary stack on-top main-end cross-center gradient-bottom">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
