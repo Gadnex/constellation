@@ -928,14 +928,14 @@
                 flex: 1 1 30ch;
                 min-inline-size: 0;
                 outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
-                padding-inline: var(--sidebar-padding);
+                padding: var(--sidebar-padding);
                 background-color: var(--sidebar-background-color);
             }
 
             &> :not(.sidebar) {
                 flex: 999 1 0;
                 min-inline-size: 50%;
-                padding-inline: var(--sidebar-padding);
+                padding: var(--sidebar-padding);
             }
         }
 
