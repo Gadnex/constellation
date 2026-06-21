@@ -52,6 +52,22 @@
         </fieldset>
 
         <fieldset>
+            <legend>Background</legend>
+            <label>
+                <input type="radio" name="background" value="neutral"
+                    data-on:click="$_backgroundPrimary = ''; localStorage.removeItem('background-primary')"
+                    data-attr:checked="$_backgroundPrimary === '' ? true : false">
+                Neutral
+            </label>
+            <label>
+                <input type="radio" name="background" value="primary"
+                    data-on:click="$_backgroundPrimary = 'true'; localStorage.setItem('background-primary', $_backgroundPrimary)"
+                    data-attr:checked="$_backgroundPrimary === 'true' ? true : false">
+                Primary
+            </label>
+        </fieldset>
+
+        <fieldset>
             <legend>CSS</legend>
             <label>
                 <input type="radio" name="css" value="enabled" data-on:click="$_cssToggle = true"

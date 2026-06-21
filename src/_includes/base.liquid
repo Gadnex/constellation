@@ -1,66 +1,77 @@
-<!DOCTYPE html>
-<html lang="en"
-    data-signals:_brand="localStorage.getItem('brand-color') !== null ? localStorage.getItem('brand-color') : '#238fff'"
-    data-style:--brand="$_brand" data-signals:_dark-theme="localStorage.getItem('dark-theme')"
-    data-signals:_color-degrees="localStorage.getItem('color-degrees') !== null ? localStorage.getItem('color-degrees') : 35"
-    data-style:--color-degrees="$_colorDegrees" data-signals:_--color-degrees="localStorage.getItem('color-degrees')"
-    data-attr:data-theme="$_darkTheme === '' ? 'light dark' : $_darkTheme === 'true' ? 'dark' : 'light'">
-
-<head>
+<!doctype html>
+<html
+  lang="en"
+  data-signals:_brand="localStorage.getItem('brand-color') !== null ? localStorage.getItem('brand-color') : '#238fff'"
+  data-style:--brand="$_brand"
+  data-signals:_color-degrees="localStorage.getItem('color-degrees') !== null ? localStorage.getItem('color-degrees') : 35"
+  data-style:--color-degrees="$_colorDegrees"
+  data-signals:_--color-degrees="localStorage.getItem('color-degrees')"
+  data-signals:_dark-theme="localStorage.getItem('dark-theme')"
+  data-attr:data-theme="$_darkTheme === '' ? 'light dark' : $_darkTheme === 'true' ? 'dark' : 'light'"
+  data-signals:_background-primary="localStorage.getItem('background-primary')"
+  data-class:primary="$_backgroundPrimary === 'true'"
+>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#238fff" data-attr:content="$_brand">
-    <link rel="stylesheet" href="/css/constellation.min.css" data-signals:_css-toggle="true"
-        data-attr:disabled="!$_cssToggle">
+    <link
+      rel="stylesheet"
+      href="/css/constellation.min.css"
+      data-signals:_css-toggle="true"
+      data-attr:disabled="!$_cssToggle"
+    >
     <link rel="stylesheet" href="/css/styles.css">
     <script type="module" src="/js/datastar.js"></script>
-    <title>Constellation: {{ title }}</title>
-</head>
+    <title>
+      Constellation:
+      {{ title }}
+    </title>
+  </head>
 
-<body class="fullscreen">
+  <body class="fullscreen">
     {% include 'settings' %}
     <div class="sidebar-container">
-        <div class="sidebar stack">
-            <header>
-                <h1 class="brand">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="brand-logo" aria-hidden="true">
-                        <polygon points="50,37 53,44 60,44 55,49 57,56 50,52 43,56 45,49 40,44 47,44"
-                            fill="currentColor" />
-                        <polygon points="50,20 76,35 76,65 50,80 24,65 24,35" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linejoin="round" />
-                        <circle cx="50" cy="12" r="4" fill="currentColor" />
-                        <circle cx="83" cy="31" r="4" fill="currentColor" />
-                        <circle cx="83" cy="69" r="4" fill="currentColor" />
-                        <circle cx="50" cy="88" r="4" fill="currentColor" />
-                        <circle cx="17" cy="69" r="4" fill="currentColor" />
-                        <circle cx="17" cy="31" r="4" fill="currentColor" />
-                        <line x1="50" y1="20" x2="50" y2="12" stroke="currentColor" stroke-width="2" />
-                        <line x1="76" y1="35" x2="83" y2="31" stroke="currentColor" stroke-width="2" />
-                        <line x1="76" y1="65" x2="83" y2="69" stroke="currentColor" stroke-width="2" />
-                        <line x1="50" y1="80" x2="50" y2="88" stroke="currentColor" stroke-width="2" />
-                        <line x1="24" y1="65" x2="17" y2="69" stroke="currentColor" stroke-width="2" />
-                        <line x1="24" y1="35" x2="17" y2="31" stroke="currentColor" stroke-width="2" />
-                    </svg>
-                    <span class="brand-text">Constellation <span class="text-suffix">CSS</span></span>
-                </h1>
-            </header>
-            <nav aria-label="Main Navigation">
-                {% include 'menu' %}
-            </nav>
-            <!-- <div data-json-signals></div> -->
+      <div class="sidebar stack">
+        <header>
+          <h1 class="brand">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="brand-logo" aria-hidden="true">
+              <polygon points="50,37 53,44 60,44 55,49 57,56 50,52 43,56 45,49 40,44 47,44"
+                  fill="currentColor" />
+              <polygon points="50,20 76,35 76,65 50,80 24,65 24,35" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linejoin="round" />
+              <circle cx="50" cy="12" r="4" fill="currentColor" />
+              <circle cx="83" cy="31" r="4" fill="currentColor" />
+              <circle cx="83" cy="69" r="4" fill="currentColor" />
+              <circle cx="50" cy="88" r="4" fill="currentColor" />
+              <circle cx="17" cy="69" r="4" fill="currentColor" />
+              <circle cx="17" cy="31" r="4" fill="currentColor" />
+              <line x1="50" y1="20" x2="50" y2="12" stroke="currentColor" stroke-width="2" />
+              <line x1="76" y1="35" x2="83" y2="31" stroke="currentColor" stroke-width="2" />
+              <line x1="76" y1="65" x2="83" y2="69" stroke="currentColor" stroke-width="2" />
+              <line x1="50" y1="80" x2="50" y2="88" stroke="currentColor" stroke-width="2" />
+              <line x1="24" y1="65" x2="17" y2="69" stroke="currentColor" stroke-width="2" />
+              <line x1="24" y1="35" x2="17" y2="31" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <span class="brand-text">Constellation <span class="text-suffix">CSS</span></span>
+          </h1>
+        </header>
+        <nav aria-label="Main Navigation">
+          {% include 'menu' %}
+        </nav>
+        <!-- <div data-json-signals></div> -->
+      </div>
+      <main>
+        <div class="center">
+          <h2 class="m-0">
+            {{ title }}
+          </h2>
+          {{ content }}
         </div>
-        <main>
-            <div class="center">
-                <h2 class="m-0">
-                    {{ title }}
-                </h2>
-                {{ content }}
-            </div>
-        </main>
+      </main>
     </div>
     <footer class="center p-1">
-        {% include 'footer' %}
+      {% include 'footer' %}
     </footer>
-</body>
-
+  </body>
 </html>
