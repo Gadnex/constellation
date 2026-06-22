@@ -114,47 +114,38 @@
 
         .primary {
             background-color: var(--primary-5);
-            color: var(--background-color);
         }
 
         .secondary {
             background-color: var(--secondary-2);
-            color: var(--background-color);
         }
 
         .tertiary {
             background-color: var(--tertiary-2);
-            color: var(--background-color);
         }
 
         .contrast {
             background-color: var(--contrast-2);
-            color: var(--background-color);
         }
 
         .neutral {
             background-color: var(--neutral-5);
-            color: var(--background-color);
         }
 
         .error {
             background-color: var(--error);
-            color: var(--background-color);
         }
 
         .warning {
             background-color: var(--warning);
-            color: var(--background-color);
         }
 
         .success {
             background-color: var(--success);
-            color: var(--background-color);
         }
 
         .info {
             background-color: var(--info);
-            color: var(--background-color);
         }
 
         .text-default {
@@ -322,11 +313,6 @@
             font-weight: 500;
             padding: var(--size-1);
             border-radius: var(--size-1);
-
-            &[aria-current="page"] {
-                color: var(--background-color);
-                background-color: var(--primary-5);
-            }
 
             &:focus {
                 outline: var(--outline-width) solid var(--primary-5);
@@ -537,6 +523,11 @@
 
             a {
                 display: block;
+                color: var(--color);
+
+                &[aria-current="page"] {
+                    background-color: var(--primary-5);
+                }
             }
         }
 
