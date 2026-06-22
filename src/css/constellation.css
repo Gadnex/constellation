@@ -512,6 +512,14 @@
 
         }
 
+        dialog {
+            margin: auto;
+
+            &::backdrop {
+                background-color: oklch(from var(--neutral-4) l c h / 90%);
+            }
+        }
+
         hr {
             height: var(--size-2);
             background-color: var(--color);
