@@ -3,5 +3,73 @@ title: The imposter
 pageOrder: 11
 ---
 <p>
-    The imposter
+    The imposter is a layout component that places an element on top of the content of it's parent element and centered
+    both vertically and horizontally.
 </p>
+<div class="box">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, dolores repellendus autem totam cum nulla
+    aliquid molestiae veniam harum iste reprehenderit itaque, saepe impedit a hic ullam ex eius ad quam sed ab? Nesciunt
+    accusamus vero vel? Ex, neque labore soluta quae rem exercitationem numquam id delectus aliquid nisi enim, aperiam
+    placeat inventore unde culpa? Ratione unde voluptatum temporibus natus vitae, earum ut illum quas iure blanditiis
+    culpa consequuntur dicta animi corrupti porro reiciendis doloremque at officia tenetur. Aliquam provident maxime
+    suscipit enim in, adipisci assumenda, cupiditate saepe veniam facere magnam labore. Laboriosam tempore ullam
+    suscipit consectetur eveniet? Rerum, nisi.
+    <div class="imposter bg-primary-5 p-4">
+        I am an imposter
+    </div>
+</div>
+
+<h3>CSS Classes</h3>
+<p>
+    There is an additional CSS class that can be applied to an imposter to alter the appearence.
+</p>
+
+<h4>Contained</h4>
+<p>
+    It is possible that the content of the imposter will not fit within the bounds of the parent element.
+    In such cases the imposter will escape the bounds of the parent element.
+    If this behaviour is unwanted, the <kbd>contained</kbd> utility class can be applied to the imposter.
+</p>
+<p>
+    With this utility class applied the imposted content will not escape the bounds of the parent and will have
+    a margin around the imposter to ensure the imposter does not touch the edges of it's parent.
+    A scollbar for the imposter will appear to enable viewing all of the content.
+</p>
+<div class="box">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, dolores repellendus autem totam cum nulla
+    aliquid molestiae veniam harum iste reprehenderit itaque, saepe impedit a hic ullam ex eius ad quam sed ab? Nesciunt
+    accusamus vero vel? Ex, neque labore soluta quae rem exercitationem numquam id delectus aliquid nisi enim, aperiam
+    placeat inventore unde culpa? Ratione unde voluptatum temporibus natus vitae, earum ut illum quas iure blanditiis
+    culpa consequuntur dicta animi corrupti porro reiciendis doloremque at officia tenetur. Aliquam provident maxime
+    suscipit enim in, adipisci assumenda, cupiditate saepe veniam facere magnam labore. Laboriosam tempore ullam
+    suscipit consectetur eveniet? Rerum, nisi.
+    <div class="imposter contained bg-primary-5 p-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident nesciunt dolorem beatae ipsa, animi
+        totam iusto? Placeat deleniti voluptate excepturi minima neque, suscipit, odit a recusandae dolores odio soluta
+        quos quia voluptates molestiae facilis ratione iure tenetur fugiat maiores nesciunt. Voluptas necessitatibus,
+        incidunt sit harum maxime exercitationem. Obcaecati, eaque. Ratione consequuntur ad eius? Laudantium maxime
+        officiis placeat illum nisi expedita sequi optio unde. Explicabo sed quae ducimus, praesentium quisquam dolorem
+        officiis ullam blanditiis, natus vel eligendi ad ipsam. Et expedita ad cupiditate in fugit qui voluptatum animi!
+        Aliquam et aliquid iure accusamus consequatur quasi ipsam neque eligendi adipisci sed?
+    </div>
+</div>
+
+<h3>CSS Variables</h3>
+<p>
+    The following CSS variables are defined for the imposter.
+</p>
+<dl>
+    <dt class="text-contrast">--positioning:</dt>
+    <dd>
+        Set the positioning of the imposter element.
+        The default positioning is absolute, but can be set to fixed if the imposted should be centered within the
+        viewport instead of its parent element.
+    </dd>
+
+    <dt class="text-contrast">--margin:</dt>
+    <dd>
+        Set the margin around the element so that the imposter does not touch its parent's border.
+        A padding on the parent element does not work with an imposter.
+        The --margin variable is only used if the utility class <kbd>contained</kbd> is applied.
+    </dd>
+</dl>
