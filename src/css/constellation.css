@@ -455,13 +455,22 @@
 
         table {
             border-collapse: collapse;
-            
+
+            caption {
+                background-color: var(--box-background-color);
+                border: var(--border-width) solid var(--border-color);
+                border-block-end: none;
+                padding: var(--size-1);
+                font-size: var(--font-size-1);
+                font-weight: 500;
+            }
+
             th {
                 background-color: var(--box-background-color);
                 border: var(--border-width) solid var(--border-color);
                 padding: var(--size-2);
             }
-            
+
             td {
                 background-color: var(--background-color);
                 border: var(--border-width) solid var(--border-color);
@@ -557,7 +566,7 @@
 
         input[type="file"] {
             padding: var(--field-padding);
-    
+
             &::file-selector-button {
                 padding: var(--size-1) var(--size-2);
                 margin-inline-end: var(--size-4);
@@ -566,7 +575,7 @@
                 font-size: var(--font-size-neg-1);
                 background-color: var(--button-background);
             }
-    
+
             &::file-selector-button:hover {
                 background-color: var(--button-hover);
             }
