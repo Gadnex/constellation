@@ -284,11 +284,15 @@
             line-height: 1;
         }
 
+        .text-left {
+            text-align: start;
+        }
+
         .text-center {
             text-align: center;
         }
 
-        .text-end {
+        .text-right {
             text-align: end;
         }
 
@@ -446,6 +450,28 @@
             dd {
                 list-style: inside;
                 margin-inline-start: var(--padding);
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            
+            th {
+                background-color: var(--box-background-color);
+                border: var(--border-width) solid var(--border-color);
+                padding: var(--size-2);
+            }
+            
+            td {
+                background-color: var(--background-color);
+                border: var(--border-width) solid var(--border-color);
+                padding: var(--size-2);
+            }
+
+            tr:has(td:hover) {
+                td {
+                    background-color: var(--primary-3);
+                }
             }
         }
     }
