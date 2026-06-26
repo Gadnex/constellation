@@ -5,8 +5,13 @@
       </a>
     </li>
     <li>
-      <a href="/about" {% if page.url == "/about/" %}aria-current="page"{% endif %}>
-        About
+      <a href="/colors" {% if page.url == "/colors/" %}aria-current="page"{% endif %}>
+        Colors
+      </a>
+    </li>
+    <li>
+      <a href="/typography" {% if page.url == "/typography/" %}aria-current="page"{% endif %}>
+        Typography
       </a>
     </li>
 
@@ -34,4 +39,10 @@
         </details>
       </li>
     {% endfor %}
+
+    <li>
+      <a href="/about" {% if page.url == "/about/" %}aria-current="page"{% endif %}>
+        About
+      </a>
+    </li>
 </menu>
