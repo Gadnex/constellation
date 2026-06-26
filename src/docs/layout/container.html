@@ -3,5 +3,174 @@ title: The container
 pageOrder: 13
 ---
 <p>
-    The container
+    The container is a layout component that is applied to an HTML element that creates
+    specific behaviours of the container element and its decendents,
+    depending on the width of the container.
 </p>
+<p>
+    The specific width is 60ch.
+    Some bahaviours occur when the width is more than 60ch and
+    other behaviours occur when the width is less than 60ch.
+</p>
+
+<h3>CSS Classes</h3>
+<p>
+    There are a number of additional CSS classes that can be applied to a container to alter
+    the appearence and behaviour.
+</p>
+
+<h4>Mobile show and hide</h4>
+<p>
+    There are a number CSS classes to show or hide content inside a container
+    on mobile screens.
+</p>
+<div class="stack container">
+    <div>
+        <strong>mobile-show</strong>
+        <div class="box">
+            <div class="p-2 bg-primary-5 mobile-show">Only shown on mobile</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-hide</strong>
+        <div class="box">
+            <div class="p-2 bg-primary-5 mobile-hide">Hidden on mobile</div>
+        </div>
+    </div>
+</div>
+
+<h4>Mobile grow and no-grow</h4>
+<p>
+    There are a number CSS classes to grow or not grow flecbox content inside a container
+    on mobile screens.
+</p>
+<div class="stack container">
+    <div>
+        <strong>mobile-grow</strong>
+        <div class="box cluster">
+            <div class="p-2 bg-primary-5 mobile-grow">Grown on mobile</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-no-grow</strong>
+        <div class="box cluster">
+            <div class="p-2 bg-primary-5 grow mobile-no-grow">Not grown on mobile</div>
+        </div>
+    </div>
+</div>
+
+<h4>Mobile main content justification</h4>
+<p>
+    There are a number CSS classes to set the mobile main content justification of a
+    flexbox elements inside a container.
+    The examples below demonstare the different mobile main content justifications.
+</p>
+<div class="stack container">
+    <div>
+        <strong>mobile-main-start</strong>
+        <div class="box cluster main-end mobile-main-start">
+            <div class="p-2 bg-primary-5">Element</div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-main-end</strong>
+        <div class="box cluster main-start mobile-main-end">
+            <div class="p-2 bg-primary-5">Element</div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-main-center</strong>
+        <div class="box cluster mobile-main-center">
+            <div class="p-2 bg-primary-5">Element</div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-main-space-between</strong>
+        <div class="box cluster mobile-main-space-between">
+            <div class="p-2 bg-primary-5">Element</div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-main-space-around</strong>
+        <div class="box cluster mobile-main-space-around">
+            <div class="p-2 bg-primary-5">Element</div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-main-space-evenly</strong>
+        <div class="box cluster mobile-main-space-evenly">
+            <div class="p-2 bg-primary-5">Element</div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+</div>
+
+<h4>Mobile cross item alignment</h4>
+<p>
+    There are a number CSS classes to set the mobile cross item alignment of flexbox elements
+    inside a conatainer.
+    The examples below demonstare the different mobile cross item alignments.
+</p>
+<div class="stack container">
+    <div>
+        <strong>mobile-cross-start</strong>
+        <div class="box cluster mobile-cross-start">
+            <div class="p-2 bg-primary-5" style="height: var(--size-9);">
+                Element
+            </div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-cross-end</strong>
+        <div class="box cluster mobile-cross-end">
+            <div class="p-2 bg-primary-5" style="height: var(--size-9);">
+                Element
+            </div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-cross-center</strong>
+        <div class="box cluster mobile-cross-center">
+            <div class="p-2 bg-primary-5" style="height: var(--size-9);">
+                Element
+            </div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-cross-stretch</strong>
+        <div class="box cluster cross-start mobile-cross-stretch">
+            <div class="p-2 bg-primary-5" style="height: var(--size-9);">
+                Element
+            </div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>mobile-cross-baseline</strong>
+        <div class="box cluster mobile-cross-baseline">
+            <div class="p-4 bg-primary-5" style="height: var(--size-9);">
+                Element
+            </div>
+            <div class="p-2 bg-contrast-2">Element</div>
+            <div class="p-2 bg-primary-5">Element</div>
+        </div>
+    </div>
+</div>

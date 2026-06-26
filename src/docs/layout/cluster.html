@@ -216,8 +216,10 @@ pageOrder: 4
     but it is not recommended to nest more than 2 levels deep.
 </p>
 <p>
-    The below example has a cluster with the CSS classes <kbd>cluster</kbd> and <kbd>main-space-between</kbd>.
-    Within the cluster are two more clusters with the CSS classes <kbd>cluster</kbd> and <kbd>main-center</kbd>.
+    The below example has a cluster with the CSS classes <kbd>cluster</kbd>,
+    <kbd>main-space-between</kbd> and <kbd>container</kbd>.
+    Within the cluster are two more clusters with the CSS classes <kbd>cluster</kbd>, 
+    <kbd>main-center</kbd> and <kbd>mobile-grow</kbd>.
 </p>
 <p>
     When the outer cluster is not wrapped the <kbd>main-center</kbd> of the inner 2 clusters have no effect
@@ -225,11 +227,15 @@ pageOrder: 4
     But when the outer cluster is wrapped a CSS container query will set the CSS property <kbd>flex-grow: 1;</kbd>
     on the inner clusters so that their <kbd>main-center</kbd> will have an effect.
 </p>
+<p>
+    The <kbd>flex-grow: 1;</kbd> property is applied to a <kbd>mobile-grow</kbd> that is the direct child of a
+    <kbd>container</kbd> where the width of the container is less than 60ch.    
+</p>
 <div class="box cluster main-space-between cross-center gap-r-0 container">
-    <div class="cluster main-center">
+    <div class="cluster main-center mobile-grow">
         <strong class="text-3 text-layout">MySite</strong>
     </div>
-    <menu id="this-menu" class="cluster main-center gap-r-0 gap-c-2">
+    <menu id="this-menu" class="cluster main-center mobile-grow gap-r-0 gap-c-2">
         <li><a href="#this-menu">Home</a></li>
         <li><a href="#this-menu">About</a></li>
         <li><a href="#this-menu">Products</a></li>

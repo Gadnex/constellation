@@ -824,12 +824,6 @@
             gap: var(--row-gap) var(--column-gap);
         }
 
-        @container (max-inline-size: 60ch) {
-            .cluster>.cluster {
-                flex-grow: 1;
-            }
-        }
-
         /* The sidebar */
         .sidebar-container {
             --sidebar-border-width: var(--layout-border-width);
@@ -852,12 +846,6 @@
                 flex: 999 1 0;
                 min-inline-size: 50%;
                 padding: var(--sidebar-padding);
-            }
-        }
-
-        @container (max-inline-size: 60ch) {
-            .sidebar-container {
-                align-content: flex-start;
             }
         }
 
@@ -1059,12 +1047,18 @@
         }
 
         @container (max-inline-size: 60ch) {
-            .container>.mobile-hide {
-                display: none;
+            .sidebar-container {
+                align-content: flex-start;
             }
 
-            .container>.mobile-show {
-                display: block;
+            .container {
+                & .mobile-hide {
+                    display: none;
+                }
+
+                & .mobile-show {
+                    display: block;
+                }
             }
         }
     }
@@ -1201,6 +1195,62 @@
 
     .gap-c-5 {
         --column-gap: var(--size-5);
+    }
+
+    @container (max-inline-size: 60ch) {
+        .container {
+            & .mobile-grow {
+                flex-grow: 1;
+            }
+
+            & .mobile-no-grow {
+                flex-grow: 0;
+            }
+
+            & .mobile-main-start {
+                justify-content: flex-start;
+            }
+
+            & .mobile-main-end {
+                justify-content: flex-end;
+            }
+
+            & .mobile-main-center {
+                justify-content: center;
+            }
+
+            & .mobile-main-space-between {
+                justify-content: space-between;
+            }
+
+            & .mobile-main-space-around {
+                justify-content: space-around;
+            }
+
+            & .mobile-main-space-evenly {
+                justify-content: space-evenly;
+            }
+
+            & .mobile-cross-start {
+                align-items: flex-start;
+            }
+
+            & .mobile-cross-end {
+                align-items: flex-end;
+            }
+
+            & .mobile-cross-center {
+                align-items: center;
+            }
+
+            & .mobile-cross-stretch {
+                align-items: stretch;
+            }
+
+            & .mobile-cross-baseline {
+                align-items: baseline;
+            }
+        }
     }
 }
 
