@@ -1029,6 +1029,10 @@
                 --item-width: 40vw;
             }
 
+            &.w-100 {
+                --item-width: 100%;
+            }
+
             &.bordered {
                 padding-block: var(--size-3);
                 border: var(--layout-border-width) solid var(--border-color);
