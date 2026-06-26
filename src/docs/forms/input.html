@@ -11,7 +11,7 @@ pageOrder: 1
     The input element has a type attribute and the default value is <kbd>type="text"</kbd>, but various other types are
     available. The following examples show all the available types.
 </p>
-<div class="box grid max-cols-3">
+<div class="box grid max-cols-2">
     <div>
         <label>
             <div>Text</div>
@@ -92,7 +92,7 @@ pageOrder: 1
     </div>
 </div>
 
-<h3>Input validation</h3>
+<h4>Input validation</h4>
 <p>
     When validating input fields, it is useful to show whether the entered input is valid or invalid. When doing so it
     is important to also make this clear for accessibility users using the <kbd>aria-invalid</kbd> attribute.
@@ -122,9 +122,94 @@ pageOrder: 1
     </div>
 </section>
 
-<h3>Input type range</h3>
+<h3>Fieldset</h3>
 <p>
-    The input <kbd>type="range"</kbd> does not visually look like a text input field and is thus styled differently.
+    A fieldset is used to group a number of form fields that are logocally grouped.
+    It is often used to group a number od checkboxes or radio buttons.
+</p>
+<p>
+    A fieldset is created using the <kbd>fieldset</kbd> element with a nested <kbd>legend</kbd>
+    element and the nested content.
+</p>
+<section class="box">
+    <fieldset>
+        <legend>Legend</legend>
+        Fieldset content
+    </fieldset>
+</section>
+<p>
+    Fieldsets can also be marked as valid or invalid using the <kbd>aria-invalid</kbd>
+    attribute.
+</p>
+<section class="box">
+    <fieldset aria-invalid="false">
+        <legend>Legend</legend>
+        Fieldset with <kbd>aria-invalid="false"</kbd>
+    </fieldset>
+    <fieldset aria-invalid="true">
+        <legend>Legend</legend>
+        Fieldset with <kbd>aria-invalid="true"</kbd>
+    </fieldset>
+</section>
+
+<h3>Checkboxes</h3>
+<p>
+    A checkbox is created using the <kbd>&lt;input type="checkbox"&gt;</kbd> element.
+    Checkboxes are often grouped inside a fieldset to provide additional context.
+</p>
+<section class="box">
+    <fieldset>
+        <legend>Checkboxes</legend>
+        <div>
+            <input type="checkbox" id="cb-unchecked">
+            <label for="cb-unchecked">Unchecked</label>
+        </div>
+        <div>
+            <input type="checkbox" id="cb-checked" checked>
+            <label for="cb-checked">Checked</label>
+        </div>
+        <div>
+            <input type="checkbox" id="cb-unchecked-disabled" disabled>
+            <label for="cb-unchecked-disabled">Unchecked and disabled</label>
+        </div>
+        <div>
+            <input type="checkbox" id="cb-checked-disabled" checked disabled>
+            <label for="cb-checked-disabled">Checked and disabled</label>
+        </div>
+    </fieldset>
+</section>
+
+<h3>Radio button</h3>
+<p>
+    A radio button is created using the <kbd>&lt;input type="cradio"&gt;</kbd> element.
+    Radio buttons are often grouped inside a fieldset to provide additional context.
+</p>
+<section class="box">
+    <fieldset>
+        <legend>Radio buttons</legend>
+        <div>
+            <input type="radio" id="rb-unchecked" name="rb-enabled">
+            <label for="rb-unchecked">Unchecked</label>
+        </div>
+        <div>
+            <input type="radio" id="rb-checked" checked name="rb-enabled">
+            <label for="rb-checked">Checked</label>
+        </div>
+        <div>
+            <input type="radio" id="rb-unchecked-disabled" disabled>
+            <label for="rb-unchecked-disabled">Unchecked and disabled</label>
+        </div>
+        <div>
+            <input type="radio" id="rb-checked-disabled" checked disabled>
+            <label for="rb-checked-disabled">Checked and disabled</label>
+        </div>
+    </fieldset>
+</section>
+
+<h3>Range input</h3>
+<p>
+    The <kbd>&lt;input type="range"&gt;</kbd> does not visually look like a text input field
+    and is thus styled differently.
 </p>
 <section class="box">
     <div>
@@ -148,9 +233,10 @@ pageOrder: 1
     </div>
 </section>
 
-<h3>Input type color</h3>
+<h3>Color input</h3>
 <p>
-
+    The <kbd>&lt;input type="color"&gt;</kbd> is used to select a color using a
+    color picker provided by the browser.
 </p>
 <section class="box">
     <div>
@@ -161,9 +247,9 @@ pageOrder: 1
     </div>
 </section>
 
-<h3>Input type file</h3>
+<h3>File input</h3>
 <p>
-
+    The <kbd>&lt;input type="file"&gt;</kbd> is used to select one or more files to upload.
 </p>
 <section class="box">
     <div>
