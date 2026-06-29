@@ -325,6 +325,7 @@
 
         .text-layout {
             line-height: 1;
+            margin: 0;
         }
 
         .text-left {
