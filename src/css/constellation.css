@@ -1110,6 +1110,10 @@
         flex-grow: 1;
     }
 
+    .grow-fast {
+        flex-grow: 999;
+    }
+
     .main-start {
         justify-content: flex-start;
     }
@@ -1297,6 +1301,10 @@
 
 @layer utilities {
     :where(:root) {
+        .hidden {
+            display: none;
+        }
+
         .borderless {
             border: 0;
         }
