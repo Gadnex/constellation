@@ -452,6 +452,8 @@
         }
 
         dialog {
+            inline-size: calc(100% - (2 * var(--padding)));
+            max-inline-size: calc(80ch - (2 * var(--padding)));
             margin: auto;
 
             &::backdrop {
