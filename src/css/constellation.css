@@ -25,55 +25,94 @@
     }
 
     :where(:root, [data-theme]) {
-        --primary-1: light-dark(oklch(from var(--primary-5) calc(0.92 + (l * 0.1)) calc(c * 0.02) h),
-                oklch(from var(--primary-5) calc(0.08 + (l * 0.1)) calc(c * 0.15) h));
-        --primary-2: light-dark(oklch(from var(--primary-5) calc(0.88 + (l * 0.1)) calc(c * 0.10) h),
-                oklch(from var(--primary-5) calc(0.15 + (l * 0.1)) calc(c * 0.30) h));
-        --primary-3: light-dark(oklch(from var(--primary-5) calc(l + 0.25) calc(c * 0.40) h),
-                oklch(from var(--primary-5) calc(l - 0.25) calc(c * 0.50) h));
-        --primary-4: light-dark(oklch(from var(--primary-5) calc(l + 0.15) calc(c * 0.75) h),
-                oklch(from var(--primary-5) calc(l - 0.15) calc(c * 0.75) h));
-        --primary-5: light-dark(oklch(from var(--brand) clamp(0.55, l, 0.65) c h),
-                oklch(from var(--brand) clamp(0.65, l, 0.75) c h));
-        --primary-6: light-dark(oklch(from var(--primary-5) calc(l - 0.10) c h),
-                oklch(from var(--primary-5) calc(l + 0.10) c h));
-        --primary-7: light-dark(oklch(from var(--primary-5) calc(l - 0.40) calc(c * 0.15) h),
-                oklch(from var(--primary-5) calc(l + 0.40) calc(c * 0.15) h));
-        --secondary-1: oklch(from var(--primary-4) l c calc(h + var(--color-degrees)));
-        --secondary-2: oklch(from var(--primary-5) l c calc(h + var(--color-degrees)));
-        --secondary-3: oklch(from var(--primary-6) l c calc(h + var(--color-degrees)));
-        --tertiary-1: oklch(from var(--primary-4) l c calc(h - var(--color-degrees)));
-        --tertiary-2: oklch(from var(--primary-5) l c calc(h - var(--color-degrees)));
-        --tertiary-3: oklch(from var(--primary-6) l c calc(h - var(--color-degrees)));
-        --contrast-1: oklch(from var(--primary-4) l c calc(h + 180));
-        --contrast-2: oklch(from var(--primary-5) l c calc(h + 180));
-        --contrast-3: oklch(from var(--primary-6) l c calc(h + 180));
+        /* Canvas background */
+        --primary-1: light-dark(
+            oklch(from var(--primary-4) calc(0.92 + (l * 0.1)) calc(c * 0.02) h),
+            oklch(from var(--primary-4) calc(0.08 + (l * 0.1)) calc(c * 0.15) h)
+        );
+
+        /* Surface background */
+        --primary-2: light-dark(
+            oklch(from var(--primary-4) calc(0.88 + (l * 0.1)) calc(c * 0.10) h),
+            oklch(from var(--primary-4) calc(0.15 + (l * 0.1)) calc(c * 0.30) h)
+        );
+
+        /* Surface Highlight / Overlay */
+        --primary-3: light-dark(
+            oklch(from var(--primary-4) calc(0.82 + (l * 0.1)) calc(c * 0.18) h),
+            oklch(from var(--primary-4) calc(0.22 + (l * 0.1)) calc(c * 0.40) h)
+        );
+
+        /* Brand Action */
+        --primary-4: light-dark(
+            oklch(from var(--brand) clamp(0.55, l, 0.65) c h),
+            oklch(from var(--brand) clamp(0.65, l, 0.75) c h)
+        );
+
+        /* Brand Hover */
+        --primary-5: light-dark(
+            oklch(from var(--primary-4) calc(l - 0.10) c h),
+            oklch(from var(--primary-4) calc(l + 0.10) c h)
+        );
+
+        /* Typography */
+        --primary-6: light-dark(
+            oklch(from var(--primary-4) calc(l - 0.40) calc(c * 0.15) h),
+            oklch(from var(--primary-4) calc(l + 0.40) calc(c * 0.15) h)
+        );
+
+        /* Secondary System (+ Degrees) */
+        --secondary-1: oklch(from var(--primary-1) l c calc(h + var(--color-degrees)));
+        --secondary-2: oklch(from var(--primary-2) l c calc(h + var(--color-degrees)));
+        --secondary-3: oklch(from var(--primary-3) l c calc(h + var(--color-degrees)));
+        --secondary-4: oklch(from var(--primary-4) l c calc(h + var(--color-degrees)));
+        --secondary-5: oklch(from var(--primary-5) l c calc(h + var(--color-degrees)));
+        --secondary-6: oklch(from var(--primary-6) l c calc(h + var(--color-degrees)));
+
+        /* Tertiary System (- Degrees) */
+        --tertiary-1: oklch(from var(--primary-1) l c calc(h - var(--color-degrees)));
+        --tertiary-2: oklch(from var(--primary-2) l c calc(h - var(--color-degrees)));
+        --tertiary-3: oklch(from var(--primary-3) l c calc(h - var(--color-degrees)));
+        --tertiary-4: oklch(from var(--primary-4) l c calc(h - var(--color-degrees)));
+        --tertiary-5: oklch(from var(--primary-5) l c calc(h - var(--color-degrees)));
+        --tertiary-6: oklch(from var(--primary-6) l c calc(h - var(--color-degrees)));
+
+        /* Contrast System (Complementary Split / Triadic 180) */
+        --contrast-1: oklch(from var(--primary-1) l c calc(h + 180));
+        --contrast-2: oklch(from var(--primary-2) l c calc(h + 180));
+        --contrast-3: oklch(from var(--primary-3) l c calc(h + 180));
+        --contrast-4: oklch(from var(--primary-4) l c calc(h + 180));
+        --contrast-5: oklch(from var(--primary-5) l c calc(h + 180));
+        --contrast-6: oklch(from var(--primary-6) l c calc(h + 180));
+
+        /* Drops chroma down to 0.01 to strip out intense color */
         --neutral-1: oklch(from var(--primary-1) l 0.01 h);
         --neutral-2: oklch(from var(--primary-2) l 0.01 h);
         --neutral-3: oklch(from var(--primary-3) l 0.01 h);
         --neutral-4: oklch(from var(--primary-4) l 0.01 h);
         --neutral-5: oklch(from var(--primary-5) l 0.01 h);
         --neutral-6: oklch(from var(--primary-6) l 0.01 h);
-        --neutral-7: oklch(from var(--primary-7) l 0.01 h);
-        --error: light-dark(oklch(60% 0.22 28deg), oklch(70% 0.18 28deg));
-        --warning: light-dark(oklch(70% 0.15 85deg), oklch(75% 0.12 85deg));
-        --success: light-dark(oklch(60% 0.18 145deg), oklch(75% 0.14 145deg));
-        --info: light-dark(oklch(60% 0.15 250deg), oklch(75% 0.12 250deg));
+
+        /* Semantic colors */
+        --error: light-dark(oklch(60% 0.22 28deg), oklch(70% 0.20 28deg));
+        --warning: light-dark(oklch(70% 0.22 85deg), oklch(75% 0.14 85deg));
+        --success: light-dark(oklch(60% 0.18 145deg), oklch(75% 0.18 145deg));
+        --info: light-dark(oklch(60% 0.15 250deg), oklch(75% 0.14 250deg));
 
         /* Variables for global colors */
         --background-color: var(--neutral-1);
-        --color: var(--neutral-7);
-        --border-color: var(--neutral-4);
-        --box-color: var(--color);
+        --color: var(--neutral-6);
+        --border-color: var(--neutral-3);
+        --box-color: var(--neutral-6);
         --box-background-color: var(--neutral-2);
-        --box-border-color: var(--neutral-4);
+        --box-border-color: var(--neutral-3);
         --button-color: var(--color);
         --sidebar-background-color: var(--background-color);
-        --sidebar-border-color: var(--neutral-4);
-        --button-background: var(--neutral-2);
-        --button-border-color: var(--color);
-        --button-hover: var(--neutral-3);
-        --button-disabled: var(--neutral-1);
+        --sidebar-border-color: var(--neutral-3);
+        --button-background: var(--neutral-1);
+        --button-border-color: var(--neutral-3);
+        --button-hover: var(--neutral-2);
+        --button-disabled: var(--neutral-3);
 
         color-scheme: light dark;
         background-color: var(--background-color);
@@ -81,18 +120,18 @@
 
         &.primary {
             --background-color: var(--primary-1);
-            --color: var(--primary-7);
-            --border-color: var(--primary-4);
-            --box-color: var(--primary-7);
+            --color: var(--primary-6);
+            --border-color: var(--primary-3);
+            --box-color: var(--primary-6);
             --box-background-color: var(--primary-2);
-            --box-border-color: var(--primary-4);
+            --box-border-color: var(--primary-3);
             --sidebar-background-color: var(--background-color);
             --sidebar-border-color: var(--primary-4);
             --button-color: var(--color);
-            --button-background: var(--primary-2);
-            --button-border-color: var(--color);
-            --button-hover: var(--primary-3);
-            --button-disabled: var(--primary-1);
+            --button-background: var(--primary-1);
+            --button-border-color: var(--primary-3);
+            --button-hover: var(--primary-2);
+            --button-disabled: var(--primary-3);
 
             background-color: var(--background-color);
             color: var(--color);
@@ -101,26 +140,26 @@
 
     * {
         --shadow-0: 0 0 0 transparent;
-        --shadow-1: 0 1px 2px light-dark(color-mix(in srgb, var(--neutral-7) 50%, transparent), transparent);
-        --shadow-2: 0 3px 6px light-dark(color-mix(in srgb, var(--neutral-7) 45%, transparent), transparent);
-        --shadow-3: 0 6px 12px light-dark(color-mix(in srgb, var(--neutral-7) 40%, transparent), transparent);
-        --shadow-4: 0 12px 24px light-dark(color-mix(in srgb, var(--neutral-7) 35%, transparent), transparent);
-        --shadow-5: 0 20px 40px light-dark(color-mix(in srgb, var(--neutral-7) 30%, transparent), transparent);
-        --glow-color: var(--primary-5);
+        --shadow-1: 0 1px 2px light-dark(color-mix(in srgb, var(--neutral-6) 50%, transparent), transparent);
+        --shadow-2: 0 3px 6px light-dark(color-mix(in srgb, var(--neutral-6) 45%, transparent), transparent);
+        --shadow-3: 0 6px 12px light-dark(color-mix(in srgb, var(--neutral-6) 40%, transparent), transparent);
+        --shadow-4: 0 12px 24px light-dark(color-mix(in srgb, var(--neutral-6) 35%, transparent), transparent);
+        --shadow-5: 0 20px 40px light-dark(color-mix(in srgb, var(--neutral-6) 30%, transparent), transparent);
+        --glow-color: var(--primary-4);
         --shadow-glow-1:
-            0 0 1px light-dark(color-mix(in srgb, var(--neutral-7) 50%, transparent), transparent),
+            0 0 1px light-dark(color-mix(in srgb, var(--neutral-6) 50%, transparent), transparent),
             0 0 8px 2px light-dark(transparent, color-mix(in srgb, var(--glow-color) 60%, transparent));
         --shadow-glow-2:
-            0 1px 2px light-dark(color-mix(in srgb, var(--neutral-7) 50%, transparent), transparent),
+            0 1px 2px light-dark(color-mix(in srgb, var(--neutral-6) 50%, transparent), transparent),
             0 0 16px 3px light-dark(transparent, color-mix(in srgb, var(--glow-color) 50%, transparent));
         --shadow-glow-3:
-            0 3px 6px light-dark(color-mix(in srgb, var(--neutral-7) 45%, transparent), transparent),
+            0 3px 6px light-dark(color-mix(in srgb, var(--neutral-6) 45%, transparent), transparent),
             0 0 28px 4px light-dark(transparent, color-mix(in srgb, var(--glow-color) 40%, transparent));
         --shadow-glow-4:
-            0 6px 12px light-dark(color-mix(in srgb, var(--neutral-7) 40%, transparent), transparent),
+            0 6px 12px light-dark(color-mix(in srgb, var(--neutral-6) 40%, transparent), transparent),
             0 0 48px 6px light-dark(transparent, color-mix(in srgb, var(--glow-color) 30%, transparent));
         --shadow-glow-5:
-            0 12px 24px light-dark(color-mix(in srgb, var(--neutral-7) 35%, transparent), transparent),
+            0 12px 24px light-dark(color-mix(in srgb, var(--neutral-6) 35%, transparent), transparent),
             0 0 64px 8px light-dark(transparent, color-mix(in srgb, var(--glow-color) 20%, transparent));
     }
 
@@ -211,13 +250,17 @@
         }
 
         a {
-            color: var(--primary-5);
+            color: var(--primary-4);
             font-weight: 500;
             padding: var(--size-1);
             border-radius: var(--size-1);
 
+            &:hover {
+                color: var(--primary-5);
+            }
+
             &:focus {
-                outline: var(--outline-width) solid var(--primary-5);
+                outline: var(--outline-width) solid var(--primary-4 );
                 border-radius: var(--size-1);
             }
         }
@@ -228,8 +271,8 @@
 
         ::selection,
         mark {
-            color: var(--primary-7);
-            background-color: var(--primary-5);
+            color: var(--primary-6);
+            background-color: var(--primary-4);
         }
 
         em,
@@ -402,7 +445,7 @@
 
             :focus,
             :focus-visible {
-                outline: var(--outline-width) solid var(--primary-5);
+                outline: var(--outline-width) solid var(--primary-4);
                 border-radius: var(--size-1);
             }
 
@@ -412,7 +455,7 @@
             margin: auto;
 
             &::backdrop {
-                background-color: oklch(from var(--neutral-4) l c h / 90%);
+                background-color: oklch(from var(--neutral-3) l c h / 90%);
             }
         }
 
@@ -438,6 +481,10 @@
 
                 &[aria-current="page"] {
                     background-color: var(--primary-3);
+                }
+
+                &:hover {
+                    background-color: var(--primary-4)  ;
                 }
             }
         }
@@ -493,7 +540,7 @@
         --field-border-width: var(--border-width);
         --field-padding: var(--size-3) var(--size-4);
 
-        accent-color: var(--primary-5);
+        accent-color: var(--primary-4);
 
         input,
         textarea {
@@ -530,8 +577,8 @@
 
         input:focus,
         textarea:focus {
-            border-color: var(--primary-5);
-            outline: var(--outline-width) solid var(--primary-5);
+            border-color: var(--primary-4);
+            outline: var(--outline-width) solid var(--primary-4);
             outline-offset: calc(-1 * var(--field-border-width));
         }
 
@@ -588,7 +635,7 @@
             outline-offset: var(--size-1);
 
             &[checked] {
-                background-color: var(--primary-5);
+                background-color: var(--primary-4);
             }
         }
 
@@ -713,7 +760,7 @@
             }
 
             &:focus-visible {
-                outline: var(--outline-width) solid var(--primary-5);
+                outline: var(--outline-width) solid var(--primary-4);
             }
 
             &:focus:not(:focus-visible) {
@@ -730,36 +777,36 @@
             }
 
             &.primary:not(:disabled) {
-                --button-background: var(--primary-5);
-                --button-border-color: var(--primary-5);
-                --button-hover: var(--primary-6);
+                --button-background: var(--primary-4);
+                --button-border-color: var(--primary-4);
+                --button-hover: var(--primary-5);
             }
 
             &.secondary:not(:disabled) {
-                --button-background: var(--secondary-2);
-                --button-border-color: var(--secondary-2);
-                --button-hover: var(--secondary-3);
-                --glow-color: var(--secondary-2);
+                --button-background: var(--secondary-4);
+                --button-border-color: var(--secondary-4);
+                --button-hover: var(--secondary-5);
+                --glow-color: var(--secondary-4);
             }
 
             &.tertiary:not(:disabled) {
-                --button-background: var(--tertiary-2);
-                --button-border-color: var(--tertiary-2);
-                --button-hover: var(--tertiary-3);
-                --glow-color: var(--tertiary-2);
+                --button-background: var(--tertiary-4);
+                --button-border-color: var(--tertiary-4);
+                --button-hover: var(--tertiary-5);
+                --glow-color: var(--tertiary-4);
             }
 
             &.contrast:not(:disabled) {
-                --button-background: var(--contrast-2);
-                --button-border-color: var(--contrast-2);
-                --button-hover: var(--contrast-3);
-                --glow-color: var(--contrast-2);
+                --button-background: var(--contrast-4);
+                --button-border-color: var(--contrast-4);
+                --button-hover: var(--contrast-5);
+                --glow-color: var(--contrast-4);
             }
 
             &.neutral:not(:disabled) {
-                --button-background: var(--neutral-5);
-                --button-border-color: var(--neutral-5);
-                --button-hover: var(--neutral-6);
+                --button-background: var(--neutral-4);
+                --button-border-color: var(--neutral-4);
+                --button-hover: var(--neutral-5);
             }
         }
     }
@@ -837,6 +884,46 @@
 
             &>:last-child {
                 margin-block-end: 0;
+            }
+
+            &.primary {
+                color: var(--primary-6);
+                background-color: var(--primary-2);
+                border-color: var(--primary-3);
+            }
+
+            &.secondary {
+                color: var(--secondary-6);
+                background-color: var(--secondary-2);
+                border-color: var(--secondary-3);
+            }
+
+            &.tertiary {
+                color: var(--tertiary-6);
+                background-color: var(--tertiary-2);
+                border-color: var(--tertiary-3);
+            }
+
+            &.contrast {
+                color: var(--contrast-6);
+                background-color: var(--contrast-2);
+                border-color: var(--contrast-3);
+            }
+
+            &.error {
+                background-color: var(--error);
+            }
+
+            &.warning {
+                background-color: var(--warning);
+            }
+
+            &.success {
+                background-color: var(--success);
+            }
+
+            &.info {
+                background-color: var(--info);
             }
         }
 
@@ -1006,7 +1093,7 @@
             -webkit-overflow-scrolling: touch;
             scroll-snap-type: x mandatory;
             padding-block-end: var(--padding);
-            scrollbar-color: var(--primary-5) var(--background-color);
+            scrollbar-color: var(--primary-4) var(--background-color);
 
             &>* {
                 scroll-snap-align: start;
@@ -1536,112 +1623,24 @@
             block-size: 100%;
         }
 
-        .bg-primary-1 {
-            background-color: var(--primary-1);
-        }
-
-        .bg-primary-2 {
-            background-color: var(--primary-2);
-        }
-
-        .bg-primary-3 {
-            background-color: var(--primary-3);
-        }
-
-        .bg-primary-4 {
+        .bg-primary {
             background-color: var(--primary-4);
         }
 
-        .bg-primary-5 {
-            background-color: var(--primary-5);
+        .bg-secondary {
+            background-color: var(--secondary-4);
         }
 
-        .bg-primary-6 {
-            background-color: var(--primary-6);
+        .bg-tertiary {
+            background-color: var(--tertiary-4);
         }
 
-        .bg-primary-7 {
-            background-color: var(--primary-7);
+        .bg-contrast {
+            background-color: var(--contrast-4);
         }
 
-        .bg-secondary-1 {
-            background-color: var(--secondary-1);
-        }
-
-        .bg-secondary-2 {
-            background-color: var(--secondary-2);
-        }
-
-        .bg-secondary-3 {
-            background-color: var(--secondary-3);
-        }
-
-        .bg-tertiary-1 {
-            background-color: var(--tertiary-1);
-        }
-
-        .bg-tertiary-2 {
-            background-color: var(--tertiary-2);
-        }
-
-        .bg-tertiary-3 {
-            background-color: var(--tertiary-3);
-        }
-
-        .bg-contrast-1 {
-            background-color: var(--contrast-1);
-        }
-
-        .bg-contrast-2 {
-            background-color: var(--contrast-2);
-        }
-
-        .bg-contrast-3 {
-            background-color: var(--contrast-3);
-        }
-
-        .bg-neutral-1 {
-            background-color: var(--neutral-1);
-        }
-
-        .bg-neutral-2 {
-            background-color: var(--neutral-2);
-        }
-
-        .bg-neutral-3 {
-            background-color: var(--neutral-3);
-        }
-
-        .bg-neutral-4 {
+        .bg-neutral {
             background-color: var(--neutral-4);
-        }
-
-        .bg-neutral-5 {
-            background-color: var(--neutral-5);
-        }
-
-        .bg-neutral-6 {
-            background-color: var(--neutral-6);
-        }
-
-        .bg-neutral-7 {
-            background-color: var(--neutral-7);
-        }
-
-        .bg-error {
-            background-color: var(--error);
-        }
-
-        .bg-warning {
-            background-color: var(--warning);
-        }
-
-        .bg-success {
-            background-color: var(--success);
-        }
-
-        .bg-info {
-            background-color: var(--info);
         }
 
         .text-default {
@@ -1649,19 +1648,19 @@
         }
 
         .text-primary {
-            color: var(--primary-5);
+            color: var(--primary-4);
         }
 
         .text-secondary {
-            color: var(--secondary-2);
+            color: var(--secondary-4);
         }
 
         .text-tertiary {
-            color: var(--tertiary-2);
+            color: var(--tertiary-4);
         }
 
         .text-contrast {
-            color: var(--contrast-2);
+            color: var(--contrast-4);
         }
 
         .text-error {
@@ -1685,11 +1684,11 @@
         }
 
         .text-light {
-            color: light-dark(var(--neutral-1), var(--neutral-7));
+            color: light-dark(var(--neutral-1), var(--neutral-6));
         }
 
         .text-dark {
-            color: light-dark(var(--neutral-7), var(--neutral-1));
+            color: light-dark(var(--neutral-6), var(--neutral-1));
         }
     }
 }
