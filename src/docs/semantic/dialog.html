@@ -1,0 +1,35 @@
+---
+title: Dialog
+pageOrder: 1
+---
+<p>
+    A dialog is a modal or non-modal popup that sits on top of the other page content
+    and it obscures the page content with a partially tranparent backdrop. 
+</p>
+<p>
+    It is created using the <kbd>&lt;dialog&gt;</kbd> element.
+</p>
+<div class="box text-center">
+    <button commandFor="example-dialog" command="show-modal" class="primary">Show Dialog</button>
+</div>
+
+<dialog id="example-dialog" class="box">
+    <div class="text-layout text-1 text-center">Dialog</div>
+    <p>
+        This dialog has <kbd>class="box"</kbd> applied to create the border,
+        border radius and the padding.
+        For dialog elements it is not required to add the <kbd>bordered</kbd>
+        class to the box as dialogs always have a border.
+    </p>
+    <p>
+        To open the dialog the <kbd>commandFor="dialog-id"</kbd> and
+        <kbd>command="show-modal"</kbd> attributes were put on the Show Dialog button.
+        This opens the dialog without JavaScript as a modal dialog.
+    </p>
+    <p>
+        To close the dialog the close button or the escape key can be used.
+    </p>
+    <div class="cluster main-end">
+        <button commandFor="example-dialog" command="close" class="primary">Close</button>
+    </div>
+</dialog>

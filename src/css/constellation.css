@@ -455,9 +455,15 @@
             inline-size: calc(100% - (2 * var(--padding)));
             max-inline-size: calc(80ch - (2 * var(--padding)));
             margin: auto;
+            border: var(--box-border-width) solid var(--box-border-color);
 
             &::backdrop {
                 background-color: oklch(from var(--neutral-3) l c h / 90%);
+            }
+
+            &:focus,
+            &:focus-visible {
+                outline: none;
             }
         }
 
