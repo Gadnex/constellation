@@ -12,8 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@shikijs/markdown-it": "^4.2.0",
-    "stylelint": "^17.13.0",
+    "@shikijs/markdown-it": "^4.3.0",
+    "stylelint": "^17.14.0",
     "stylelint-config-standard": "^40.0.0"
   }
 }
