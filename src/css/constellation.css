@@ -111,8 +111,8 @@
         --sidebar-border-color: var(--border-color);
         --button-background: var(--neutral-1);
         --button-border-color: var(--border-color);
-        --button-hover: var(--neutral-2);
-        --button-disabled: var(--neutral-3);
+        --button-hover: var(--neutral-3);
+        --button-disabled: var(--neutral-2);
 
         color-scheme: light dark;
         background-color: var(--background-color);
@@ -130,8 +130,8 @@
             --button-color: var(--color);
             --button-background: var(--primary-1);
             --button-border-color: var(--border-color);
-            --button-hover: var(--primary-2);
-            --button-disabled: var(--primary-3);
+            --button-hover: var(--primary-3);
+            --button-disabled: var(--primary-2);
 
             background-color: var(--background-color);
             color: var(--color);
