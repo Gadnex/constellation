@@ -652,18 +652,16 @@
             border-radius: var(--field-border-radius);
         }
 
-        select,
         ::picker(select) {
             appearance: base-select;
             background-color: var(--background-color);
-        }
-
-        ::picker(select) {
             margin-block-start: var(--size-1);
             border-radius: var(--field-border-radius);
         }
 
         select {
+            appearance: base-select;
+            background-color: var(--background-color);
             margin-block: var(--size-1);
             padding: var(--size-1) var(--size-2);
             border: var(--field-border-width) solid var(--border-color);
