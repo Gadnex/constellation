@@ -26,7 +26,7 @@ pageOrder: 2
     color scheme.
     Below are examples of all the color utility classes.
 </p>
-<div class="grid max-cols-2">
+<div class="grid max-cols-2 m-b-5">
     <div>
         <strong>primary</strong>
         <div class="box primary">
@@ -80,11 +80,12 @@ pageOrder: 2
 <h4>Color backgrounds</h4>
 <p>
     There are a number CSS background color utility classes to set for a box.
-    These utility classes can be applied for example as <kbd>class="box bg-primary"</kbd> to create a box with the primary
+    These utility classes can be applied for example as <kbd>class="box bg-primary"</kbd> to create a box with the
+    primary
     color scheme and a bright background.
     Below are examples of all the background color utility classes.
 </p>
-<div class="grid max-cols-2">
+<div class="grid max-cols-2 m-b-5">
     <div>
         <strong>bg-primary</strong>
         <div class="box bg-primary">
@@ -123,7 +124,7 @@ pageOrder: 2
     It is used in combination with the color utility classes to have different
     border colors depending on the box color.
 </p>
-<div class="grid max-cols-2">
+<div class="grid max-cols-2 m-b-5">
     <div>
         <strong>default</strong>
         <div class="box bordered">
@@ -156,6 +157,54 @@ pageOrder: 2
     </div>
 </div>
 
+<h4>Shadowed</h4>
+<p>
+    The utility class <kbd>shadowed</kbd> puts a shadow around a box in a light theme,
+    but does nothing on a dark theme as there are no shadows in the dark.
+</p>
+<p>
+    It is used in combination with the color utility classes to have different
+    glow colors depending on the box color.
+</p>
+<div class="grid max-cols-2 m-b-5 gap-5">
+    <div>
+        <strong>shadowed</strong>
+        <div class="box shadowed">
+            Default
+        </div>
+    </div>
+    <div>
+        <strong>shadowed shadow-glow</strong>
+        <div class="box shadowed shadow-glow">
+            Default
+        </div>
+    </div>
+    <div>
+        <strong>primary shadowed shadow-glow</strong>
+        <div class="box primary shadowed shadow-glow">
+            Primary
+        </div>
+    </div>
+    <div>
+        <strong>secondary shadowed shadow-glow</strong>
+        <div class="box secondary shadowed shadow-glow">
+            Secondary
+        </div>
+    </div>
+    <div>
+        <strong>tertiary shadowed shadow-glow</strong>
+        <div class="box tertiary shadowed shadow-glow">
+            Tertiary
+        </div>
+    </div>
+    <div>
+        <strong>contrast shadowed shadow-glow</strong>
+        <div class="box contrast shadowed shadow-glow">
+            Contrast
+        </div>
+    </div>
+</div>
+
 <h4>Padding utilities</h4>
 <p>
     There are a number CSS padding utility classes to set for a box.
@@ -164,7 +213,7 @@ pageOrder: 2
     The padding class <kbd>p-0</kbd> means that there is no padding at all.
     Below are examples of all the padding utility classes.
 </p>
-<div class="grid max-cols-3">
+<div class="grid max-cols-3 m-b-5">
     <div>
         <strong>p-0</strong>
         <div class="box p-0">
@@ -240,5 +289,10 @@ pageOrder: 2
         Set the padding of the box.
         It is suggested to use the --size-{1-12} CSS variables to have a responsive padding size.
     </dd>
-    </div>
+
+    <dt class="text-contrast">--glow-color:</dt>
+    <dd>
+        Set the glow color for dark mode when the utility classes <kbd>shadowed</kbd> and
+        <kbd>shadow-glow</kbd> are applied.
+    </dd>
 </dl>

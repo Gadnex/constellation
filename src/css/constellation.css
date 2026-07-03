@@ -455,7 +455,7 @@
             inline-size: calc(100% - (2 * var(--padding)));
             max-inline-size: calc(80ch - (2 * var(--padding)));
             margin: auto;
-            border: var(--box-border-width) solid var(--box-border-color);
+            border: none;
 
             &::backdrop {
                 background-color: oklch(from var(--neutral-3) l c h / 90%);
@@ -880,12 +880,19 @@
         .box {
             color: var(--box-color);
             background-color: var(--box-background-color);
-            box-shadow: var(--box-shadow);
             border-radius: var(--box-border-radius);
             padding: var(--box-padding);
             
             &.bordered {
                 border: var(--box-border-width) solid var(--box-border-color);
+            }
+            
+            &.shadowed {
+                box-shadow: var(--box-shadow);
+            }
+            
+            &.shadow-glow {
+                box-shadow: var(--shadow-glow-3);
             }
 
             &>:first-child {
@@ -912,6 +919,10 @@
                 &.bordered {
                     border-color: var(--secondary-4);
                 }
+
+                &.shadow-glow {
+                    --glow-color: var(--secondary-4);
+                }
             }
 
             &.tertiary {
@@ -921,6 +932,10 @@
                 &.bordered {
                     border-color: var(--tertiary-4);
                 }
+
+                &.shadow-glow {
+                    --glow-color: var(--tertiary-4);
+                }
             }
 
             &.contrast {
@@ -929,6 +944,10 @@
 
                 &.bordered {
                     border-color: var(--contrast-4);
+                }
+
+                &.shadow-glow {
+                    --glow-color: var(--contrast-4);
                 }
             }
 
