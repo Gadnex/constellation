@@ -8,22 +8,24 @@ pageOrder: 1
     The margin of all direct children of the stack is removed to ensure the consistent gap between the stacked elements.
 </p>
 <p>
-    The stack is applied by setting <kbd>class="stack"</kbd> on an HTML element.
+    The stack is applied by setting the <kbd>layout-stack</kbd> attribute on an HTML element.
 </p>
-<div class="stack">
+<div layout-stack>
     <div class="bg-primary text-center">Stacked element</div>
     <div class="bg-primary text-center">Stacked element</div>
     <div class="bg-primary text-center">Stacked element</div>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a stack to alter the appearence.
+    There are a number of additional layout modifiers that can be applied to a stack to alter the appearence.
+    A layout modifiers are applied as space separated values of the layout attribute.
+    For example <kbd>layout-stack="v-center gap-1"</kbd>
 </p>
 
 <h4>Gap</h4>
 <p>
-    There are a number CSS classes to set the gap between the elements of the stack.
+    There are a number layout modifiers to set the gap between the elements of the stack.
     These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
     <kbd>gap-0</kbd> means no gap at all.
     The default gap is <kbd>gap-3</kbd>.
@@ -34,7 +36,7 @@ pageOrder: 1
 <div class="grid max-cols-3">
     <div>
         <strong>gap-0</strong>
-        <div class="stack gap-0">
+        <div layout-stack="gap-0">
             <div class="p-2 bg-primary">Element 1</div>
             <div class="p-2 bg-contrast">Element 2</div>
             <div class="p-2 bg-primary">Element 3</div>
@@ -42,7 +44,7 @@ pageOrder: 1
     </div>
     <div>
         <strong>gap-1</strong>
-        <div class="stack gap-1">
+        <div layout-stack="gap-1">
             <div class="p-2 bg-primary">Element 1</div>
             <div class="p-2 bg-contrast">Element 2</div>
             <div class="p-2 bg-primary">Element 3</div>
@@ -50,7 +52,7 @@ pageOrder: 1
     </div>
     <div>
         <strong>gap-2</strong>
-        <div class="stack gap-2">
+        <div layout-stack="gap-2">
             <div class="p-2 bg-primary">Element 1</div>
             <div class="p-2 bg-contrast">Element 2</div>
             <div class="p-2 bg-primary">Element 3</div>
@@ -58,7 +60,7 @@ pageOrder: 1
     </div>
     <div>
         <strong>gap-3 (Default)</strong>
-        <div class="stack gap-3">
+        <div layout-stack="gap-3">
             <div class="p-2 bg-primary">Element 1</div>
             <div class="p-2 bg-contrast">Element 2</div>
             <div class="p-2 bg-primary">Element 3</div>
@@ -66,7 +68,7 @@ pageOrder: 1
     </div>
     <div>
         <strong>gap-4</strong>
-        <div class="stack gap-4">
+        <div layout-stack="gap-4">
             <div class="p-2 bg-primary">Element 1</div>
             <div class="p-2 bg-contrast">Element 2</div>
             <div class="p-2 bg-primary">Element 3</div>
@@ -74,7 +76,7 @@ pageOrder: 1
     </div>
     <div>
         <strong>gap-5</strong>
-        <div class="stack gap-5">
+        <div layout-stack="gap-5">
             <div class="p-2 bg-primary">Element 1</div>
             <div class="p-2 bg-contrast">Element 2</div>
             <div class="p-2 bg-primary">Element 3</div>
@@ -84,48 +86,48 @@ pageOrder: 1
 
 <h4>Vertical content justification</h4>
 <p>
-    There are a number CSS classes to set the vertical content justification of the stack.
+    There are a number layout modifiers to set the vertical content justification of the stack.
     The default content justification in CSS is <kbd>justify-content: flex-start;</kbd>.
     The examples below demonstare the different vertical content justifications.
 </p>
-<div class="stack">
+<div layout-stack>
     <div>
-        <strong>main-start (Default)</strong>
-        <div class="box stack main-start" style="min-block-size: 200px;">
+        <strong>v-start (Default)</strong>
+        <div layout-stack="v-start" class="box" style="min-block-size: 200px;">
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-end</strong>
-        <div class="box stack main-end" style="min-block-size: 200px;">
+        <strong>v-end</strong>
+        <div layout-stack="v-end" class="box" style="min-block-size: 200px;">
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-center</strong>
-        <div class="box stack main-center" style="min-block-size: 200px;">
+        <strong>v-center</strong>
+        <div layout-stack="v-center" class="box" style="min-block-size: 200px;">
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-space-between</strong>
-        <div class="box stack main-space-between" style="min-block-size: 300px;">
+        <strong>v-space-between</strong>
+        <div layout-stack="v-space-between" class="box" style="min-block-size: 300px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-space-around</strong>
-        <div class="box stack main-space-around" style="min-block-size: 300px;">
+        <strong>v-space-around</strong>
+        <div layout-stack="v-space-around" class="box" style="min-block-size: 300px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-space-evenly</strong>
-        <div class="box stack main-space-evenly" style="min-block-size: 300px;">
+        <strong>v-space-evenly</strong>
+        <div layout-stack="v-space-evenly" class="box" style="min-block-size: 300px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -135,32 +137,32 @@ pageOrder: 1
 
 <h4>Horizontal item alignment</h4>
 <p>
-    There are a number CSS classes to set the horizontal item alignment of the stack.
+    There are a number layout modifiers to set the horizontal item alignment of the stack.
     The default item alignment in CSS is <kbd>align-items: stretch;</kbd>.
     The examples below demonstare the different horizontal item alignments.
 </p>
-<div class="stack">
+<div layout-stack>
     <div>
-        <strong>cross-start</strong>
-        <div class="box stack cross-start">
+        <strong>h-start</strong>
+        <div layout-stack="h-start" class="box">
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>cross-end</strong>
-        <div class="box stack cross-end">
+        <strong>h-end</strong>
+        <div layout-stack="h-end" class="box">
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>cross-center</strong>
-        <div class="box stack cross-center">
+        <strong>h-center</strong>
+        <div layout-stack="h-center" class="box">
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>cross-stretch (Default)</strong>
-        <div class="box stack cross-stretch">
+        <strong>h-stretch (Default)</strong>
+        <div layout-stack="h-stretch" class="box">
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
@@ -168,19 +170,19 @@ pageOrder: 1
 
 <h4>On top</h4>
 <p>
-    The <kbd>on-top</kbd> class can be used on a <kbd>stack</kbd> to stack elements on top of each other.
+    The <kbd>on-top</kbd> layout modifier can be used on a <kbd>layout-stack</kbd> attribute to stack elements on top of
+    each other.
     This pattern is useful if you would like to display an image or video with text on top of it.
     The image or video should always be the first element within the stack to have it behind everything else.
 </p>
 <p>
-    The example below has a div element with the classes <kbd>frame</kbd>, <kbd>stack</kbd>, <kbd>on-top</kbd>,
-    <kbd>main-center</kbd> and <kbd>cross-center</kbd> applied. Inside the div element is an image (img) element
-    followed by a
-    div element with some image text. Instead of the text appearing below the image in the stack, it appears
-    on top of the image and centered vertically and horizontally.
+    The example below has a stack with the layout modifiers <kbd>on-top</kbd>,
+    <kbd>v-center</kbd> and <kbd>h-center</kbd> applied. Inside the stack is an image (img) element
+    followed by a div element with some image text. Instead of the text appearing below the image in the stack, it
+    appears on top of the image and centered vertically and horizontally.
 </p>
 <div class="center w-max-40ch">
-    <div class="frame stack on-top main-center cross-center">
+    <div layout-stack="on-top v-center h-center" class="frame">
         <img src="/img/stars.jpg" alt="Image of stars">
         <div class="text-light">Image text</div>
     </div>
@@ -195,21 +197,21 @@ pageOrder: 1
 <div class="switcher">
     <div>
         <strong>No gradient</strong>
-        <div class="frame bg-primary stack on-top main-center cross-center">
+        <div layout-stack="on-top v-center h-center" class="frame bg-primary">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
     </div>
     <div>
         <strong>gradient-top</strong>
-        <div class="frame bg-primary stack on-top main-start cross-center gradient-top">
+        <div layout-stack="on-top v-start h-center gradient-start" class="frame bg-primary">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
     </div>
     <div>
         <strong>gradient-bottom</strong>
-        <div class="frame bg-primary stack on-top main-end cross-center gradient-bottom">
+        <div layout-stack="on-top v-end h-center gradient-end" class="frame bg-primary">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
@@ -223,4 +225,9 @@ pageOrder: 1
 <dl>
     <dt class="text-contrast">--gap</dt>
     <dd>Set the gap size between the elements in the stack.</dd>
+
+    <dt class="text-contrast">--gradient-color</dt>
+    <dd>Set the gradient color for the gradient when the <kbd>on-top</kbd> modifier is used with the
+        <kbd>gradient-start</kbd> or <kbd>gradient-end</kbd> modifiers.
+    </dd>
 </dl>
