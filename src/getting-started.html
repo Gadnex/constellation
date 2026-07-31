@@ -22,11 +22,12 @@ date: 2026-07-03
     You can always minify it along with your site's custom CSS.
 </p>
 <p>
-    Assuming your project exposes the CSS file at <kbd>/css/constellation.css</kbd> you can add the CSS file
+    Assuming your project exposes the CSS file at <kbd>/css/CONSTELLATION.css</kbd> you can add the CSS file
     in your HTML as follows:
 </p>
 <div class="box">
-    <code>&lt;link rel="stylesheet" href="/css/constellation.css"&gt;</code>
+    <code>&lt;link rel="stylesheet" href="/css/CONSTELLATION.css"&gt;
+&lt;link rel="stylesheet" href="/css/LAYOUT.css"&gt;</code>
 </div>
 
 <h3>Customizing</h3>
@@ -141,8 +142,8 @@ date: 2026-07-03
                     <label for="padding">--padding</label>
                 </div>
                 <div>
-                    <input id="padding" type="range" min="0" max="5" list="padding-markers"
-                        class="w-full" data-signals:_padding="4" data-bind:_padding>
+                    <input id="padding" type="range" min="0" max="5" list="padding-markers" class="w-full"
+                        data-signals:_padding="4" data-bind:_padding>
                     <datalist id="padding-markers">
                         <option value="0"></option>
                         <option value="1"></option>
@@ -158,9 +159,8 @@ date: 2026-07-03
                     <label for="sidebar-padding">--sidebar-padding</label>
                 </div>
                 <div>
-                    <input id="sidebar-padding" type="range" min="0" max="5"
-                        list="sidebar-padding-markers" class="w-full" data-signals:_sidebar-padding="4"
-                        data-bind:_sidebar-padding>
+                    <input id="sidebar-padding" type="range" min="0" max="5" list="sidebar-padding-markers"
+                        class="w-full" data-signals:_sidebar-padding="4" data-bind:_sidebar-padding>
                     <datalist id="sidebar-padding-markers">
                         <option value="0"></option>
                         <option value="1"></option>
@@ -173,12 +173,12 @@ date: 2026-07-03
             </div>
             <div>
                 <div class="cluster cross-baseline">
-                    <input type="checkbox"  id="box-padding-enabled" data-bind:_box-padding-enabled>
+                    <input type="checkbox" id="box-padding-enabled" data-bind:_box-padding-enabled>
                     <label for="box-padding-enabled">--box-padding</label>
                 </div>
                 <div data-show="$_boxPaddingEnabled" style="display: none;">
-                    <input type="range" min="0" max="5" list="box-padding-markers"
-                        class="w-full" data-signals:_box-padding="4" data-bind:_box-padding>
+                    <input type="range" min="0" max="5" list="box-padding-markers" class="w-full"
+                        data-signals:_box-padding="4" data-bind:_box-padding>
                     <datalist id="box-padding-markers">
                         <option value="0"></option>
                         <option value="1"></option>
