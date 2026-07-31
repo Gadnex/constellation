@@ -5,5 +5,190 @@ description: A guide to start using Constellation CSS in your own project
 date: 2026-07-03
 ---
 <p>
-    
+    Constellation CSS prefers <a href="https://htmx.org/essays/vendoring/" target="_blank">vendoring</a> as a way of
+    using the library.
+    “Vendoring” software is a technique where you copy the source of another project directly into your own project.
 </p>
+<p>
+    Simply follow
+    <a href="https://raw.githubusercontent.com/Gadnex/constellation/main/src/css/constellation.css"
+        target="_blank">this</a>
+    link to find the original Constellation CSS file.
+</p>
+<p>
+    The
+    <a href="https://gadnex.github.io/constellation/css/constellation.css" target="_blank">minified version</a>
+    can be found here, but if you want to read and understand the CSS yourself, the unminified version may be better.
+    You can always minify it along with your site's custom CSS.
+</p>
+<p>
+    Assuming your project exposes the CSS file at <kbd>/css/constellation.css</kbd> you can add the CSS file
+    in your HTML as follows:
+</p>
+<div class="box">
+    <code>&lt;link rel="stylesheet" href="/css/constellation.css"&gt;</code>
+</div>
+
+<h3>Customizing</h3>
+<p>
+    While you are free toc customize Constellation CSS as required, this may block you from upgrading to a
+    more recent and improved version of the CSS.
+</p>
+<p>
+    With this in mind constellation has a number of CSS variables that can be set in a custom CSS file
+    in your project that will override the most common look and feel options.
+</p>
+<p>
+    The following CSS can be used and customized with the interactive customizer below.
+</p>
+<div class="box">
+    <pre>:root {
+    --brand: <span data-text="$_brand"></span>;
+    --color-degrees: <span data-text="$_colorDegrees"></span>;
+
+    --padding: <span data-text="$_padding > 0 ? 'var(--size-' + $_padding + ')' : 0"></span>;
+    --sidebar-padding: <span data-text="$_sidebarPadding > 0 ? 'var(--size-' + $_sidebarPadding + ')' : 0"></span>;
+    --box-padding: <span data-text="$_boxPadding > 0 ? 'var(--size-' + $_boxPadding + ')' : 0"></span>;
+}</pre>
+</div>
+<p>
+    Change the settings below to update the CSS variables above.
+</p>
+<div class="box grid" data-style="{
+    '--padding': $_padding > 0 ? 'var(--size-' + $_padding + ')' : 0,
+    '--sidebar-padding': $_sidebarPadding > 0 ? 'var(--size-' + $_sidebarPadding + ')' : 0,
+    '--box-padding': ($_boxPadding > 0 ? 'var(--size-' + $_boxPadding + ')' : 0)
+}">
+    <fieldset>
+        <legend>Colors</legend>
+        <div class="stack">
+            <div>
+                <div>
+                    <label for="brand">--brand</label>
+                </div>
+                <div>
+                    <input name="color" id="brand" type="color" class="w-full" data-bind:_brand
+                        data-on:change="localStorage.setItem('brand-color', $_brand)">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="color-degrees">--color-degrees</label>
+                </div>
+                <div>
+                    <input name="degrees" id="color-degrees" type="range" min="0" max="180" step="5" class="w-full"
+                        data-bind:_color-degrees data-on:change="localStorage.setItem('color-degrees', $_colorDegrees)">
+                </div>
+            </div>
+            <div>
+                <button class="w-full primary" data-on:click="
+                    $_brand = '#238fff';
+                    localStorage.removeItem('brand-color');
+                    $_colorDegrees = 35; 
+                    localStorage.removeItem('color-degrees');">
+                    Reset
+                </button>
+            </div>
+            <div class="p-2 stack gap-0">
+                <div class="cluster gap-0">
+                    <div class="frame square" style="width: 16%; background-color: var(--primary-1);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--primary-2);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--primary-3);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--primary-4);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--primary-5);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--primary-6);"></div>
+                </div>
+                <div class="cluster gap-0">
+                    <div class="frame square" style="width: 16%; background-color: var(--secondary-1);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--secondary-2);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--secondary-3);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--secondary-4);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--secondary-5);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--secondary-6);"></div>
+                </div>
+                <div class="cluster gap-0">
+                    <div class="frame square" style="width: 16%; background-color: var(--tertiary-1);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--tertiary-2);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--tertiary-3);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--tertiary-4);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--tertiary-5);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--tertiary-6);"></div>
+                </div>
+                <div class="cluster gap-0">
+                    <div class="frame square" style="width: 16%; background-color: var(--contrast-1);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--contrast-2);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--contrast-3);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--contrast-4);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--contrast-5);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--contrast-6);"></div>
+                </div>
+                <div class="cluster gap-0">
+                    <div class="frame square" style="width: 16%; background-color: var(--neutral-1);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--neutral-2);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--neutral-3);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--neutral-4);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--neutral-5);"></div>
+                    <div class="frame square" style="width: 16%; background-color: var(--neutral-6);"></div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="box bordered">
+        <div class="stack">
+            <div>
+                <div>
+                    <label for="padding">--padding</label>
+                </div>
+                <div>
+                    <input id="padding" type="range" min="0" max="5" list="padding-markers"
+                        class="w-full" data-signals:_padding="4" data-bind:_padding>
+                    <datalist id="padding-markers">
+                        <option value="0"></option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                    </datalist>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="sidebar-padding">--sidebar-padding</label>
+                </div>
+                <div>
+                    <input id="sidebar-padding" type="range" min="0" max="5"
+                        list="sidebar-padding-markers" class="w-full" data-signals:_sidebar-padding="4"
+                        data-bind:_sidebar-padding>
+                    <datalist id="sidebar-padding-markers">
+                        <option value="0"></option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                    </datalist>
+                </div>
+            </div>
+            <div>
+                <div class="cluster cross-baseline">
+                    <input type="checkbox"  id="box-padding-enabled" data-bind:_box-padding-enabled>
+                    <label for="box-padding-enabled">--box-padding</label>
+                </div>
+                <div data-show="$_boxPaddingEnabled" style="display: none;">
+                    <input type="range" min="0" max="5" list="box-padding-markers"
+                        class="w-full" data-signals:_box-padding="4" data-bind:_box-padding>
+                    <datalist id="box-padding-markers">
+                        <option value="0"></option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                    </datalist>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

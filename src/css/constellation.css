@@ -1,3 +1,7 @@
+/*! 
+ * Copyright (c) 2026 William Gadney. All rights reserved.
+ * Licensed under the MIT License.
+ */
 @layer reset {
     :where(:root) {
         *,
@@ -319,6 +323,8 @@
         }
 
         code {
+            white-space: pre-wrap;
+            word-break: break-all;
             font-family: var(--font-monospace-code);
         }
 
@@ -614,8 +620,8 @@
 
         input[type="color"] {
             padding: 0 var(--size-1);
-            width: var(--size-10);
-            height: var(--size-6);
+            inline-size: var(--size-10);
+            block-size: var(--size-6);
         }
 
         input[type="file"] {
@@ -637,8 +643,8 @@
 
         input[type="checkbox"],
         input[type="radio"] {
-            width: 1rem;
-            height: 1rem;
+            inline-size: 1rem;
+            block-size: 1rem;
             outline-offset: var(--size-1);
 
             &[checked] {
@@ -647,7 +653,7 @@
         }
 
         fieldset {
-            padding: var(--size-2) var(--size-3);
+            padding: var(--size-3);
             border: var(--field-border-width) solid var(--border-color);
             border-radius: var(--field-border-radius);
         }
@@ -821,12 +827,7 @@
     :where(:root) {
         --layout-border-width: var(--border-width);
         --layout-border-radius: var(--size-3);
-        --layout-box-padding: var(--padding);
         --layout-shadow: var(--shadow-2);
-        --box-border-width: var(--layout-border-width);
-        --box-border-radius: var(--layout-border-radius);
-        --box-padding: var(--layout-box-padding);
-        --box-shadow: var(--layout-shadow);
 
         /* The stack */
         .stack {
@@ -876,6 +877,11 @@
 
         /* The box */
         .box {
+            --box-border-width: var(--layout-border-width);
+            --box-border-radius: var(--layout-border-radius);
+            --box-padding: var(--padding);
+            --box-shadow: var(--layout-shadow);
+
             color: var(--box-color);
             background-color: var(--box-background-color);
             border-radius: var(--box-border-radius);
@@ -1128,14 +1134,14 @@
         .reel {
             --item-width: 20vw;
             --gap: var(--size-3);
-            --padding: var(--size-2);
+            --reel-padding: var(--size-2);
 
             display: flex;
             gap: var(--gap);
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scroll-snap-type: x mandatory;
-            padding-block-end: var(--padding);
+            padding-block-end: var(--reel-padding);
             scrollbar-color: var(--primary-4) var(--background-color);
 
             &>* {
@@ -1203,8 +1209,8 @@
         }
 
         .icon {
-            height: 1em;
-            width: 1em;
+            inline-size: 1em;
+            block-size: 1em;
         }
 
         /* The container */
