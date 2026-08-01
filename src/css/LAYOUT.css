@@ -1,3 +1,8 @@
+/*! 
+ * Copyright (c) 2026 William Gadney. All rights reserved.
+ * Licensed under the MIT License.
+ */
+ 
 /* The stack */
 [layout-stack] {
     --gap: var(--size-3, 1rem);
@@ -111,17 +116,15 @@
 
 /* The box */
 [layout-box] {
-    --box-color: currentcolor;
-    --box-background-color: transparent;
-    --box-padding: 1rem;
-    --box-border-width: 1px;
-    --box-border-color: currentcolor;
-    --box-border-radius: 0;
-    --box-shadow: 4px 4px 0 oklch(from currentcolor l c h / 50%);
+    --internal-box-color: var(--box-color, currentcolor);
+    --internal-box-background-color: var(--box-background-color, transparent);
+    --internal-box-padding: var(--box-padding, 1rem);
+    --internal-box-border-radius: var(--box-border-radius, 0);
 
-    color: var(--box-color);
-    background-color: var(--box-background-color);
-    padding: var(--box-padding);
+    color: var(--internal-box-color);
+    background-color: var(--internal-box-background-color);
+    padding: var(--internal-box-padding);
+    border-radius: var(--internal-box-border-radius);
 }
 
 [layout-box]>:first-child {
@@ -130,15 +133,6 @@
 
 [layout-box]>:last-child {
     margin-block-end: 0;
-}
-
-[layout-box~="bordered"] {
-    border: var(--box-border-width) solid var(--box-border-color);
-    border-radius: var(--box-border-radius);
-}
-
-[layout-box~="shadowed"] {
-    box-shadow: var(--box-shadow);
 }
 
 /* The center */

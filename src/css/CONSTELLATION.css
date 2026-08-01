@@ -30,40 +30,28 @@
 
     :where(:root, [data-theme]) {
         /* Canvas background */
-        --primary-1: light-dark(
-            oklch(from var(--primary-4) calc(0.92 + (l * 0.1)) calc(c * 0.02) h),
-            oklch(from var(--primary-4) calc(0.08 + (l * 0.1)) calc(c * 0.15) h)
-        );
+        --primary-1: light-dark(oklch(from var(--primary-4) calc(0.92 + (l * 0.1)) calc(c * 0.02) h),
+                oklch(from var(--primary-4) calc(0.08 + (l * 0.1)) calc(c * 0.15) h));
 
         /* Surface background */
-        --primary-2: light-dark(
-            oklch(from var(--primary-4) calc(0.88 + (l * 0.1)) calc(c * 0.10) h),
-            oklch(from var(--primary-4) calc(0.16 + (l * 0.1)) calc(c * 0.40) h)
-        );
+        --primary-2: light-dark(oklch(from var(--primary-4) calc(0.88 + (l * 0.1)) calc(c * 0.10) h),
+                oklch(from var(--primary-4) calc(0.16 + (l * 0.1)) calc(c * 0.40) h));
 
         /* Surface Highlight / Overlay */
-        --primary-3: light-dark(
-            oklch(from var(--primary-4) calc(0.82 + (l * 0.1)) calc(c * 0.18) h),
-            oklch(from var(--primary-4) calc(0.22 + (l * 0.1)) calc(c * 0.40) h)
-        );
+        --primary-3: light-dark(oklch(from var(--primary-4) calc(0.82 + (l * 0.1)) calc(c * 0.18) h),
+                oklch(from var(--primary-4) calc(0.22 + (l * 0.1)) calc(c * 0.40) h));
 
         /* Brand Action */
-        --primary-4: light-dark(
-            oklch(from var(--brand) clamp(0.55, l, 0.65) c h),
-            oklch(from var(--brand) clamp(0.65, l, 0.75) c h)
-        );
+        --primary-4: light-dark(oklch(from var(--brand) clamp(0.55, l, 0.65) c h),
+                oklch(from var(--brand) clamp(0.65, l, 0.75) c h));
 
         /* Brand Hover */
-        --primary-5: light-dark(
-            oklch(from var(--primary-4) calc(l - 0.10) calc(c * 0.90) h),
-            oklch(from var(--primary-4) calc(l + 0.10) calc(c * 0.90) h)
-        );
+        --primary-5: light-dark(oklch(from var(--primary-4) calc(l - 0.10) calc(c * 0.90) h),
+                oklch(from var(--primary-4) calc(l + 0.10) calc(c * 0.90) h));
 
         /* Typography */
-        --primary-6: light-dark(
-            oklch(from var(--primary-4) calc(l - 0.40) calc(c * 0.15) h),
-            oklch(from var(--primary-4) calc(l + 0.40) calc(c * 0.15) h)
-        );
+        --primary-6: light-dark(oklch(from var(--primary-4) calc(l - 0.40) calc(c * 0.15) h),
+                oklch(from var(--primary-4) calc(l + 0.40) calc(c * 0.15) h));
 
         /* Secondary System (+ Degrees) */
         --secondary-1: oklch(from var(--primary-1) l c calc(h + var(--color-degrees)));
@@ -103,13 +91,14 @@
         --success: light-dark(oklch(60% 0.18 145deg), oklch(75% 0.18 145deg));
         --info: light-dark(oklch(60% 0.15 250deg), oklch(75% 0.14 250deg));
 
-        /* Variables for global colors */
+        /* Global variables */
         --background-color: var(--neutral-1);
         --color: var(--neutral-6);
         --border-color: var(--neutral-4);
         --box-color: var(--neutral-6);
         --box-background-color: var(--neutral-2);
-        --box-border-color: var(--border-color);
+        --box-padding: var(--size-4);
+        --box-border-radius: var(--size-2);
         --button-color: var(--color);
         --sidebar-background-color: var(--background-color);
         --sidebar-border-color: var(--border-color);
@@ -128,7 +117,6 @@
             --border-color: var(--primary-4);
             --box-color: var(--primary-6);
             --box-background-color: var(--primary-2);
-            --box-border-color: var(--border-color);
             --sidebar-background-color: var(--background-color);
             --sidebar-border-color: var(--border-color);
             --button-color: var(--color);
@@ -165,6 +153,143 @@
         --shadow-glow-5:
             0 12px 24px light-dark(color-mix(in srgb, var(--neutral-6) 35%, transparent), transparent),
             0 0 64px 8px light-dark(transparent, color-mix(in srgb, var(--glow-color) 20%, transparent));
+    }
+
+    .primary {
+        --border-color: var(--primary-4);
+        --box-color: var(--primary-6);
+        --box-background-color: var(--primary-2);
+    }
+
+    .secondary {
+        --border-color: var(--secondary-4);
+        --box-color: var(--secondary-6);
+        --box-background-color: var(--secondary-2);
+        --glow-color: var(--secondary-4);
+    }
+
+    .tertiary {
+        --border-color: var(--tertiary-4);
+        --box-color: var(--tertiary-6);
+        --box-background-color: var(--tertiary-2);
+        --glow-color: var(--tertiary-4);
+    }
+
+    .contrast {
+        --border-color: var(--contrast-4);
+        --box-color: var(--contrast-6);
+        --box-background-color: var(--contrast-2);
+        --glow-color: var(--contrast-4);
+    }
+
+    .error {
+        --border-color: var(--error);
+        --box-background-color: var(--error);
+    }
+
+    .warning {
+        --border-color: var(--warning);
+        --box-background-color: var(--warning);
+    }
+
+    .success {
+        --border-color: var(--success);
+        --box-background-color: var(--success);
+    }
+
+    .info {
+        --border-color: var(--info);
+        --box-background-color: var(--info);
+    }
+
+    .bg-primary {
+        --box-background-color: var(--primary-4);
+
+        background-color: var(--primary-4);
+    }
+
+    .bg-secondary {
+        --box-background-color: var(--secondary-4);
+
+        background-color: var(--secondary-4);
+    }
+
+    .bg-tertiary {
+        --box-background-color: var(--tertiary-4);
+
+        background-color: var(--tertiary-4);
+    }
+
+    .bg-contrast {
+        --box-background-color: var(--contrast-4);
+
+        background-color: var(--contrast-4);
+    }
+
+    .bg-neutral {
+        --box-background-color: var(--neutral-4);
+
+        background-color: var(--neutral-4);
+    }
+
+    .text-default {
+        color: var(--color);
+    }
+
+    .text-primary {
+        color: var(--primary-4);
+    }
+
+    .text-secondary {
+        color: var(--secondary-4);
+    }
+
+    .text-tertiary {
+        color: var(--tertiary-4);
+    }
+
+    .text-contrast {
+        color: var(--contrast-4);
+    }
+
+    .text-error {
+        color: var(--error);
+    }
+
+    .text-warning {
+        color: var(--warning);
+    }
+
+    .text-success {
+        color: var(--success);
+    }
+
+    .text-info {
+        color: var(--info);
+    }
+
+    .text-invert {
+        color: var(--background-color);
+    }
+
+    .text-light {
+        color: light-dark(var(--neutral-1), var(--neutral-6));
+    }
+
+    .text-dark {
+        color: light-dark(var(--neutral-6), var(--neutral-1));
+    }
+
+    .bordered {
+        border: var(--border-width) solid var(--border-color);
+    }
+
+    .shadowed {
+        box-shadow: var(--shadow-2);
+    }
+
+    .shadowed-glow {
+        box-shadow: var(--shadow-glow-3);
     }
 
     [data-theme="light"] {
@@ -263,7 +388,7 @@
             }
 
             &:focus {
-                outline: var(--outline-width) solid var(--primary-4 );
+                outline: var(--outline-width) solid var(--primary-4);
                 border-radius: var(--size-1);
             }
         }
@@ -497,7 +622,7 @@
                 }
 
                 &:hover {
-                    background-color: var(--primary-4)  ;
+                    background-color: var(--primary-4);
                 }
             }
         }
@@ -828,107 +953,6 @@
         --layout-border-width: var(--border-width);
         --layout-border-radius: var(--size-3);
         --layout-shadow: var(--shadow-2);
-
-        /* The box */
-        .box {
-            --box-border-width: var(--layout-border-width);
-            --box-border-radius: var(--layout-border-radius);
-            --box-padding: var(--padding);
-            --box-shadow: var(--layout-shadow);
-
-            color: var(--box-color);
-            background-color: var(--box-background-color);
-            border-radius: var(--box-border-radius);
-            padding: var(--box-padding);
-            
-            &.bordered {
-                border: var(--box-border-width) solid var(--box-border-color);
-            }
-            
-            &.shadowed {
-                box-shadow: var(--box-shadow);
-            }
-            
-            &.shadow-glow {
-                box-shadow: var(--shadow-glow-3);
-            }
-
-            &>:first-child {
-                margin-block-start: 0;
-            }
-
-            &>:last-child {
-                margin-block-end: 0;
-            }
-
-            &.primary {
-                color: var(--primary-6);
-                background-color: var(--primary-2);
-
-                &.bordered {
-                    border-color: var(--primary-4);
-                }
-            }
-
-            &.secondary {
-                color: var(--secondary-6);
-                background-color: var(--secondary-2);
-
-                &.bordered {
-                    border-color: var(--secondary-4);
-                }
-
-                &.shadow-glow {
-                    --glow-color: var(--secondary-4);
-                }
-            }
-
-            &.tertiary {
-                color: var(--tertiary-6);
-                background-color: var(--tertiary-2);
-
-                &.bordered {
-                    border-color: var(--tertiary-4);
-                }
-
-                &.shadow-glow {
-                    --glow-color: var(--tertiary-4);
-                }
-            }
-
-            &.contrast {
-                color: var(--contrast-6);
-                background-color: var(--contrast-2);
-
-                &.bordered {
-                    border-color: var(--contrast-4);
-                }
-
-                &.shadow-glow {
-                    --glow-color: var(--contrast-4);
-                }
-            }
-
-            &.error {
-                background-color: var(--error);
-                border-color: var(--error);
-            }
-
-            &.warning {
-                background-color: var(--warning);
-                border-color: var(--warning);
-            }
-
-            &.success {
-                background-color: var(--success);
-                border-color: var(--success);
-            }
-
-            &.info {
-                background-color: var(--info);
-                border-color: var(--info);
-            }
-        }
 
         /* The center */
         .center {
@@ -1395,26 +1419,38 @@
 
         /* Padding */
         .p-0 {
+            --box-padding: 0;
+
             padding: 0;
         }
 
         .p-1 {
+            --box-padding: var(--size-1);
+
             padding: var(--size-1);
         }
 
         .p-2 {
+            --box-padding: var(--size-2);
+
             padding: var(--size-2);
         }
 
         .p-3 {
+            --box-padding: var(--size-3);
+
             padding: var(--size-3);
         }
 
         .p-4 {
+            --box-padding: var(--size-4);
+
             padding: var(--size-4);
         }
 
         .p-5 {
+            --box-padding: var(--size-5);
+
             padding: var(--size-5);
         }
 
@@ -1540,74 +1576,6 @@
 
         .h-full {
             block-size: 100%;
-        }
-
-        .bg-primary {
-            background-color: var(--primary-4);
-        }
-
-        .bg-secondary {
-            background-color: var(--secondary-4);
-        }
-
-        .bg-tertiary {
-            background-color: var(--tertiary-4);
-        }
-
-        .bg-contrast {
-            background-color: var(--contrast-4);
-        }
-
-        .bg-neutral {
-            background-color: var(--neutral-4);
-        }
-
-        .text-default {
-            color: var(--color);
-        }
-
-        .text-primary {
-            color: var(--primary-4);
-        }
-
-        .text-secondary {
-            color: var(--secondary-4);
-        }
-
-        .text-tertiary {
-            color: var(--tertiary-4);
-        }
-
-        .text-contrast {
-            color: var(--contrast-4);
-        }
-
-        .text-error {
-            color: var(--error);
-        }
-
-        .text-warning {
-            color: var(--warning);
-        }
-
-        .text-success {
-            color: var(--success);
-        }
-
-        .text-info {
-            color: var(--info);
-        }
-
-        .text-invert {
-            color: var(--background-color);
-        }
-
-        .text-light {
-            color: light-dark(var(--neutral-1), var(--neutral-6));
-        }
-
-        .text-dark {
-            color: light-dark(var(--neutral-6), var(--neutral-1));
         }
     }
 }

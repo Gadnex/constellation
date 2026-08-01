@@ -3,14 +3,17 @@ title: The box
 pageOrder: 2
 ---
 <p>
-    The box is a layout component designed for placing a number of HTML elements inside a bordered box.
-    The box has a has a visible border with a border radius and some padding to ensure the content of the box does not
-    touch the border.
+    The box is a layout component designed for placing a number of HTML elements inside a box that is visually distinct
+    from the backgrount it is placed on. The box has some padding to ensure the content of the box does not touch the
+    border.
 </p>
 <p>
-    The box is applied by setting <kbd>class="box"</kbd> on an HTML element.
+    The box can be visually styled with a background color, border and a border radius.
 </p>
-<div class="box">
+<p>
+    The box is applied by setting the <kbd>layout-box</kbd> attribute on an HTML element.
+</p>
+<div layout-box>
     This is a box
 </div>
 
@@ -22,56 +25,56 @@ pageOrder: 2
 <h4>Color utilities</h4>
 <p>
     There are a number CSS color utility classes to set for a box.
-    These utility classes can be applied for example as <kbd>class="box primary"</kbd> to create a box with the primary
+    These utility classes can be applied for example as <kbd>layout-box class="primary"</kbd> to create a box with the primary
     color scheme.
     Below are examples of all the color utility classes.
 </p>
 <div class="grid max-cols-2 m-b-5">
     <div>
         <strong>primary</strong>
-        <div class="box primary">
+        <div layout-box class="primary">
             Primary
         </div>
     </div>
     <div>
         <strong>secondary</strong>
-        <div class="box secondary">
+        <div layout-box class="secondary">
             Secondary
         </div>
     </div>
     <div>
         <strong>tertiary</strong>
-        <div class="box tertiary">
+        <div layout-box class="tertiary">
             Tertiary
         </div>
     </div>
     <div>
         <strong>contrast</strong>
-        <div class="box contrast">
+        <div layout-box class="contrast">
             Contrast
         </div>
     </div>
     <div>
         <strong>error</strong>
-        <div class="box error">
+        <div layout-box class="error">
             Error
         </div>
     </div>
     <div>
         <strong>warning</strong>
-        <div class="box warning">
+        <div layout-box class="warning">
             Warning
         </div>
     </div>
     <div>
         <strong>success</strong>
-        <div class="box success">
+        <div layout-box class="success">
             Success
         </div>
     </div>
     <div>
         <strong>info</strong>
-        <div class="box info">
+        <div layout-box class="info">
             Info
         </div>
     </div>
@@ -80,7 +83,7 @@ pageOrder: 2
 <h4>Color backgrounds</h4>
 <p>
     There are a number CSS background color utility classes to set for a box.
-    These utility classes can be applied for example as <kbd>class="box bg-primary"</kbd> to create a box with the
+    These utility classes can be applied for example as <kbd>layout-box class="bg-primary"</kbd> to create a box with the
     primary
     color scheme and a bright background.
     Below are examples of all the background color utility classes.
@@ -88,31 +91,31 @@ pageOrder: 2
 <div class="grid max-cols-2 m-b-5">
     <div>
         <strong>bg-primary</strong>
-        <div class="box bg-primary">
+        <div layout-box class="bg-primary">
             Primary
         </div>
     </div>
     <div>
         <strong>bg-secondary</strong>
-        <div class="box bg-secondary">
+        <div layout-box class="bg-secondary">
             Secondary
         </div>
     </div>
     <div>
         <strong>bg-tertiary</strong>
-        <div class="box bg-tertiary">
+        <div layout-box class="bg-tertiary">
             Tertiary
         </div>
     </div>
     <div>
         <strong>bg-contrast</strong>
-        <div class="box bg-contrast">
+        <div layout-box class="bg-contrast">
             Contrast
         </div>
     </div>
     <div>
         <strong>bg-neutral</strong>
-        <div class="box bg-neutral">
+        <div layout-box class="bg-neutral">
             Neutral
         </div>
     </div>
@@ -127,31 +130,31 @@ pageOrder: 2
 <div class="grid max-cols-2 m-b-5">
     <div>
         <strong>default</strong>
-        <div class="box bordered">
+        <div layout-box class="bordered">
             Default
         </div>
     </div>
     <div>
         <strong>primary</strong>
-        <div class="box primary bordered">
+        <div layout-box class="primary bordered">
             Primary
         </div>
     </div>
     <div>
         <strong>secondary</strong>
-        <div class="box secondary bordered">
+        <div layout-box class="secondary bordered">
             Secondary
         </div>
     </div>
     <div>
         <strong>tertiary</strong>
-        <div class="box tertiary bordered">
+        <div layout-box class="tertiary bordered">
             Tertiary
         </div>
     </div>
     <div>
         <strong>contrast</strong>
-        <div class="box contrast bordered">
+        <div layout-box class="contrast bordered">
             Contrast
         </div>
     </div>
@@ -169,37 +172,37 @@ pageOrder: 2
 <div class="grid max-cols-2 m-b-5 gap-5">
     <div>
         <strong>shadowed</strong>
-        <div class="box shadowed">
+        <div layout-box class="shadowed">
             Default
         </div>
     </div>
     <div>
-        <strong>shadowed shadow-glow</strong>
-        <div class="box shadowed shadow-glow">
+        <strong>shadowed-glow</strong>
+        <div layout-box class="shadowed-glow">
             Default
         </div>
     </div>
     <div>
-        <strong>primary shadowed shadow-glow</strong>
-        <div class="box primary shadowed shadow-glow">
+        <strong>primary shadowed-glow</strong>
+        <div layout-box class="primary shadowed-glow">
             Primary
         </div>
     </div>
     <div>
-        <strong>secondary shadowed shadow-glow</strong>
-        <div class="box secondary shadowed shadow-glow">
+        <strong>secondary shadowed-glow</strong>
+        <div layout-box class="secondary shadowed-glow">
             Secondary
         </div>
     </div>
     <div>
-        <strong>tertiary shadowed shadow-glow</strong>
-        <div class="box tertiary shadowed shadow-glow">
+        <strong>tertiary shadowed-glow</strong>
+        <div layout-box class="tertiary shadowed-glow">
             Tertiary
         </div>
     </div>
     <div>
-        <strong>contrast shadowed shadow-glow</strong>
-        <div class="box contrast shadowed shadow-glow">
+        <strong>contrast shadowed-glow</strong>
+        <div layout-box class="contrast shadowed-glow">
             Contrast
         </div>
     </div>
@@ -208,7 +211,7 @@ pageOrder: 2
 <h4>Padding utilities</h4>
 <p>
     There are a number CSS padding utility classes to set for a box.
-    These utility classes can be applied for example as <kbd>class="box p-3"</kbd> padding using the responsive CSS size
+    These utility classes can be applied for example as <kbd>layout-box class="p-3"</kbd> padding using the responsive CSS size
     variable --size-3.
     The padding class <kbd>p-0</kbd> means that there is no padding at all.
     Below are examples of all the padding utility classes.
@@ -216,37 +219,37 @@ pageOrder: 2
 <div class="grid max-cols-3 m-b-5">
     <div>
         <strong>p-0</strong>
-        <div class="box p-0">
+        <div layout-box class="p-0">
             Content
         </div>
     </div>
     <div>
         <strong>p-1</strong>
-        <div class="box p-1">
+        <div layout-box class="p-1">
             Content
         </div>
     </div>
     <div>
         <strong>p-2</strong>
-        <div class="box p-2">
+        <div layout-box class="p-2">
             Content
         </div>
     </div>
     <div>
         <strong>p-3</strong>
-        <div class="box p-3">
+        <div layout-box class="p-3">
             Content
         </div>
     </div>
     <div>
         <strong>p-4 (Default)</strong>
-        <div class="box p-4">
+        <div layout-box class="p-4">
             Content
         </div>
     </div>
     <div>
         <strong>p-5</strong>
-        <div class="box p-5">
+        <div layout-box class="p-5">
             Content
         </div>
     </div>
@@ -263,21 +266,6 @@ pageOrder: 2
     <dt class="text-contrast">--box-background-color</dt>
     <dd>Set the background color of the box.</dd>
 
-    <dt class="text-contrast">--box-border-width</dt>
-    <dd>
-        Set the box border width in px.
-        Not suggested to use the size responsive variables here.
-    </dd>
-
-    <dt class="text-contrast">--box-border-color</dt>
-    <dd>Set the border color of the box.</dd>
-
-    <dt class="text-contrast">--box-shadow</dt>
-    <dd>
-        Set the shadow of the box.
-        One of the shadow CSS variables could be used here.
-    </dd>
-
     <dt class="text-contrast">--box-border-radius</dt>
     <dd>
         Set the border radius of the box.
@@ -290,9 +278,17 @@ pageOrder: 2
         It is suggested to use the --size-{1-12} CSS variables to have a responsive padding size.
     </dd>
 
+    <dt class="text-contrast">--border-width</dt>
+    <dd>
+        Set the box border width in px.
+        Not suggested to use the size responsive variables here.
+    </dd>
+
+    <dt class="text-contrast">--border-color</dt>
+    <dd>Set the border color of the box when the utility class <kbd>shadowed-glow</kbd> is applied</dd>
+
     <dt class="text-contrast">--glow-color:</dt>
     <dd>
-        Set the glow color for dark mode when the utility classes <kbd>shadowed</kbd> and
-        <kbd>shadow-glow</kbd> are applied.
+        Set the glow color for dark mode when the utility class <kbd>shadowed-glow</kbd> is applied.
     </dd>
 </dl>

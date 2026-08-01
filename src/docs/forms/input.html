@@ -11,7 +11,7 @@ pageOrder: 2
     The input element has a type attribute and the default value is <kbd>type="text"</kbd>, but various other types are
     available. The following examples show all the available types.
 </p>
-<div class="box grid max-cols-2">
+<div layout-box class="grid max-cols-2">
     <div>
         <label>
             <div>Text</div>
@@ -102,7 +102,7 @@ pageOrder: 2
     <code>--error</code> color to mark the field visually. For invalid fields, any sibling element immediately following
     the input element will have smaller text in the <code>--error</code> color.
 </p>
-<section class="box" layout-stack="gap-2">
+<section layout-box layout-stack="gap-2">
     <div>
         <label>
             <div>Valid input</div>
@@ -131,7 +131,7 @@ pageOrder: 2
     A fieldset is created using the <kbd>fieldset</kbd> element with a nested <kbd>legend</kbd>
     element and the nested content.
 </p>
-<section class="box">
+<section layout-box>
     <fieldset>
         <legend>Legend</legend>
         Fieldset content
@@ -141,7 +141,7 @@ pageOrder: 2
     Fieldsets can also be marked as valid or invalid using the <kbd>aria-invalid</kbd>
     attribute.
 </p>
-<section class="box">
+<section layout-box layout-stack>
     <fieldset aria-invalid="false">
         <legend>Legend</legend>
         Fieldset with <kbd>aria-invalid="false"</kbd>
@@ -157,7 +157,7 @@ pageOrder: 2
     A checkbox is created using the <kbd>&lt;input type="checkbox"&gt;</kbd> element.
     Checkboxes are often grouped inside a fieldset to provide additional context.
 </p>
-<section class="box">
+<section layout-box>
     <fieldset>
         <legend>Checkboxes</legend>
         <div>
@@ -184,7 +184,7 @@ pageOrder: 2
     A radio button is created using the <kbd>&lt;input type="cradio"&gt;</kbd> element.
     Radio buttons are often grouped inside a fieldset to provide additional context.
 </p>
-<section class="box">
+<section layout-box>
     <fieldset>
         <legend>Radio buttons</legend>
         <div>
@@ -211,7 +211,7 @@ pageOrder: 2
     The <kbd>&lt;input type="range"&gt;</kbd> does not visually look like a text input field
     and is thus styled differently.
 </p>
-<section class="box">
+<section layout-box>
     <div>
         <label>
             <div>Range</div>
@@ -238,7 +238,7 @@ pageOrder: 2
     The <kbd>&lt;input type="color"&gt;</kbd> is used to select a color using a
     color picker provided by the browser.
 </p>
-<section class="box">
+<section layout-box>
     <div>
         <label>
             <div>Color</div>
@@ -251,7 +251,7 @@ pageOrder: 2
 <p>
     The <kbd>&lt;input type="file"&gt;</kbd> is used to select one or more files to upload.
 </p>
-<section class="box">
+<section layout-box>
     <div>
         <label>
             <div>File</div>
