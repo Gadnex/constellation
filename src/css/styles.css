@@ -113,7 +113,7 @@
         navigation: auto;
     }
 
-    .sidebar {
+    [layout-sidebar] {
         view-transition-name: sidebar;
         z-index: 1;
     }

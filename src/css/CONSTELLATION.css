@@ -100,8 +100,6 @@
         --box-padding: var(--size-4);
         --box-border-radius: var(--size-2);
         --button-color: var(--color);
-        --sidebar-background-color: var(--background-color);
-        --sidebar-border-color: var(--border-color);
         --button-background: var(--neutral-1);
         --button-border-color: var(--border-color);
         --button-hover: var(--neutral-2);
@@ -117,8 +115,6 @@
             --border-color: var(--primary-4);
             --box-color: var(--primary-6);
             --box-background-color: var(--primary-2);
-            --sidebar-background-color: var(--background-color);
-            --sidebar-border-color: var(--border-color);
             --button-color: var(--color);
             --button-background: var(--primary-1);
             --button-border-color: var(--border-color);
@@ -536,19 +532,6 @@
     :where(:root) {
         body {
             margin-inline: var(--size-4);
-
-            &.fullscreen {
-                container-type: inline-size;
-                margin: 0;
-                min-height: 100dvh;
-                display: flex;
-                flex-direction: column;
-
-                &>main,
-                &>.sidebar-container {
-                    flex-grow: 1;
-                }
-            }
         }
 
         blockquote {
@@ -949,35 +932,6 @@
 
 @layer layout {
     :where(:root) {
-        --layout-border-width: var(--border-width);
-        --layout-border-radius: var(--size-3);
-        --layout-shadow: var(--shadow-2);
-
-        /* The sidebar */
-        .sidebar-container {
-            --sidebar-border-width: var(--layout-border-width);
-            --sidebar-padding: var(--padding);
-
-            display: flex;
-            flex-wrap: wrap;
-            outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
-            min-inline-size: 320px;
-
-            &>.sidebar {
-                flex: 1 1 30ch;
-                min-inline-size: 0;
-                outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
-                padding: var(--sidebar-padding);
-                background-color: var(--sidebar-background-color);
-            }
-
-            &> :not(.sidebar) {
-                flex: 999 1 0;
-                min-inline-size: 50%;
-                padding: var(--sidebar-padding);
-            }
-        }
-
         /* The switcher */
         .switcher {
             --threshold: 60ch;
@@ -1127,7 +1081,7 @@
 
             &.bordered {
                 padding-block: var(--size-3);
-                border: var(--layout-border-width) solid var(--border-color);
+                border: var(--border-width) solid var(--border-color);
             }
         }
 
@@ -1180,10 +1134,6 @@
         }
 
         @container (max-inline-size: 60ch) {
-            .sidebar-container {
-                align-content: flex-start;
-            }
-
             .container {
                 & .mobile-hide {
                     display: none;

@@ -17,7 +17,7 @@ pageOrder: 5
 <p>
     By default in Constellation CSS, the HTML body pas a responsive padding, thus when using a sidebar it is suggested
     to set
-    <kbd>&lt;body class="fullscreen"&gt;</kbd> to prepare the body to contain a sidebar.
+    <kbd>&lt;body layout-fullscreen&gt;</kbd> to prepare the body to contain a sidebar.
 </p>
 <p>
     The sidebar is created by wrapping both the sidebar and the main page content in an HTML tag with the class
@@ -25,8 +25,11 @@ pageOrder: 5
     On the sidebar HTML element <kbd>class="sidebar"</kbd> is applied.
 </p>
 <div class="container">
-    <div class="sidebar-container mobile-hide">
-        <div class="sidebar">Sidebar</div>
+    <div layout-box class="error m-b-3">
+        Sidebar example does not currently hide on mobile due to CSS specificity issue. 
+    </div>
+    <div class="mobile-hide">
+        <div layout-sidebar>Sidebar</div>
         <div>Main page content</div>
     </div>
     <div layout-box class="m-b-4 bg-warning mobile-show">
@@ -44,15 +47,15 @@ pageOrder: 5
     The following CSS variables are defined for the sidebar.
 </p>
 <dl>
-    <dt class="text-contrast">--sidebar-background-color</dt>
-    <dd>Sets the background color of the sidebar.</dd>
-
     <dt class="text-contrast">--sidebar-border-color</dt>
     <dd>Sets the border color of the sidebar conatiner and sidebar.</dd>
-
+    
     <dt class="text-contrast">--sidebar-border-width</dt>
     <dd>Sets the border width of the sidebar.</dd>
-
+    
     <dt class="text-contrast">--sidebar-padding</dt>
     <dd>Set the horizontal (inline) padding of the centered element.</dd>
+
+    <dt class="text-contrast">--sidebar-background-color</dt>
+    <dd>Sets the background color of the sidebar.</dd>
 </dl>

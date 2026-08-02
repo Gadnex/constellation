@@ -3,6 +3,20 @@
  * Licensed under the MIT License.
  */
 
+/* The fullscreen */
+[layout-fullscreen] {
+    container-type: inline-size;
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+[layout-fullscreen]>main,
+[layout-fullscreen]>:has(> [layout-sidebar]) {
+    flex-grow: 1;
+}
+
 /* The stack */
 [layout-stack] {
     --gap: var(--size-3, 1rem);
@@ -312,6 +326,39 @@
 
 [layout-cluster~="gap-c-5"] {
     --column-gap: var(--size-5, 1.5rem);
+}
+
+/* The sidebar */
+:has(> [layout-sidebar]) {
+    --sidebar-border-color: var(--border-color, currentcolor);
+    --sidebar-border-width: var(--border-width, 1px);
+    --sidebar-padding: var(--padding, 1rem);
+    --sidebar-background-color: var(--background-color, contrast-color(currentcolor));
+
+    display: flex;
+    flex-wrap: wrap;
+    outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
+    min-inline-size: 320px;
+}
+
+[layout-sidebar] {
+    flex: 1 1 30ch;
+    min-inline-size: 0;
+    outline: var(--sidebar-border-width) solid var(--sidebar-border-color);
+    padding: var(--sidebar-padding);
+    background-color: var(--sidebar-background-color);
+}
+
+:has(> [layout-sidebar])>:not([layout-sidebar]) {
+    flex: 999 1 0;
+    min-inline-size: 50%;
+    padding: var(--sidebar-padding);
+}
+
+@container (max-inline-size: 60ch) {
+    :has(> [layout-sidebar]) {
+        align-content: flex-start;
+    }
 }
 
 .gap-0 {
