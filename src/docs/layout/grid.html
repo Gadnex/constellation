@@ -18,9 +18,9 @@ pageOrder: 8
     When a cluster wraps onto multiple lines, the column gaps between the different rows do not match up.
 </p>
 <p>
-    The grid is applied by setting <kbd>class="grid"</kbd> on an HTML element.
+    The grid is applied by setting the <kbd>layout-grid</kbd> attribute on an HTML element.
 </p>
-<div class="grid">
+<div layout-grid>
     <div class="p-2 bg-primary">Element 1</div>
     <div class="p-2 bg-primary">Element 2</div>
     <div class="p-2 bg-primary">Element 3</div>
@@ -31,14 +31,16 @@ pageOrder: 8
     </div>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a grid to alter the appearence and behaviour.
+    There are a number of additional layout modifiers that can be applied to a grid to alter the appearence and behaviour.
+    Layout modifiers are applied as space separated values of the layout attribute.
+    For example <kbd>layout-grid="max-cols-2 gap-1"</kbd>
 </p>
 
 <h4>Gap</h4>
 <p>
-    There are a number CSS classes to set the gap between the elements of the grid.
+    There are a number of layout modifiers to set the gap between the elements of the grid.
     These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
     <kbd>gap-0</kbd> means no gap at all.
     The default gap is <kbd>gap-3</kbd>.
@@ -49,7 +51,7 @@ pageOrder: 8
 <div layout-stack>
     <div>
         <strong>gap-0</strong>
-        <div class="grid gap-0">
+        <div layout-box layout-grid="gap-0">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -60,7 +62,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>gap-1</strong>
-        <div class="grid gap-1">
+        <div layout-box layout-grid="gap-1">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -71,7 +73,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>gap-2</strong>
-        <div class="grid gap-2">
+        <div layout-box layout-grid="gap-2">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -82,7 +84,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>gap-3 (Default)</strong>
-        <div class="grid gap-3">
+        <div layout-box layout-grid="gap-3">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -93,7 +95,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>gap-4</strong>
-        <div class="grid gap-4">
+        <div layout-box layout-grid="gap-4">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -104,7 +106,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>gap-5</strong>
-        <div class="grid gap-5">
+        <div layout-box layout-grid="gap-5">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -117,13 +119,13 @@ pageOrder: 8
 
 <h4>Width</h4>
 <p>
-    There are a number CSS classes to set the minimum inline size (width) of columns of the grid.
+    There are a number of layout modifiers to set the minimum inline size (width) of columns of the grid.
     By default the minimum inline size of columns is 20ch to allow narrow grid columns.
 </p>
 <div layout-stack>
     <div>
         <strong>w-min-10ch</strong>
-        <div layout-box class="grid w-min-10ch">
+        <div layout-box layout-grid="w-min-10ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -134,7 +136,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>w-min-20ch (Default)</strong>
-        <div layout-box class="grid w-min-20ch">
+        <div layout-box layout-grid="w-min-20ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -145,7 +147,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>w-min-30ch</strong>
-        <div layout-box class="grid w-min-30ch">
+        <div layout-box layout-grid="w-min-30ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -154,7 +156,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>w-min-40ch</strong>
-        <div layout-box class="grid w-min-40ch">
+        <div layout-box layout-grid="w-min-40ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -163,7 +165,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>w-min-50ch</strong>
-        <div layout-box class="grid w-min-50ch">
+        <div layout-box layout-grid="w-min-50ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -174,13 +176,13 @@ pageOrder: 8
 
 <h4>Maximum columns</h4>
 <p>
-    There are a number CSS classes to set the maximum number of columns of the grid.
+    There are a number of layout modifiers to set the maximum number of columns of the grid.
     By default the maximum number of columns is 100 to allow very large grids.
 </p>
 <div layout-stack>
     <div>
         <strong>Default + (--min-inline-size: 3ch;)</strong>
-        <div layout-box class="grid" style="--min-inline-size: 3ch;">
+        <div layout-box layout-grid style="--min-inline-size: 3ch;">
             <div class="p-2 bg-primary">1</div>
             <div class="p-2 bg-primary">2</div>
             <div class="p-2 bg-primary">3</div>
@@ -205,7 +207,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>max-cols-2 + w-min-10ch</strong>
-        <div layout-box class="grid max-cols-2 w-min-10ch">
+        <div layout-box layout-grid="max-cols-2 w-min-10ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -216,7 +218,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>max-cols-3 + w-min-10ch</strong>
-        <div layout-box class="grid max-cols-3 w-min-10ch">
+        <div layout-box layout-grid="max-cols-3 w-min-10ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -227,7 +229,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>max-cols-4 + w-min-10ch</strong>
-        <div layout-box class="grid max-cols-4 w-min-10ch">
+        <div layout-box layout-grid="max-cols-4 w-min-10ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -238,7 +240,7 @@ pageOrder: 8
     </div>
     <div>
         <strong>max-cols-5 + w-min-10ch</strong>
-        <div layout-box class="grid max-cols-5 w-min-10ch">
+        <div layout-box layout-grid="max-cols-5 w-min-10ch">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -254,6 +256,12 @@ pageOrder: 8
     The following CSS variables are defined for the grid.
 </p>
 <dl>
+    <dt class="text-contrast">--gap</dt>
+    <dd>
+        Set the gap between rows and columns of the grid.
+        It is suggested to use the --size-{1-12} CSS variables to have a responsive gap size.
+    </dd>
+
     <dt class="text-contrast">--min-inline-size</dt>
     <dd>
         Set the minimum inline size (width) of the grid columns.
@@ -263,10 +271,4 @@ pageOrder: 8
 
     <dt class="text-contrast">--max-cols</dt>
     <dd>Set the maximum number of columns of the grid.</dd>
-
-    <dt class="text-contrast">--gap</dt>
-    <dd>
-        Set the gap between rows and columns of the grid.
-        It is suggested to use the --size-{1-12} CSS variables to have a responsive gap size.
-    </dd>
 </dl>
