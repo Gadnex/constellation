@@ -4,6 +4,7 @@
  */
 @layer layout {
     :where(:root) {
+
         /* The fullscreen */
         [layout-fullscreen] {
             container-type: inline-size;

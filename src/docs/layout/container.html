@@ -66,9 +66,6 @@ pageOrder: 13
     The examples below demonstare the different mobile main content justifications.
 </p>
 <div layout-stack class="container">
-    <div layout-box class="error">
-        This is currently broken due to specificity issue
-    </div>
     <div>
         <strong>mobile-main-start</strong>
         <div layout-box layout-cluster="h-end" class="mobile-main-start">
@@ -111,7 +108,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-main-space-evenly</strong>
-        <div layout-box layout-cluster="mobile-main-space-evenly">
+        <div layout-box layout-cluster class="mobile-main-space-evenly">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -155,9 +152,6 @@ pageOrder: 13
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
-    </div>
-    <div layout-box class="error">
-        This is currently broken due to specificity issue
     </div>
     <div>
         <strong>mobile-cross-stretch</strong>
