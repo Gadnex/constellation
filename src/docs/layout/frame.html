@@ -3,14 +3,14 @@ title: The frame
 pageOrder: 9
 ---
 <p>
-    The frame is a layout component designed for displaying image or video content the content within an HTML element.
-    In sets a specific aspect ratio for the frame with a defaul value of 16 / 9.
+    The frame is a layout component designed for displaying image or video content within an HTML element.
+    In sets a specific aspect ratio for the frame with a default value of 16 / 9.
 </p>
 <p>
-    The frame is applied by setting <kbd>class="frame"</kbd> on an HTML element.
+    The frame is applied by setting the <kbd>layout-frame</kbd> attribute on an HTML element.
 </p>
 <div layout-center="40ch">
-    <div class="frame bg-primary"></div>
+    <div layout-frame class="bg-primary"></div>
 </div>
 
 <h3>Examples</h3>
@@ -20,13 +20,13 @@ pageOrder: 9
 <div layout-grid="w-min-30ch">
     <div layout-box>
         <strong>Image content</strong>
-        <div class="frame">
+        <div layout-frame>
             <img src="/img/stars.jpg" alt="Image of stars">
         </div>
     </div>
     <div layout-box>
         <strong>Video content</strong>
-        <figure layout-stack="on-top v-end h-center" class="frame">
+        <figure layout-frame layout-stack="on-top v-end h-center">
             <video autoplay loop muted>
                 <source src="/img/night-sky-with-crescent-moon-and-milky-way.mp4" type="video/mp4">
             </video>
@@ -40,14 +40,16 @@ pageOrder: 9
     </div>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a frame to alter the appearence.
+    There are a number of additional layout modifiers that can be applied to a frame to alter the appearence.
+    Layout modifiers are applied as space separated values of the layout attribute.
+    For example <kbd>layout-frame="square"</kbd>
 </p>
 
 <h4>Aspect ratio</h4>
 <p>
-    There are a number CSS classes to set the width of the centered element.
+    There are a number of layout modifiers to set the aspect ratio of the frame.
 </p>
 <p>
     The examples below demonstare the different gap sizes.
@@ -55,27 +57,27 @@ pageOrder: 9
 <div layout-grid="w-min-20ch">
     <div>
         <strong>ultrawide</strong>
-        <div class="frame ultrawide bg-primary"></div>
+        <div layout-frame="ultrawide" class="bg-primary"></div>
     </div>
     <div>
         <strong>widescreen (Default)</strong>
-        <div class="frame widescreen bg-primary"></div>
+        <div layout-frame="widescreen" class="bg-primary"></div>
     </div>
     <div>
         <strong>golden</strong>
-        <div class="frame golden bg-primary"></div>
+        <div layout-frame="golden" class="bg-primary"></div>
     </div>
     <div>
         <strong>landscape</strong>
-        <div class="frame landscape bg-primary"></div>
+        <div layout-frame="landscape" class="bg-primary"></div>
     </div>
     <div>
         <strong>square</strong>
-        <div class="frame square bg-primary"></div>
+        <div layout-frame="square" class="bg-primary"></div>
     </div>
     <div>
         <strong>portrait</strong>
-        <div class="frame portrait bg-primary"></div>
+        <div layout-frame="portrait" class="bg-primary"></div>
     </div>
 </div>
 

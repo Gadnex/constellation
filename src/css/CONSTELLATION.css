@@ -932,51 +932,6 @@
 
 @layer layout {
     :where(:root) {
-        /* The frame */
-        .frame {
-            --ratio-square: 1;
-            --ratio-landscape: 4/3;
-            --ratio-portrait: 3/4;
-            --ratio-widescreen: 16/9;
-            --ratio-ultrawide: 18/5;
-            --ratio-golden: 1.6180/1;
-            --aspect-ratio: var(--ratio-widescreen);
-
-            aspect-ratio: var(--aspect-ratio);
-            overflow: hidden;
-
-            &>img,
-            &>video {
-                inline-size: 100%;
-                block-size: 100%;
-                object-fit: cover;
-            }
-
-            &.ultrawide {
-                --aspect-ratio: var(--ratio-ultrawide);
-            }
-
-            &.widescreen {
-                --aspect-ratio: var(--ratio-widescreen);
-            }
-
-            &.golden {
-                --aspect-ratio: var(--ratio-golden);
-            }
-
-            &.landscape {
-                --aspect-ratio: var(--ratio-landscape);
-            }
-
-            &.square {
-                --aspect-ratio: var(--ratio-square);
-            }
-
-            &.portrait {
-                --aspect-ratio: var(--ratio-portrait);
-            }
-        }
-
         /* The reel */
         .reel {
             --item-width: 20vw;

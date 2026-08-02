@@ -182,7 +182,7 @@ pageOrder: 1
     appears on top of the image and centered vertically and horizontally.
 </p>
 <div layout-center="40ch">
-    <div layout-stack="on-top v-center h-center" class="frame">
+    <div layout-frame layout-stack="on-top v-center h-center">
         <img src="/img/stars.jpg" alt="Image of stars">
         <div class="text-light">Image text</div>
     </div>
@@ -197,21 +197,21 @@ pageOrder: 1
 <div layout-switcher>
     <div>
         <strong>No gradient</strong>
-        <div layout-stack="on-top v-center h-center" class="frame bg-primary">
+        <div layout-frame layout-stack="on-top v-center h-center" class="bg-primary">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
     </div>
     <div>
         <strong>gradient-top</strong>
-        <div layout-stack="on-top v-start h-center gradient-start" class="frame bg-primary">
+        <div layout-frame layout-stack="on-top v-start h-center gradient-start" class="bg-primary">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>
     </div>
     <div>
         <strong>gradient-bottom</strong>
-        <div layout-stack="on-top v-end h-center gradient-end" class="frame bg-primary">
+        <div layout-frame layout-stack="on-top v-end h-center gradient-end" class="bg-primary">
             <div></div>
             <div class="text-contrast">Image text</div>
         </div>

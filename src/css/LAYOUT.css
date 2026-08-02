@@ -551,6 +551,51 @@
         [layout-grid~="max-cols-5"] {
             --max-cols: 5;
         }
+
+        /* The frame */
+        [layout-frame] {
+            --ratio-square: 1;
+            --ratio-landscape: 4/3;
+            --ratio-portrait: 3/4;
+            --ratio-widescreen: 16/9;
+            --ratio-ultrawide: 18/5;
+            --ratio-golden: 1.6180/1;
+            --aspect-ratio: var(--ratio-widescreen);
+
+            aspect-ratio: var(--aspect-ratio);
+            overflow: hidden;
+        }
+
+        [layout-frame]>img,
+        [layout-frame]>video {
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
+        }
+
+        [layout-frame~="ultrawide"] {
+            --aspect-ratio: var(--ratio-ultrawide);
+        }
+
+        [layout-frame~="widescreen"] {
+            --aspect-ratio: var(--ratio-widescreen);
+        }
+
+        [layout-frame~="golden"] {
+            --aspect-ratio: var(--ratio-golden);
+        }
+
+        [layout-frame~="landscape"] {
+            --aspect-ratio: var(--ratio-landscape);
+        }
+
+        [layout-frame~="square"] {
+            --aspect-ratio: var(--ratio-square);
+        }
+
+        [layout-frame~="portrait"] {
+            --aspect-ratio: var(--ratio-portrait);
+        }
     }
 }
 
