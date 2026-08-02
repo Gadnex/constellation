@@ -10,9 +10,9 @@ pageOrder: 6
     have multiple items on the same row, but also have multiple rows.
 </p>
 <p>
-    The switcher is applied by setting <kbd>class="switcher"</kbd> on an HTML element.
+    The switcher is applied by setting the <kbd>layout-switcher</kbd> attribute on an HTML element.
 </p>
-<div class="switcher">
+<div layout-switcher>
     <div class="bg-primary">Element</div>
     <div class="bg-primary">Element</div>
     <div class="bg-primary">Element</div>
@@ -20,31 +20,36 @@ pageOrder: 6
 <p>
     Example of a switcher in a narrow parent element
 </p>
-<div layout-box class="switcher w-max-30ch">
+<div layout-box layout-center="30ch" layout-switcher>
     <div class="bg-primary">Element</div>
     <div class="bg-primary">Element</div>
     <div class="bg-primary">Element</div>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a switcher to alter the appearence.
+    There are a number of additional layout modifiers that can be applied to a switcher to alter the appearence.
+    For example <kbd>layout-switcher="40ch gap-1"</kbd>
 </p>
 
 <h4>Gap</h4>
 <p>
-    There are a number CSS classes to set the gap between the elements of the switcher.
+    There are a number of layout modifiers to set the gap between the elements of the switcher.
     These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
     <kbd>gap-0</kbd> means no gap at all.
     The default gap is <kbd>gap-3</kbd>.
 </p>
 <p>
+    There are also <kbd>gap-r-{0-5}</kbd> and <kbd>gap-c-{0-5}</kbd> modifiers that set only the row or column
+    gap.
+</p>
+<p>
     The examples below demonstare the different gap sizes.
 </p>
-<div layout-stack>
+<div layout-stack layout-box>
     <div>
         <strong>gap-0</strong>
-        <div class="switcher gap-0">
+        <div layout-switcher="gap-0">
             <div class="bg-primary">Element</div>
             <div class="bg-contrast">Element</div>
             <div class="bg-primary">Element</div>
@@ -52,7 +57,7 @@ pageOrder: 6
     </div>
     <div>
         <strong>gap-1</strong>
-        <div class="switcher gap-1">
+        <div layout-switcher="gap-1">
             <div class="bg-primary">Element</div>
             <div class="bg-contrast">Element</div>
             <div class="bg-primary">Element</div>
@@ -60,7 +65,7 @@ pageOrder: 6
     </div>
     <div>
         <strong>gap-2</strong>
-        <div class="switcher gap-2">
+        <div layout-switcher="gap-2">
             <div class="bg-primary">Element</div>
             <div class="bg-contrast">Element</div>
             <div class="bg-primary">Element</div>
@@ -68,7 +73,7 @@ pageOrder: 6
     </div>
     <div>
         <strong>gap-3 (Default)</strong>
-        <div class="switcher gap-3">
+        <div layout-switcher="gap-3">
             <div class="bg-primary">Element</div>
             <div class="bg-contrast">Element</div>
             <div class="bg-primary">Element</div>
@@ -76,7 +81,7 @@ pageOrder: 6
     </div>
     <div>
         <strong>gap-4</strong>
-        <div class="switcher gap-4">
+        <div layout-switcher="gap-4">
             <div class="bg-primary">Element</div>
             <div class="bg-contrast">Element</div>
             <div class="bg-primary">Element</div>
@@ -84,7 +89,75 @@ pageOrder: 6
     </div>
     <div>
         <strong>gap-5</strong>
-        <div class="switcher gap-5">
+        <div layout-switcher="gap-5">
+            <div class="bg-primary">Element</div>
+            <div class="bg-contrast">Element</div>
+            <div class="bg-primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>gap-r-1 + gap-c-5</strong>
+        <div layout-switcher="gap-r-1 gap-c-5">
+            <div class="bg-primary">Element</div>
+            <div class="bg-contrast">Element</div>
+            <div class="bg-primary">Element</div>
+        </div>
+    </div>
+</div>
+
+<h4>Threshold</h4>
+<p>
+    There are a number of layout modifiers to set the threshold in ch units at which the switcher switches.
+    These are <kbd>{3-8}ch</kbd>, which set progressively bigger thresholds as the number increases.
+    The default threshold is <kbd>60ch</kbd>.
+</p>
+<p>
+    The examples below demonstare the different thresholds.
+</p>
+<div layout-stack layout-box>
+    <div>
+        <strong>30ch</strong>
+        <div layout-switcher="30ch">
+            <div class="bg-primary">Element</div>
+            <div class="bg-contrast">Element</div>
+            <div class="bg-primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>40ch</strong>
+        <div layout-switcher="40ch">
+            <div class="bg-primary">Element</div>
+            <div class="bg-contrast">Element</div>
+            <div class="bg-primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>50ch</strong>
+        <div layout-switcher="50ch">
+            <div class="bg-primary">Element</div>
+            <div class="bg-contrast">Element</div>
+            <div class="bg-primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>60ch (Default)</strong>
+        <div layout-switcher="60ch">
+            <div class="bg-primary">Element</div>
+            <div class="bg-contrast">Element</div>
+            <div class="bg-primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>70ch</strong>
+        <div layout-switcher="70ch">
+            <div class="bg-primary">Element</div>
+            <div class="bg-contrast">Element</div>
+            <div class="bg-primary">Element</div>
+        </div>
+    </div>
+    <div>
+        <strong>80ch</strong>
+        <div layout-switcher="80ch">
             <div class="bg-primary">Element</div>
             <div class="bg-contrast">Element</div>
             <div class="bg-primary">Element</div>
@@ -97,13 +170,13 @@ pageOrder: 6
     The following CSS variables are defined for the switcher.
 </p>
 <dl>
+    <dt class="text-contrast">--gap</dt>
+    <dd>Set the gap between the elements.</dd>
+
     <dt class="text-contrast">--threshold</dt>
     <dd>
         Set the horizontal (inline) size at which the switched switches.
         Suggested to set the value in ch units.
         the default threshold is 60ch.
     </dd>
-
-    <dt class="text-contrast">--gap</dt>
-    <dd>Set the gap between the elements.</dd>
 </dl>
