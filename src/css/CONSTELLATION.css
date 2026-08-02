@@ -440,12 +440,17 @@
             padding: 2px 4px;
             border: 1px solid var(--border-color);
             border-radius: var(--size-1);
+            white-space: nowrap;
         }
 
         code {
             white-space: pre-wrap;
             word-break: break-all;
             font-family: var(--font-monospace-code);
+        }
+
+        .text-wrap {
+            white-space: normal;
         }
 
         .text-layout {
