@@ -9,72 +9,75 @@ pageOrder: 3
     Even on the narrowest screens there is a padding to ensure the centered element does not touch the screen edges.
 </p>
 <p>
-    The center is applied by setting <kbd>class="center"</kbd> on an HTML element.
+    The center is applied by setting the <kbd>layout-center</kbd> attribute on an HTML element.
 </p>
-<div class="center w-content bg-primary p-4">
+<div layout-center="fit-content" class="bg-primary p-4">
     A centered element
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a center to alter the appearence.
+    There are a number of layout modifiers that can be applied to a center to alter the appearence.
 </p>
 
 <h4>Width</h4>
 <p>
-    There are a number CSS classes to set the width of the centered element.
-    The width class <kbd>w-content</kbd> limits the width of the centered element to be the minimum to fit its content.
-    The width classes <kbd>w-max-{1-8}0ch</kbd> sets the maximum width in characters from 10ch to 80ch in increments of
-    10 characters.
-    The default gap is <kbd>w-max-80ch</kbd>.
+    There are a number of layout modifiers to set the maximum width of the centered element.
 </p>
 <p>
-    The examples below demonstare the different gap sizes.
+    The <kbd>fit-content</kbd> layout modifier limits the width of the centered element to be the minimum to fit its
+    content.
+    The <kbd>{1-8}0ch</kbd> layout modifiers sets the maximum width in characters from 10ch to 80ch in increments of
+    10 characters.
+    The default width is <kbd>60ch</kbd>.
+</p>
+<p>
+    The examples below demonstare the different width layout modifiers.
 </p>
 <div layout-stack>
     <div>
-        <div class="bg-primary center w-content text-center">
-            w-content
+        <div layout-center="fit-content" class="bg-primary text-center">
+            fit-content
         </div>
     </div>
     <div>
-        <div class="bg-contrast center w-max-10ch text-center">
-            w-max-10ch
+        <div layout-center="10ch" class="bg-contrast text-center">
+            10ch
         </div>
     </div>
     <div>
-        <div class="bg-primary center w-max-20ch text-center">
-            w-max-20ch
+        <div layout-center="20ch" class="bg-primary text-center">
+            20ch
         </div>
     </div>
     <div>
-        <div class="bg-contrast center w-max-30ch text-center">
-            w-max-30ch
+        <div layout-center="30ch" class="bg-contrast text-center">
+            30ch
         </div>
     </div>
     <div>
-        <div class="bg-primary center w-max-40ch text-center">
-            w-max-40ch
+        <div layout-center="40ch" class="bg-primary text-center">
+            40ch
         </div>
     </div>
     <div>
-        <div class="bg-contrast center w-max-50ch text-center">
-            w-max-50ch
+        <div layout-center="50ch" class="bg-contrast text-center">
+            50ch
         </div>
     </div>
     <div>
-        <div class="bg-primary center w-max-60ch text-center">
-            w-max-60ch
+        <div layout-center="60ch" class="bg-primary text-center">
+            60ch (Default)
         </div>
     </div>
     <div>
-        <div class="bg-contrast center w-max-70ch text-center">
-            w-max-70ch
+        <div layout-center="70ch" class="bg-contrast text-center">
+            70ch
         </div>
     </div>
     <div>
-        <div class="bg-primary center w-max-80ch text-center">
-            w-max-80ch (Default)
+        <div layout-center="80ch" class="bg-primary text-center">
+            80ch
         </div>
     </div>
 </div>
