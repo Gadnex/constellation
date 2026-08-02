@@ -7,23 +7,26 @@ pageOrder: 4
     If there is insufficient space to fit all the elements side by side, they start wrappingto the next line.
 </p>
 <p>
-    The cluster is applied by setting <kbd>class="cluster"</kbd> on an HTML element.
+    The cluster is applied by setting the <kbd>layout-cluster</kbd> attribute on an HTML element.
 </p>
-<div class="cluster">
+<div layout-cluster>
     <div class="p-2 bg-primary">Element 1</div>
     <div class="p-2 bg-primary">Element 2 longer</div>
     <div class="p-2 bg-primary">Element 3 even longer</div>
     <div class="p-2 bg-primary">E4</div>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a cluster to alter the appearence and behaviour.
+    There are a number of additional layout modifiers that can be applied to a cluster to alter the appearence and
+    behaviour.
+    Layout modifiers are applied as space separated values of the layout attribute.
+    For example <kbd>layout-cluster="h-center gap-1"</kbd>
 </p>
 
 <h4>Gap</h4>
 <p>
-    There are a number CSS classes to set the gap between the elements of the cluster.
+    There are a number layout modifiers to set the gap between the elements of the stack.
     These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
     <kbd>gap-0</kbd> means no gap at all.
     The default gap is <kbd>gap-3</kbd>.
@@ -38,7 +41,7 @@ pageOrder: 4
 <div layout-stack>
     <div>
         <strong>gap-0</strong>
-        <div layout-box class="cluster gap-0" style="width: 275px;">
+        <div layout-box layout-cluster="gap-0" style="width: 275px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element long</div>
@@ -46,7 +49,7 @@ pageOrder: 4
     </div>
     <div>
         <strong>gap-1</strong>
-        <div layout-box class="cluster gap-1" style="width: 275px;">
+        <div layout-box layout-cluster="gap-1" style="width: 275px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element long</div>
@@ -54,7 +57,7 @@ pageOrder: 4
     </div>
     <div>
         <strong>gap-2</strong>
-        <div layout-box class="cluster gap-2" style="width: 275px;">
+        <div layout-box layout-cluster="gap-2" style="width: 275px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element long</div>
@@ -62,7 +65,7 @@ pageOrder: 4
     </div>
     <div>
         <strong>gap-3 (Default)</strong>
-        <div layout-box class="cluster gap-3" style="width: 275px;">
+        <div layout-box layout-cluster="gap-3" style="width: 275px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element long</div>
@@ -70,7 +73,7 @@ pageOrder: 4
     </div>
     <div>
         <strong>gap-4</strong>
-        <div layout-box class="cluster gap-4" style="width: 275px;">
+        <div layout-box layout-cluster="gap-4" style="width: 275px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element long</div>
@@ -78,7 +81,7 @@ pageOrder: 4
     </div>
     <div>
         <strong>gap-5</strong>
-        <div layout-box class="cluster gap-5" style="width: 275px;">
+        <div layout-box layout-cluster="gap-5" style="width: 275px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element long</div>
@@ -86,7 +89,7 @@ pageOrder: 4
     </div>
     <div>
         <strong>gap-r-1 + gap-c-5</strong>
-        <div layout-box class="cluster gap-r-1 gap-c-5" style="width: 275px;">
+        <div layout-box layout-cluster="gap-r-1 gap-c-5" style="width: 275px;">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element long</div>
@@ -96,54 +99,54 @@ pageOrder: 4
 
 <h4>Horizontal content justification</h4>
 <p>
-    There are a number CSS classes to set the horizontal content justification of the cluster.
+    There are a number layout modifiers to set the horizontal content justification of the cluster.
     The default content justification in CSS is <kbd>justify-content: flex-start;</kbd>.
     The examples below demonstare the different horizontal content justifications.
 </p>
 <div layout-stack>
     <div>
-        <strong>main-start (Default)</strong>
-        <div layout-box class="cluster main-start">
+        <strong>h-start (Default)</strong>
+        <div layout-box layout-cluster="h-start">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-end</strong>
-        <div layout-box class="cluster main-end">
+        <strong>h-end</strong>
+        <div layout-box layout-cluster="h-end">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-center</strong>
-        <div layout-box class="cluster main-center">
+        <strong>h-center</strong>
+        <div layout-box layout-cluster="h-center">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-space-between</strong>
-        <div layout-box class="cluster main-space-between">
+        <strong>h-space-between</strong>
+        <div layout-box layout-cluster="h-space-between">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-space-around</strong>
-        <div layout-box class="cluster main-space-around">
+        <strong>h-space-around</strong>
+        <div layout-box layout-cluster="h-space-around">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
     <div>
-        <strong>main-space-evenly</strong>
-        <div layout-box class="cluster main-space-evenly">
+        <strong>h-space-evenly</strong>
+        <div layout-box layout-cluster="h-space-evenly">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -153,14 +156,14 @@ pageOrder: 4
 
 <h4>Vertical item alignment</h4>
 <p>
-    There are a number CSS classes to set the vertical item alignment of the cluster.
-    The default item alignment in CSS is <kbd>align-items: stretch;</kbd>.
+    There are a number layout modifiers to set the vertical item alignment of the cluster.
+    The default vertical item alignment in CSS is <kbd>align-items: stretch;</kbd>.
     The examples below demonstare the different vertical item alignments.
 </p>
 <div layout-stack>
     <div>
-        <strong>cross-start</strong>
-        <div layout-box class="cluster cross-start">
+        <strong>v-start</strong>
+        <div layout-box layout-cluster="v-start">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -169,8 +172,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>cross-end</strong>
-        <div layout-box class="cluster cross-end">
+        <strong>v-end</strong>
+        <div layout-box layout-cluster="v-end">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -179,8 +182,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>cross-center</strong>
-        <div layout-box class="cluster cross-center">
+        <strong>v-center</strong>
+        <div layout-box layout-cluster="v-center">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -189,8 +192,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>cross-stretch (Default)</strong>
-        <div layout-box class="cluster cross-stretch">
+        <strong>v-stretch (Default)</strong>
+        <div layout-box layout-cluster="v-stretch">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -199,8 +202,8 @@ pageOrder: 4
         </div>
     </div>
     <div>
-        <strong>cross-baseline</strong>
-        <div layout-box class="cluster cross-baseline">
+        <strong>v-baseline</strong>
+        <div layout-box layout-cluster="v-baseline">
             <div class="p-4 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -216,26 +219,26 @@ pageOrder: 4
     but it is not recommended to nest more than 2 levels deep.
 </p>
 <p>
-    The below example has a cluster with the CSS classes <kbd>cluster</kbd>,
-    <kbd>main-space-between</kbd> and <kbd>container</kbd>.
-    Within the cluster are two more clusters with the CSS classes <kbd>cluster</kbd>, 
-    <kbd>main-center</kbd> and <kbd>mobile-grow</kbd>.
+    The below example has a cluster with the layout modifier <kbd>h-space-between</kbd> and the layout attribute
+    <kbd>layout-container</kbd>.
+    Within the cluster are two more clusters with the layout modifier <kbd>h-center</kbd> and the CSS class
+    <kbd>mobile-grow</kbd>.
 </p>
 <p>
-    When the outer cluster is not wrapped the <kbd>main-center</kbd> of the inner 2 clusters have no effect
-    as the inner clusters are the size of their contents.
+    When the outer cluster is not wrapped the <kbd>h-center</kbd> of the inner 2 clusters have no effect as the inner
+    clusters are the size of their contents.
     But when the outer cluster is wrapped a CSS container query will set the CSS property <kbd>flex-grow: 1;</kbd>
-    on the inner clusters so that their <kbd>main-center</kbd> will have an effect.
+    on the inner clusters so that their <kbd>h-center</kbd> will have an effect.
 </p>
 <p>
     The <kbd>flex-grow: 1;</kbd> property is applied to a <kbd>mobile-grow</kbd> that is the direct child of a
-    <kbd>container</kbd> where the width of the container is less than 60ch.    
+    <kbd>layout-container</kbd> where the width of the container is less than 60ch.
 </p>
-<div layout-box class="cluster main-space-between cross-center gap-r-0 container">
-    <div class="cluster main-center mobile-grow">
+<div layout-box layout-cluster="h-space-between v-center gap-r-0" class="container">
+    <div layout-cluster="h-center" class="mobile-grow">
         <strong class="text-3 text-layout">MySite</strong>
     </div>
-    <menu id="this-menu" class="cluster main-center mobile-grow gap-r-0 gap-c-2">
+    <menu id="this-menu" layout-cluster="h-center gap-r-0 gap-c-2" class="mobile-grow">
         <li><a href="#this-menu">Home</a></li>
         <li><a href="#this-menu">About</a></li>
         <li><a href="#this-menu">Products</a></li>

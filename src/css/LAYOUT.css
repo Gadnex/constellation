@@ -2,7 +2,7 @@
  * Copyright (c) 2026 William Gadney. All rights reserved.
  * Licensed under the MIT License.
  */
- 
+
 /* The stack */
 [layout-stack] {
     --gap: var(--size-3, 1rem);
@@ -95,23 +95,23 @@
 }
 
 [layout-stack~="gap-1"] {
-    --gap: var(--size-1);
+    --gap: var(--size-1, 0.25rem);
 }
 
 [layout-stack~="gap-2"] {
-    --gap: var(--size-2);
+    --gap: var(--size-2, 0.5rem);
 }
 
 [layout-stack~="gap-3"] {
-    --gap: var(--size-3);
+    --gap: var(--size-3, 1rem);
 }
 
 [layout-stack~="gap-4"] {
-    --gap: var(--size-4);
+    --gap: var(--size-4, 1.25rem);
 }
 
 [layout-stack~="gap-5"] {
-    --gap: var(--size-5);
+    --gap: var(--size-5, 1.5rem);
 }
 
 /* The box */
@@ -184,8 +184,8 @@
 
 /* The cluster */
 [layout-cluster] {
-    --column-gap: 1rem;
-    --row-gap: 1rem;
+    --column-gap: var(--size-3, 1rem);
+    --row-gap: var(--size-3, 1rem);
 
     display: flex;
     flex-wrap: wrap;
@@ -242,28 +242,76 @@
 }
 
 [layout-cluster~="gap-1"] {
-    --row-gap: var(--size-1);
-    --column-gap: var(--size-1);
+    --row-gap: var(--size-1, 0.25rem);
+    --column-gap: var(--size-1, 0.25rem);
 }
 
 [layout-cluster~="gap-2"] {
-    --row-gap: var(--size-2);
-    --column-gap: var(--size-2);
+    --row-gap: var(--size-2, 0.5rem);
+    --column-gap: var(--size-2, 0.5rem);
 }
 
 [layout-cluster~="gap-3"] {
-    --row-gap: var(--size-3);
-    --column-gap: var(--size-3);
+    --row-gap: var(--size-3, 1rem);
+    --column-gap: var(--size-3, 1rem);
 }
 
 [layout-cluster~="gap-4"] {
-    --row-gap: var(--size-4);
-    --column-gap: var(--size-4);
+    --row-gap: var(--size-4, 1.25rem);
+    --column-gap: var(--size-4, 1.25rem);
 }
 
 [layout-cluster~="gap-5"] {
-    --row-gap: var(--size-5);
-    --column-gap: var(--size-5);
+    --row-gap: var(--size-5, 1.5rem);
+    --column-gap: var(--size-5, 1.5rem);
+}
+
+[layout-cluster~="gap-r-0"] {
+    --row-gap: 0px;
+}
+
+[layout-cluster~="gap-r-1"] {
+    --row-gap: var(--size-1, 0.25rem);
+}
+
+[layout-cluster~="gap-r-2"] {
+    --row-gap: var(--size-2, 0.5rem);
+}
+
+[layout-cluster~="gap-r-3"] {
+    --row-gap: var(--size-3, 1rem);
+}
+
+[layout-cluster~="gap-r-4"] {
+    --row-gap: var(--size-4, 1.25rem);
+}
+
+[layout-cluster~="gap-r-5"] {
+    --row-gap: var(--size-5, 1.5rem);
+}
+
+[layout-cluster~="gap-c-0"] {
+    --column-gap: 0px;
+}
+
+[layout-cluster~="gap-c-1"] {
+    --column-gap: var(--size-1, 0.25rem);
+}
+
+[layout-cluster~="gap-c-2"] {
+    --column-gap: var(--size-2, 0.5rem);
+}
+
+[layout-cluster~="gap-c-3"] {
+    --column-gap: var(--size-3, 1rem);
+}
+
+[layout-cluster~="gap-c-4"] {
+    --column-gap: var(--size-4, 1.25rem);
+}
+
+[layout-cluster~="gap-c-5"] {
+    --column-gap: var(--size-5, 1.5rem);
 }
 
 .gap-0 {
@@ -348,4 +396,71 @@
 
 .gap-c-5 {
     --column-gap: var(--size-5);
+}
+
+
+@layer flexbox {
+    .grow {
+        flex-grow: 1;
+    }
+
+    .grow-fast {
+        flex-grow: 999;
+    }
+
+    @container (max-inline-size: 60ch) {
+        .container {
+            & .mobile-grow {
+                flex-grow: 1;
+            }
+
+            & .mobile-no-grow {
+                flex-grow: 0;
+            }
+
+            & .mobile-main-start {
+                justify-content: flex-start;
+            }
+
+            & .mobile-main-end {
+                justify-content: flex-end;
+            }
+
+            & .mobile-main-center {
+                justify-content: center;
+            }
+
+            & .mobile-main-space-between {
+                justify-content: space-between;
+            }
+
+            & .mobile-main-space-around {
+                justify-content: space-around;
+            }
+
+            & .mobile-main-space-evenly {
+                justify-content: space-evenly;
+            }
+
+            & .mobile-cross-start {
+                align-items: flex-start;
+            }
+
+            & .mobile-cross-end {
+                align-items: flex-end;
+            }
+
+            & .mobile-cross-center {
+                align-items: center;
+            }
+
+            & .mobile-cross-stretch {
+                align-items: stretch;
+            }
+
+            & .mobile-cross-baseline {
+                align-items: baseline;
+            }
+        }
+    }
 }

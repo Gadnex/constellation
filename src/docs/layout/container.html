@@ -47,13 +47,13 @@ pageOrder: 13
 <div layout-stack class="container">
     <div>
         <strong>mobile-grow</strong>
-        <div layout-box class="cluster">
+        <div layout-box layout-cluster>
             <div class="p-2 bg-primary mobile-grow">Grown on mobile</div>
         </div>
     </div>
     <div>
         <strong>mobile-no-grow</strong>
-        <div layout-box class="cluster">
+        <div layout-box layout-cluster>
             <div class="p-2 bg-primary grow mobile-no-grow">Not grown on mobile</div>
         </div>
     </div>
@@ -66,9 +66,12 @@ pageOrder: 13
     The examples below demonstare the different mobile main content justifications.
 </p>
 <div layout-stack class="container">
+    <div layout-box class="error">
+        This is currently broken due to specificity issue
+    </div>
     <div>
         <strong>mobile-main-start</strong>
-        <div layout-box class="cluster main-end mobile-main-start">
+        <div layout-box layout-cluster="h-end" class="mobile-main-start">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -76,7 +79,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-main-end</strong>
-        <div layout-box class="cluster main-start mobile-main-end">
+        <div layout-box layout-cluster="h-start" class="mobile-main-end">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -84,7 +87,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-main-center</strong>
-        <div layout-box class="cluster mobile-main-center">
+        <div layout-box layout-cluster class="mobile-main-center">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -92,7 +95,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-main-space-between</strong>
-        <div layout-box class="cluster mobile-main-space-between">
+        <div layout-box layout-cluster class="mobile-main-space-between">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -100,7 +103,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-main-space-around</strong>
-        <div layout-box class="cluster mobile-main-space-around">
+        <div layout-box layout-cluster class="mobile-main-space-around">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -108,7 +111,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-main-space-evenly</strong>
-        <div layout-box class="cluster mobile-main-space-evenly">
+        <div layout-box layout-cluster="mobile-main-space-evenly">
             <div class="p-2 bg-primary">Element</div>
             <div class="p-2 bg-contrast">Element</div>
             <div class="p-2 bg-primary">Element</div>
@@ -125,7 +128,7 @@ pageOrder: 13
 <div layout-stack class="container">
     <div>
         <strong>mobile-cross-start</strong>
-        <div layout-box class="cluster mobile-cross-start">
+        <div layout-box layout-cluster class="mobile-cross-start">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -135,7 +138,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-cross-end</strong>
-        <div layout-box class="cluster mobile-cross-end">
+        <div layout-box layout-cluster class="mobile-cross-end">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -145,7 +148,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-cross-center</strong>
-        <div layout-box class="cluster mobile-cross-center">
+        <div layout-box layout-cluster class="mobile-cross-center">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -153,9 +156,12 @@ pageOrder: 13
             <div class="p-2 bg-primary">Element</div>
         </div>
     </div>
+    <div layout-box class="error">
+        This is currently broken due to specificity issue
+    </div>
     <div>
         <strong>mobile-cross-stretch</strong>
-        <div layout-box class="cluster cross-start mobile-cross-stretch">
+        <div layout-box layout-cluster="v-start" class="mobile-cross-stretch">
             <div class="p-2 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
@@ -165,7 +171,7 @@ pageOrder: 13
     </div>
     <div>
         <strong>mobile-cross-baseline</strong>
-        <div layout-box class="cluster mobile-cross-baseline">
+        <div layout-box layout-cluster class="mobile-cross-baseline">
             <div class="p-4 bg-primary" style="height: var(--size-9);">
                 Element
             </div>
