@@ -6,6 +6,9 @@ pageOrder: 11
     The imposter is a layout component that places an element on top of the content of it's parent element and centered
     both vertically and horizontally.
 </p>
+<p>
+    The imposter is applied by setting the <kbd>layout-imposter</kbd> attribute on an HTML element.
+</p>
 <div layout-box>
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, dolores repellendus autem totam cum nulla
     aliquid molestiae veniam harum iste reprehenderit itaque, saepe impedit a hic ullam ex eius ad quam sed ab? Nesciunt
@@ -14,24 +17,26 @@ pageOrder: 11
     culpa consequuntur dicta animi corrupti porro reiciendis doloremque at officia tenetur. Aliquam provident maxime
     suscipit enim in, adipisci assumenda, cupiditate saepe veniam facere magnam labore. Laboriosam tempore ullam
     suscipit consectetur eveniet? Rerum, nisi.
-    <div class="imposter bg-primary p-4">
+    <div layout-imposter class="bg-primary p-4">
         I am an imposter
     </div>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There is an additional CSS class that can be applied to an imposter to alter the appearence.
+    There are a number of additional layout modifiers that can be applied to an imposter to alter the appearence.
+    Layout modifiers are applied as space separated values of the layout attribute.
+    For example <kbd>layout-imposter="contained"</kbd>
 </p>
 
 <h4>Contained</h4>
 <p>
     It is possible that the content of the imposter will not fit within the bounds of the parent element.
     In such cases the imposter will escape the bounds of the parent element.
-    If this behaviour is unwanted, the <kbd>contained</kbd> utility class can be applied to the imposter.
+    If this behaviour is unwanted, the <kbd>contained</kbd> layout modifier can be applied to the imposter.
 </p>
 <p>
-    With this utility class applied the imposted content will not escape the bounds of the parent and will have
+    With this layout modifier the imposted content will not escape the bounds of the parent and will have
     a margin around the imposter to ensure the imposter does not touch the edges of it's parent.
     A scollbar for the imposter will appear to enable viewing all of the content.
 </p>
@@ -43,7 +48,7 @@ pageOrder: 11
     culpa consequuntur dicta animi corrupti porro reiciendis doloremque at officia tenetur. Aliquam provident maxime
     suscipit enim in, adipisci assumenda, cupiditate saepe veniam facere magnam labore. Laboriosam tempore ullam
     suscipit consectetur eveniet? Rerum, nisi.
-    <div class="imposter contained bg-primary p-4">
+    <div layout-imposter="contained" class="bg-primary p-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident nesciunt dolorem beatae ipsa, animi
         totam iusto? Placeat deleniti voluptate excepturi minima neque, suscipit, odit a recusandae dolores odio soluta
         quos quia voluptates molestiae facilis ratione iure tenetur fugiat maiores nesciunt. Voluptas necessitatibus,
@@ -70,6 +75,6 @@ pageOrder: 11
     <dd>
         Set the margin around the element so that the imposter does not touch its parent's border.
         A padding on the parent element does not work with an imposter.
-        The --margin variable is only used if the utility class <kbd>contained</kbd> is applied.
+        The --margin variable is only used if the layout modifier <kbd>contained</kbd> is applied.
     </dd>
 </dl>

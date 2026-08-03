@@ -665,6 +665,26 @@
             padding-block: var(--size-3);
             border: var(--border-width, 1px) solid var(--border-color, currentcolor);
         }
+
+        /* The imposter */
+        :has(> [layout-imposter]) {
+            position: relative;
+        }
+
+        [layout-imposter] {
+            position: var(--positioning, absolute);
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        [layout-imposter~="contained"] {
+            --margin: var(--padding);
+
+            overflow: auto;
+            max-inline-size: calc(100% - (var(--margin) * 2));
+            max-block-size: calc(100% - (var(--margin) * 2));
+        }
     }
 }
 
@@ -734,7 +754,7 @@
     }
 }
 
-@layer layout {
+@layer utilities {
     :where(:root) {
         .hidden {
             display: none;
