@@ -5,12 +5,11 @@ pageOrder: 10
 <p>
     The reel is a layout component designed for making an HTML element horizontally scrollable within its parent
     element.
-
 </p>
 <p>
-    The reel is applied by setting <kbd>class="reel"</kbd> on an HTML element.
+    The reel is applied by setting the <kbd>layout-reel</kbd> attribute on an HTML element.
 </p>
-<div class="reel">
+<div layout-reel>
     <div layout-frame class="bg-neutral"></div>
     <div layout-frame class="bg-neutral"></div>
     <div layout-frame class="bg-neutral"></div>
@@ -21,23 +20,25 @@ pageOrder: 10
     <div layout-frame class="bg-neutral"></div>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to a reel to alter the appearence.
+    There are a number of additional layout modifiers that can be applied to a reel to alter the appearence.
+    Layout modifiers are applied as space separated values of the layout attribute.
+    For example <kbd>layout-reel="30vw gap-1"</kbd>
 </p>
 
 <h4>Item width</h4>
 <p>
-    There are a number CSS classes to set the width of the elements of the reel.
-    The default item width is <kbd>w-20vw</kbd>, which is 20% of the viewport (screen) width.
+    There are a number of layout modifiers to set the width of the elements of the reel.
+    The default item width is <kbd>20vw</kbd>, which is 20% of the viewport (screen) width.
 </p>
 <p>
     The examples below demonstare the different gap sizes.
 </p>
 <div layout-stack>
     <div>
-        <strong>w-10vw</strong>
-        <div class="reel w-10vw">
+        <strong>10vw</strong>
+        <div layout-reel="10vw">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -53,8 +54,8 @@ pageOrder: 10
         </div>
     </div>
     <div>
-        <strong>w-20vw (Default)</strong>
-        <div class="reel w-20vw">
+        <strong>20vw (Default)</strong>
+        <div layout-reel="20vw">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -64,8 +65,8 @@ pageOrder: 10
         </div>
     </div>
     <div>
-        <strong>w-30vw</strong>
-        <div class="reel w-30vw">
+        <strong>30vw</strong>
+        <div layout-reel="30vw">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -75,8 +76,8 @@ pageOrder: 10
         </div>
     </div>
     <div>
-        <strong>w-40vw</strong>
-        <div class="reel w-40vw">
+        <strong>40vw</strong>
+        <div layout-reel="40vw">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -86,8 +87,8 @@ pageOrder: 10
         </div>
     </div>
     <div>
-        <strong>w-100</strong>
-        <div class="reel w-100">
+        <strong>w-full</strong>
+        <div layout-reel="w-full">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -97,7 +98,7 @@ pageOrder: 10
 
 <h4>Gap</h4>
 <p>
-    There are a number CSS classes to set the gap between the elements of the reel.
+    There are a number of layout modifiers to set the gap between the elements of the reel.
     These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
     <kbd>gap-0</kbd> means no gap at all.
     The default gap is <kbd>gap-3</kbd>.
@@ -108,7 +109,7 @@ pageOrder: 10
 <div layout-stack>
     <div>
         <strong>gap-0</strong>
-        <div class="reel gap-0">
+        <div layout-reel="gap-0">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -119,7 +120,7 @@ pageOrder: 10
     </div>
     <div>
         <strong>gap-1</strong>
-        <div class="reel gap-1">
+        <div layout-reel="gap-1">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -130,7 +131,7 @@ pageOrder: 10
     </div>
     <div>
         <strong>gap-2</strong>
-        <div class="reel gap-2">
+        <div layout-reel="gap-2">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -141,7 +142,7 @@ pageOrder: 10
     </div>
     <div>
         <strong>gap-3 (Default)</strong>
-        <div class="reel gap-3">
+        <div layout-reel="gap-3">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -152,7 +153,7 @@ pageOrder: 10
     </div>
     <div>
         <strong>gap-4</strong>
-        <div class="reel gap-4">
+        <div layout-reel="gap-4">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -163,7 +164,7 @@ pageOrder: 10
     </div>
     <div>
         <strong>gap-5</strong>
-        <div class="reel gap-5">
+        <div layout-reel="gap-5">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -174,14 +175,20 @@ pageOrder: 10
     </div>
 </div>
 
-<h4>Border</h4>
+<h3>CSS Classes</h3>
 <p>
-    The <kbd>bordered</kbd> CSS class created a border around the reel.
+    There are a number of additional CSS classes that can be applied to a reel to alter the appearence.
+</p>
+
+<h4>Bordered</h4>
+<p>
+    The <kbd>bordered</kbd> CSS class creates a border around the reel and sets block padding to create space between
+    the border and the elements of the reel.
 </p>
 <div layout-stack>
     <div>
         <strong>bordered</strong>
-        <div class="reel bordered">
+        <div layout-reel class="bordered">
             <div layout-frame class="bg-neutral"></div>
             <div layout-frame class="bg-contrast"></div>
             <div layout-frame class="bg-neutral"></div>
@@ -203,6 +210,12 @@ pageOrder: 10
     <dt class="text-contrast">--gap</dt>
     <dd>Set the gap size between the elements in the reel.</dd>
 
-    <dt class="text-contrast">--padding</dt>
+    <dt class="text-contrast">--reel-padding</dt>
     <dd>Set the padding size below the elements in the reel where the slider resides.</dd>
+
+    <dt class="text-contrast">--border-width</dt>
+    <dd>Set the border width when the CSS class bordered is applied.</dd>
+
+    <dt class="text-contrast">--border-color</dt>
+    <dd>Set the border color when the CSS class bordered is applied.</dd>
 </dl>

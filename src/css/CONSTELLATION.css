@@ -937,51 +937,6 @@
 
 @layer layout {
     :where(:root) {
-        /* The reel */
-        .reel {
-            --item-width: 20vw;
-            --gap: var(--size-3);
-            --reel-padding: var(--size-2);
-
-            display: flex;
-            gap: var(--gap);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
-            padding-block-end: var(--reel-padding);
-            scrollbar-color: var(--primary-4) var(--background-color);
-
-            &>* {
-                scroll-snap-align: start;
-                flex: 0 0 var(--item-width);
-            }
-
-            &.w-10vw {
-                --item-width: 10vw;
-            }
-
-            &.w-20vw {
-                --item-width: 20vw;
-            }
-
-            &.w-30vw {
-                --item-width: 30vw;
-            }
-
-            &.w-40vw {
-                --item-width: 40vw;
-            }
-
-            &.w-100 {
-                --item-width: 100%;
-            }
-
-            &.bordered {
-                padding-block: var(--size-3);
-                border: var(--border-width) solid var(--border-color);
-            }
-        }
-
         /* The imposter */
         :has(.imposter) {
             position: relative;
