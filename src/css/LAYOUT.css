@@ -685,6 +685,50 @@
             max-inline-size: calc(100% - (var(--margin) * 2));
             max-block-size: calc(100% - (var(--margin) * 2));
         }
+
+        /* The icon */
+        :has(> [layout-icon]) {
+            --gap: var(--size-3);
+
+            display: inline-flex;
+            align-items: center;
+            gap: var(--gap);
+            line-height: 1.0;
+        }
+
+        [layout-icon] {
+            inline-size: 1em;
+            block-size: 1em;
+        }
+
+        :has(> [layout-icon])>:not([layout-icon]) {
+            flex-grow: 1;
+            line-height: 1;
+        }
+
+        :has(> [layout-icon~="gap-0"]) {
+            --gap: 0px;
+        }
+
+        :has(> [layout-icon~="gap-1"]) {
+            --gap: var(--size-1);
+        }
+
+        :has(> [layout-icon~="gap-2"]) {
+            --gap: var(--size-2);
+        }
+
+        :has(> [layout-icon~="gap-3"]) {
+            --gap: var(--size-3);
+        }
+
+        :has(> [layout-icon~="gap-4"]) {
+            --gap: var(--size-4);
+        }
+
+        :has(> [layout-icon~="gap-5"]) {
+            --gap: var(--size-5);
+        }
     }
 }
 

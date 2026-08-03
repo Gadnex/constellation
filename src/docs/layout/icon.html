@@ -10,9 +10,13 @@ pageOrder: 12
     the icon and text are properly vertically alinged with a
     gap between them.
 </p>
+<p>
+    The icon is applied by setting the <kbd>layout-icon</kbd> attribute on an HTML element.
+    In most cases this HTML element will be an <kbd>svg</kbd> element, but it can be any HTML element.
+</p>
 <div layout-cluster>
     <h3 class="text-1 bg-neutral-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" layout-icon width="1em" height="1em" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
             <path fill="currentColor"
                 d="M3 21v-4.25L16.2 3.575q.3-.275.663-.425t.762-.15t.775.15t.65.45L20.425 5q.3.275.438.65T21 6.4q0 .4-.137.763t-.438.662L7.25 21zM17.6 7.8L19 6.4L17.6 5l-1.4 1.4z" />
@@ -20,7 +24,7 @@ pageOrder: 12
         Heading
     </h3>
     <button>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" layout-icon width="1em" height="1em" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
             <path fill="currentColor"
                 d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5t.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5t-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-6.287 10.713Q11 16.425 11 16V9q0-.425-.288-.712T10 8t-.712.288T9 9v7q0 .425.288.713T10 17t.713-.288m4 0Q15 16.426 15 16V9q0-.425-.288-.712T14 8t-.712.288T13 9v7q0 .425.288.713T14 17t.713-.288M7 6v13z" />
@@ -29,14 +33,14 @@ pageOrder: 12
     </button>
     <button>
         Add
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" layout-icon width="1em" height="1em" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
             <path fill="currentColor"
                 d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
         </svg>
     </button>
     <button class="ghost">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+        <svg xmlns="http://www.w3.org/2000/svg" layout-icon width="1em" height="1em" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="feather feather-settings">
             <circle cx="12" cy="12" r="3"></circle>
@@ -47,20 +51,22 @@ pageOrder: 12
     </button>
 </div>
 
-<h3>CSS Classes</h3>
+<h3>Modifiers</h3>
 <p>
-    There are a number of additional CSS classes that can be applied to an icon to alter the appearence.
+    There are a number of additional layout modifiers that can be applied to an icon to alter the appearence.
+    Layout modifiers are applied as space separated values of the layout attribute.
+    For example <kbd>layout-icon="gap-1"</kbd>
 </p>
 
 <h4>Gap</h4>
 <p>
-    There are a number CSS classes to set the gap between the icon and its sibling elements.
+    There are a number of layout modifiers to set the gap between the icon and its sibling elements.
     These are <kbd>gap-{0-5}</kbd>, which set progressively bigger gaps as the number increases.
     <kbd>gap-0</kbd> means no gap at all.
     The default gap is <kbd>gap-3</kbd>.
 </p>
 <p>
-    The gap classes are applied to the parent elememt of the icon and not the ison itself.
+    The gap modifier is applied to the layout-icon attribute and not the parent element.
 </p>
 <p>
     The examples below demonstare the different gap sizes.
@@ -69,8 +75,8 @@ pageOrder: 12
     <div>
         <strong>gap-0</strong>
         <div>
-            <button class="gap-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" layout-icon="gap-0" width="1em" height="1em" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none" />
                     <path fill="currentColor"
                         d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
@@ -82,8 +88,8 @@ pageOrder: 12
     <div>
         <strong>gap-1</strong>
         <div>
-            <button class="gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" layout-icon="gap-1" width="1em" height="1em" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none" />
                     <path fill="currentColor"
                         d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
@@ -95,8 +101,8 @@ pageOrder: 12
     <div>
         <strong>gap-2</strong>
         <div>
-            <button class="gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" layout-icon="gap-2" width="1em" height="1em" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none" />
                     <path fill="currentColor"
                         d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
@@ -108,8 +114,8 @@ pageOrder: 12
     <div>
         <strong>gap-3 (Default)</strong>
         <div>
-            <button class="gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" layout-icon="gap-3" width="1em" height="1em" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none" />
                     <path fill="currentColor"
                         d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
@@ -121,8 +127,8 @@ pageOrder: 12
     <div>
         <strong>gap-4</strong>
         <div>
-            <button class="gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" layout-icon="gap-4" width="1em" height="1em" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none" />
                     <path fill="currentColor"
                         d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
@@ -134,8 +140,8 @@ pageOrder: 12
     <div>
         <strong>gap-5</strong>
         <div>
-            <button class="gap-5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" layout-icon="gap-5" width="1em" height="1em" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none" />
                     <path fill="currentColor"
                         d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
