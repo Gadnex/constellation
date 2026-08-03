@@ -4,6 +4,14 @@
  */
 @layer layout {
     :where(:root) {
+        .grow {
+            flex-grow: 1;
+        }
+
+        .grow-fast {
+            flex-grow: 999;
+        }
+
         /* The fullscreen */
         [layout-fullscreen] {
             container-type: inline-size;
@@ -729,69 +737,75 @@
         :has(> [layout-icon~="gap-5"]) {
             --gap: var(--size-5);
         }
-    }
-}
 
-@layer flexbox {
-    .grow {
-        flex-grow: 1;
-    }
+        /* The container */
+        [layout-container] {
+            container-type: inline-size;
+            inline-size: 100%;
+        }
 
-    .grow-fast {
-        flex-grow: 999;
-    }
+        [layout-container] .mobile-show {
+            display: none;
+        }
 
-    @container (max-inline-size: 60ch) {
-        .container {
-            & .mobile-grow {
+        @container (max-inline-size: 60ch) {
+            [layout-container] .mobile-hide {
+                display: none;
+            }
+
+            [layout-container] .mobile-show {
+                display: block;
+            }
+
+            [layout-container] .mobile-grow {
                 flex-grow: 1;
             }
 
-            & .mobile-no-grow {
+            [layout-container] .mobile-no-grow {
                 flex-grow: 0;
             }
 
-            & .mobile-main-start {
+            [layout-container] .mobile-main-start {
                 justify-content: flex-start;
             }
 
-            & .mobile-main-end {
+            [layout-container] .mobile-main-end {
                 justify-content: flex-end;
             }
 
-            & .mobile-main-center {
+            [layout-container] .mobile-main-center {
                 justify-content: center;
             }
 
-            & .mobile-main-space-between {
+            [layout-container] .mobile-main-space-between {
                 justify-content: space-between;
             }
 
-            & .mobile-main-space-around {
+            [layout-container] .mobile-main-space-around {
                 justify-content: space-around;
             }
 
-            & .mobile-main-space-evenly {
+            [layout-container] .mobile-main-space-evenly {
                 justify-content: space-evenly;
             }
 
-            & .mobile-cross-start {
+            [layout-container] .mobile-cross-start {
                 align-items: flex-start;
             }
 
-            & .mobile-cross-end {
+            [layout-container] .mobile-cross-end {
                 align-items: flex-end;
             }
 
-            & .mobile-cross-center {
+            [layout-container] .mobile-cross-center {
                 align-items: center;
             }
 
-            & .mobile-cross-stretch {
+            [layout-container] .mobile-cross-stretch {
                 align-items: stretch;
             }
 
-            & .mobile-cross-baseline {
+            [layout-container] .mobile-cross-baseline {
                 align-items: baseline;
             }
         }

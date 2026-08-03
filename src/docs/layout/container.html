@@ -24,7 +24,7 @@ pageOrder: 13
     There are a number CSS classes to show or hide content inside a container
     on mobile screens.
 </p>
-<div layout-stack class="container">
+<div layout-stack layout-container>
     <div>
         <strong>mobile-show</strong>
         <div layout-box>
@@ -39,12 +39,30 @@ pageOrder: 13
     </div>
 </div>
 
-<h4>Mobile grow and no-grow</h4>
+<h4>Grow and no-grow</h4>
 <p>
-    There are a number CSS classes to grow or not grow flecbox content inside a container
+    There are a number CSS classes to grow or not grow flexbox content inside a container
     on mobile screens.
 </p>
-<div layout-stack class="container">
+<p>
+    These CSS classes work on child elements of the <kbd>fullscreen</kbd>,
+    <kbd>stack</kbd>, <kbd>cluster</kbd>, <kbd>sidebar</kbd>,
+    <kbd>switcher</kbd> and <kbd>reel</kbd> layouts,
+    which are all implemented using CSS flexbox.
+</p>
+<p>
+    The <kbd>grow</kbd> class will set the <kbd>flex-grow: 1;</kbd> flexbox property on the element.
+    The <kbd>grow-fast</kbd> class will set the <kbd>flex-grow: 999;</kbd> flexbox property on the element,
+    which will make the element grow faster than other elements with the <kbd>grow</kbd> class.
+</p>
+<p>
+    There are also <kbd>mobile-grow</kbd> and <kbd>mobile-no-grow</kbd> classes available.
+    These are implemented using CSS @container queries and are applied when the closest ancestor
+    <kbd>layout-container</kbd> element is less than 60ch wide. If there is no ancestor
+    <kbd>layout-container</kbd> element, then the ancestor <kbd>layout-fullscreen</kbd>
+    is used for the @container query.
+</p>
+<div layout-stack layout-container>
     <div>
         <strong>mobile-grow</strong>
         <div layout-box layout-cluster>
@@ -52,7 +70,7 @@ pageOrder: 13
         </div>
     </div>
     <div>
-        <strong>mobile-no-grow</strong>
+        <strong>grow + mobile-no-grow</strong>
         <div layout-box layout-cluster>
             <div class="p-2 bg-primary grow mobile-no-grow">Not grown on mobile</div>
         </div>
@@ -65,7 +83,7 @@ pageOrder: 13
     flexbox elements inside a container.
     The examples below demonstare the different mobile main content justifications.
 </p>
-<div layout-stack class="container">
+<div layout-stack layout-container>
     <div>
         <strong>mobile-main-start</strong>
         <div layout-box layout-cluster="h-end" class="mobile-main-start">
@@ -122,7 +140,7 @@ pageOrder: 13
     inside a conatainer.
     The examples below demonstare the different mobile cross item alignments.
 </p>
-<div layout-stack class="container">
+<div layout-stack layout-container>
     <div>
         <strong>mobile-cross-start</strong>
         <div layout-box layout-cluster class="mobile-cross-start">

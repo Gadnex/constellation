@@ -934,29 +934,3 @@
         }
     }
 }
-
-@layer layout {
-    :where(:root) {
-        /* The container */
-        .container {
-            container-type: inline-size;
-            inline-size: 100%;
-
-            .mobile-show {
-                display: none;
-            }
-        }
-
-        @container (max-inline-size: 60ch) {
-            .container {
-                & .mobile-hide {
-                    display: none;
-                }
-
-                & .mobile-show {
-                    display: block;
-                }
-            }
-        }
-    }
-}
